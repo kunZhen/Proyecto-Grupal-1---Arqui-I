@@ -2,7 +2,7 @@
 ## Minutes
 
 ### Reuniones
-    Reuniones al menos una vez por semana, los lunes.
+    Reuniones al menos una vez por semana,  lunes 8pm.
 
 
 ### Python
