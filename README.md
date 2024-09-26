@@ -82,3 +82,9 @@
     Propuesta: Poder soportar imágenes a color queda a cargo de Emanuel Marín.
 
     Fecha límite: Tenerlo listo media semana antes de la entrega del proyecto.
+
+## Desarrolladores
+* **Jessica Espinoza** - [Jespinoza1703](https://github.com/Jespinoza1703)
+* **José Vargas** - [JoseAndresVargasTorres](https://github.com/JoseAndresVargasTorres)
+* **Kun Zheng** - [kunZhen](https://github.com/kunZhen)
+* **Emanuel Marín** - [MarinGE23](https://github.com/MarinGE23)
