@@ -85,6 +85,6 @@
 
 ## Desarrolladores
 * **Jessica Espinoza** - [Jespinoza1703](https://github.com/Jespinoza1703)
+* **Emanuel Marín** - [MarinGE23](https://github.com/MarinGE23)
 * **José Vargas** - [JoseAndresVargasTorres](https://github.com/JoseAndresVargasTorres)
 * **Kun Zheng** - [kunZhen](https://github.com/kunZhen)
-* **Emanuel Marín** - [MarinGE23](https://github.com/MarinGE23)
