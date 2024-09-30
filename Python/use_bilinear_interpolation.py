@@ -78,7 +78,7 @@ def bilinear_interpolation(I):
 
 def main():
     # Cargar la imagen en escala de grises
-    image_path = "cameraman.jpg"
+    image_path = "escudo.jpg"
     image = load_grayscale_image(image_path)
 
     # Dibujar líneas divisorias sobre la imagen
