@@ -1,0 +1,10 @@
+|MAIN
+clk => clk.IN1
+reset => reset.IN1
+
+
+|MAIN|Bilinea:bilinea
+clk => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+
+

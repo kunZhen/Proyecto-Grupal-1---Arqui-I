@@ -1,0 +1,31 @@
+# Quartus-generated files
+/db/
+/output_files/
+/simulation/
+/synthesis/
+/tmp/
+/*.rpt
+/*.summary
+/*.smsg
+/*.pof
+/*.qws
+/*.qws.gz
+/*.jdi
+/*.rdb
+/db/*.flock
+
+# # Quartus settings file
+# *.qsf
+
+# # Quartus project file
+# *.qpf
+
+# Quartus project database file
+*.qdb
+
+# Quartus system database file
+*.sopcinfo
+
+# Quartus backup files
+*~
+*.bak
