@@ -3,6 +3,7 @@ import numpy as np
 def bilinear_interpolation(I):
     # Convert the original image matrix to a numpy array
     I = np.array(I, dtype=int)
+    print("Original matrix:")
     print(I)
     print()
 
@@ -44,19 +45,30 @@ def bilinear_interpolation(I):
 
     # Validate that the values ​​are between 0 and 255
     new_image = np.clip(new_image, 0, 255)
+    print("Interpolated matrix in decimal:")
     print(new_image)
+    print()
+
+    # Convert the new matrix to hexadecimal
+    hex_image = np.vectorize(lambda x: hex(x))(new_image)
+    print("Interpolated matrix in hexadecimal:")
+    print(hex_image)
 
 # Usage examples
 I2 = [[10, 20],
       [30, 40]]
 
-I3 = [[10, 20, 30], 
-      [40, 50, 60],
-      [70, 80, 90]]
+I3_1 = [[10, 20, 30], 
+        [40, 50, 60],
+        [70, 80, 90]]
+
+I3_2 = [[116, 192, 58], 
+        [139, 29, 255],
+        [217, 173, 46]]
 
 I4 = [[10, 20, 30, 40], 
       [50, 60, 70, 80],
       [90, 100, 110, 120],
       [130, 140, 150, 160]]
 
-bilinear_interpolation(I4)
+bilinear_interpolation(I3_2)
