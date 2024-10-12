@@ -13,6 +13,8 @@
 /*.jdi
 /*.rdb
 /db/*.flock
+PISA/db/PISA.quiproj.9108.rdr.flock
+
 
 # # Quartus settings file
 # *.qsf
