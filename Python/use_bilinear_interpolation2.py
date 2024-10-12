@@ -57,6 +57,11 @@ def bilinear_interpolation(I):
     print(I)
     print()
 
+    hex_image = np.vectorize(lambda x: hex(x))(I)
+    print("Original matrix in hexadecimal:")
+    print(hex_image)
+    print()
+
     # Get the original size of the image
     old_height, old_width = I.shape
     

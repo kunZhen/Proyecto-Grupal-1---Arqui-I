@@ -101,11 +101,13 @@ column_loop:
 
     # Increment indexes andp loops
     addip t11, t11, 1
-    bltp t11, s6, column_loop
+	cmpp t11, s6
+	bltp column_loop
 
     addip t10, t10, 1
-    bltp t10, s7, row_loop
+	cmpp t10, s7
+	bltp row_loop
 
     # End of program
-    addip v0, zero, 1
+    addip v0, zero, 10
     syscall
