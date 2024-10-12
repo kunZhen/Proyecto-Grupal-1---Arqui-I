@@ -2,9 +2,9 @@ module MAIN (
 	input logic clk, reset
 );
 
-	// Instantiate Bilinea Processor
+	// Instantiate Processor
 	
-	Bilinea bilinea(
+	PISA pisa(
 		.clk(clk),
 		.reset(reset)
 	);
