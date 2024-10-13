@@ -50,7 +50,7 @@ module RAM_data_tb;
     #20; // Wait for one clock cycle
     
     // Write data to address 1
-    data = 32'h5A5A5A5A;
+    data = 32'hA;
     wraddress = 17'd1;
     wren = 1;
     #20; // Wait for one clock cycle
@@ -72,7 +72,7 @@ module RAM_data_tb;
     #20; // Wait for one clock cycle
 	 
 	 rdaddress = 17'd9;
-    #20; // Wait for one clock cycle
+    #60; // Wait for one clock cycle
     
     // End simulation
     $stop;
