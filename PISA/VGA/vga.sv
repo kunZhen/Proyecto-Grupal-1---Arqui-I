@@ -4,6 +4,10 @@ module vga #(
 )(
     input logic clk,
 	 input logic switch,
+	 
+	 input [31:0] q, 
+	 output [16:0] rdaddress,
+	 
     output logic vgaclk,
     output logic hsync,
     output logic vsync,
@@ -46,14 +50,15 @@ module vga #(
 		 .y(y),
 		 .switch(switch),
 		 .nboat(num_boats),
+		 
+		 .q(q),
+		 .rdaddress(rdaddress),
+		 
 		 .red(red),
 		 .green(green),
 		 .blue(blue)
     );
 	
 
-    always_ff @(posedge clk) begin
-
-    end
 
 endmodule

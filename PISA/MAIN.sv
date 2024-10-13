@@ -9,7 +9,13 @@ module MAIN (
    output logic blank_b,
    output logic [7:0] red,
    output logic [7:0] green,
-   output logic [7:0] blue
+   output logic [7:0] blue,
+	
+	input logic wren,
+	input logic [31:0] data,       
+	output [31:0] q, 
+	output [16:0] rdaddress, wraddress
+	
 );
 
 	// Instantiate Processor
@@ -25,7 +31,12 @@ module MAIN (
 		.blank_b(blank_b),        // Señal de blanking
 		.red(red),                // Salida de color rojo (8 bits)
 		.green(green),            // Salida de color verde (8 bits)
-		.blue(blue)              // Salida de color azul (8 bits)
+		.blue(blue),              // Salida de color azul (8 bits)
+		.wren(wren),
+		.data(data),
+		.q(q),
+		.rdaddress(rdaddress),
+		.wraddress(wraddress)
 	);
 
 endmodule

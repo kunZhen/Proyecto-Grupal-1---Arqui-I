@@ -4,6 +4,10 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
     input logic [9:0] y,
 	 input logic switch,
 	 input logic [3:0] nboat,
+	 
+	 input [31:0] q, 
+	 output [16:0] rdaddress,
+	 
     output logic [7:0] red,
     output logic [7:0] green,
     output logic [7:0] blue
@@ -101,7 +105,7 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
 	end
 			
 			
-	always_ff @(posedge clk) begin
+	/*always_ff @(posedge clk) begin
 		// Pintar el fondo
 		if (x < HRES && y < VRES) begin
 			red = background_red;
@@ -280,6 +284,34 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
 		end
 
 		
-	end
+	end*/
+	
+	// Procesar el valor de `q` para generar la imagen en escala de grises
+   always_ff @(posedge clk) begin
+        // Pintar el fondo o la imagen
+        if (x < HRES && y < VRES) begin
+            // Extraer los 8 bits menos significativos de `q` para el color
+            // Si necesitas usar más bits, puedes dividir `q` en canales de color
+            red = 8'b11111111;
+            green = 8'b11111111;
+            blue = 8'b11111111;
+        end else begin
+            red = 8'b11111111;
+            green = 8'b11111111;
+            blue = 8'b11111111;
+        end
+		  
+		  // Dibujado barco 1x1
+		if (rect_x >= lim_x && rect_x <= (lim_x + RECT_WIDTH) && rect_y >= lim_y && rect_y <= (lim_y + RECT_HEIGHT)) begin
+			rdaddress <= 17'b1;
+			red = q[7:0];
+         green = q[7:0];
+         blue = q[7:0];
+			/*red = 8'b11111111;
+			green = 8'b00000000;
+			blue = 8'b00000000;*/
+		end
+   end
+
 
 endmodule
