@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Tue Oct 15 03:27:50 2024
+Analysis & Elaboration Status : Successful - Tue Oct 15 04:22:22 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Unicycle
-Top-level Entity Name : register_file
+Top-level Entity Name : imm_gen
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
