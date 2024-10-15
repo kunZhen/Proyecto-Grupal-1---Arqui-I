@@ -1,0 +1,32 @@
+|instruction_memory
+clk => ~NO_FANOUT~
+address[0] => instruction_memory.RADDR
+address[1] => instruction_memory.RADDR1
+address[2] => instruction_memory.RADDR2
+address[3] => instruction_memory.RADDR3
+address[4] => instruction_memory.RADDR4
+address[5] => instruction_memory.RADDR5
+address[6] => instruction_memory.RADDR6
+address[7] => instruction_memory.RADDR7
+instruction[0] << instruction_memory.DATAOUT
+instruction[1] << instruction_memory.DATAOUT1
+instruction[2] << instruction_memory.DATAOUT2
+instruction[3] << instruction_memory.DATAOUT3
+instruction[4] << instruction_memory.DATAOUT4
+instruction[5] << instruction_memory.DATAOUT5
+instruction[6] << instruction_memory.DATAOUT6
+instruction[7] << instruction_memory.DATAOUT7
+instruction[8] << instruction_memory.DATAOUT8
+instruction[9] << instruction_memory.DATAOUT9
+instruction[10] << instruction_memory.DATAOUT10
+instruction[11] << instruction_memory.DATAOUT11
+instruction[12] << instruction_memory.DATAOUT12
+instruction[13] << instruction_memory.DATAOUT13
+instruction[14] << instruction_memory.DATAOUT14
+instruction[15] << instruction_memory.DATAOUT15
+instruction[16] << instruction_memory.DATAOUT16
+instruction[17] << instruction_memory.DATAOUT17
+instruction[18] << instruction_memory.DATAOUT18
+instruction[19] << instruction_memory.DATAOUT19
+
+
