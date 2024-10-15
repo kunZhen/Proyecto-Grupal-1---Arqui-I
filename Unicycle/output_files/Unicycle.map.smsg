@@ -1,1 +1,2 @@
 Warning (10273): Verilog HDL warning at register_file.sv(33): extended using "x" or "z" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv Line: 33
+Warning (10273): Verilog HDL warning at data_memory.sv(59): extended using "x" or "z" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 59

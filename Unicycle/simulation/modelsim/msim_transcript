@@ -10,34 +10,34 @@
 # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen.sv}
+# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 04:23:26 on Oct 15,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen.sv 
-# -- Compiling module imm_gen
+# Start time: 05:25:41 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv 
+# -- Compiling module data_memory
 # 
 # Top level modules:
-# 	imm_gen
-# End time: 04:23:26 on Oct 15,2024, Elapsed time: 0:00:00
+# 	data_memory
+# End time: 05:25:41 on Oct 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 04:23:26 on Oct 15,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen_tb.sv 
-# -- Compiling module imm_gen_tb
+# Start time: 05:25:41 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv 
+# -- Compiling module data_memory_tb
 # 
 # Top level modules:
-# 	imm_gen_tb
-# End time: 04:23:26 on Oct 15,2024, Elapsed time: 0:00:00
+# 	data_memory_tb
+# End time: 05:25:42 on Oct 15,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  imm_gen_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" imm_gen_tb 
-# Start time: 04:23:26 on Oct 15,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  data_memory_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" data_memory_tb 
+# Start time: 05:25:42 on Oct 15,2024
 # Loading sv_std.std
-# Loading work.imm_gen_tb
-# Loading work.imm_gen
+# Loading work.data_memory_tb
+# Loading work.data_memory
 # 
 # add wave *
 # view structure
@@ -45,20 +45,23 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Instruction[0]: 00325, Immediate: 00019
-# Instruction[1]: 188c4, Immediate: 00006
-# Instruction[2]: 608cb, Immediate: 0000c
-# Instruction[3]: 94618, Immediate: 00000
-# Instruction[4]: 188c1, Immediate: 00000
-# Instruction[5]: 188e9, Immediate: 00000
-# Instruction[6]: 34031, Immediate: 00000
-# Instruction[7]: 28a02, Immediate: 00005
-# Instruction[8]: 20bca, Immediate: 00004
-# Instruction[9]: 18ff2, Immediate: 00003
+# Address: 00000000, Data: 00000186
+# Address: 00000004, Data: 00000186
+# Address: 00000008, Data: 00000002
+# Address: 0000000c, Data: 6c6c6548
+# Address: 00000010, Data: 6f57206f
+# Address: 00000014, Data: 21646c72
+# Address: 00000018, Data: 00000000
+# Address: 0000001c, Data: 00000000
+# Address: 00000020, Data: 00000000
+# Address: 00000024, Data: 00000000
+# Address: 00000018, Data: b6a84325
+# Address: 00000019, Data: 00000074
+# Address: 00000018, Data: b6a87425
 # Testbench completed successfully
-# ** Note: $finish    : C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen_tb.sv(34)
-#    Time: 100 ps  Iteration: 0  Instance: /imm_gen_tb
+# ** Note: $finish    : C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv(77)
+#    Time: 170 ps  Iteration: 0  Instance: /data_memory_tb
 # 1
-# Break in Module imm_gen_tb at C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen_tb.sv line 34
-# End time: 04:25:36 on Oct 15,2024, Elapsed time: 0:02:10
+# Break in Module data_memory_tb at C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv line 77
+# End time: 05:26:02 on Oct 15,2024, Elapsed time: 0:00:20
 # Errors: 0, Warnings: 0
