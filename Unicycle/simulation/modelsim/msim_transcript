@@ -10,34 +10,34 @@
 # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv}
+# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:25:41 on Oct 15,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv 
-# -- Compiling module data_memory
+# Start time: 07:21:37 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv 
+# -- Compiling module alu
 # 
 # Top level modules:
-# 	data_memory
-# End time: 05:25:41 on Oct 15,2024, Elapsed time: 0:00:00
+# 	alu
+# End time: 07:21:37 on Oct 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 05:25:41 on Oct 15,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv 
-# -- Compiling module data_memory_tb
+# Start time: 07:21:37 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv 
+# -- Compiling module alu_tb
 # 
 # Top level modules:
-# 	data_memory_tb
-# End time: 05:25:42 on Oct 15,2024, Elapsed time: 0:00:01
+# 	alu_tb
+# End time: 07:21:37 on Oct 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  data_memory_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" data_memory_tb 
-# Start time: 05:25:42 on Oct 15,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  alu_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" alu_tb 
+# Start time: 07:21:37 on Oct 15,2024
 # Loading sv_std.std
-# Loading work.data_memory_tb
-# Loading work.data_memory
+# Loading work.alu_tb
+# Loading work.alu
 # 
 # add wave *
 # view structure
@@ -45,23 +45,18 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Address: 00000000, Data: 00000186
-# Address: 00000004, Data: 00000186
-# Address: 00000008, Data: 00000002
-# Address: 0000000c, Data: 6c6c6548
-# Address: 00000010, Data: 6f57206f
-# Address: 00000014, Data: 21646c72
-# Address: 00000018, Data: 00000000
-# Address: 0000001c, Data: 00000000
-# Address: 00000020, Data: 00000000
-# Address: 00000024, Data: 00000000
-# Address: 00000018, Data: b6a84325
-# Address: 00000019, Data: 00000074
-# Address: 00000018, Data: b6a87425
+# A = 80000, B = 80000, Opcode = 000, Result = 00000, Z = 1
+# A = aaaaa, B = 55555, Opcode = 001, Result = 55555, Z = 0
+# A = 00006, B = 00002, Opcode = 010, Result = 0000c, Z = 0
+# A = 00006, B = 00004, Opcode = 011, Result = 00001, Z = 0
+# A = aaaaa, B = 55555, Opcode = 100, Result = 00000, Z = 1
+# A = aaaaa, B = 55555, Opcode = 101, Result = fffff, Z = 0
+# A = 00003, B = 00004, Opcode = 110, Result = 00030, Z = 0
+# A = 00020, B = 00002, Opcode = 111, Result = 00008, Z = 0
 # Testbench completed successfully
-# ** Note: $finish    : C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv(77)
-#    Time: 170 ps  Iteration: 0  Instance: /data_memory_tb
+# ** Note: $finish    : C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv(99)
+#    Time: 80 ps  Iteration: 0  Instance: /alu_tb
 # 1
-# Break in Module data_memory_tb at C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv line 77
-# End time: 05:26:02 on Oct 15,2024, Elapsed time: 0:00:20
+# Break in Module alu_tb at C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv line 99
+# End time: 07:22:14 on Oct 15,2024, Elapsed time: 0:00:37
 # Errors: 0, Warnings: 0

@@ -8,53 +8,53 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/simulation/modelsim
-vdata_memory
+valu
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-!s110 1728991541
+Z2 !s110 1728998497
 !i10b 1
-!s100 VO@GcPJaS03mYRS2e;6C@3
-IaLFkjDACMS6Gm43CQM69_1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-!s105 data_memory_sv_unit
+!s100 AQ[4SEiYbfBP4zX9JQz<M0
+IoYzkWWWh<V_5=KBNI7<];0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 alu_sv_unit
 S1
 R0
-w1728990502
-8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv
-FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv
+w1728992347
+8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv
+FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv
 L0 1
-Z3 OV;L;10.5b;63
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1728991541.000000
-!s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv|
+Z5 !s108 1728998497.000000
+!s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv|
 !i113 1
-Z5 o-sv -work work
-Z6 !s92 -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle
-Z7 tCvgOpt 0
-vdata_memory_tb
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle
+Z8 tCvgOpt 0
+valu_tb
 R1
-!s110 1728991542
-!i10b 1
-!s100 K4Nc`S]54CZMmKIb=2ian1
-I[P1^5_?QiI>PgVamMS[;I1
 R2
-!s105 data_memory_tb_sv_unit
+!i10b 1
+!s100 ?VlU6DHTYn^^iW3@Lob=a3
+IafDfKYFccTWGKRY[acX7]0
+R3
+!s105 alu_tb_sv_unit
 S1
 R0
-w1728991512
-8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv
-FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv
+w1728998472
+8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv
+FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv
 L0 1
-R3
+R4
 r1
 !s85 0
 31
-R4
-!s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory_tb.sv|
-!i113 1
 R5
+!s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv|
+!i113 1
 R6
 R7
+R8

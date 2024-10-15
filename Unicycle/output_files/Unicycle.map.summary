@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Tue Oct 15 05:23:19 2024
+Analysis & Elaboration Status : Successful - Tue Oct 15 07:21:28 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Unicycle
-Top-level Entity Name : data_memory
+Top-level Entity Name : alu
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge
