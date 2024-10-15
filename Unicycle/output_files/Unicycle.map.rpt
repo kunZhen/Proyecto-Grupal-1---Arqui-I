@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Unicycle
-Tue Oct 15 07:21:28 2024
+Tue Oct 15 07:31:25 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -9,7 +9,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |alu
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |comparator
   5. Analysis & Elaboration Settings
   6. Analysis & Elaboration Messages
   7. Analysis & Elaboration Suppressed Messages
@@ -38,10 +38,10 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Tue Oct 15 07:21:28 2024       ;
+; Analysis & Elaboration Status ; Successful - Tue Oct 15 07:31:25 2024       ;
 ; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                 ; Unicycle                                    ;
-; Top-level Entity Name         ; alu                                         ;
+; Top-level Entity Name         ; comparator                                  ;
 ; Family                        ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
 ; Total registers               ; N/A until Partition Merge                   ;
@@ -69,13 +69,13 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |alu ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; N              ; 20    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |comparator ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; DATA_WIDTH     ; 20    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -85,7 +85,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; alu                ; Unicycle           ;
+; Top-level entity name                                                           ; comparator         ; Unicycle           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -172,7 +172,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Oct 15 07:21:16 2024
+    Info: Processing started: Tue Oct 15 07:31:13 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Unicycle -c Unicycle --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -202,13 +202,17 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: control_unit File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/control_unit.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu_tb.sv
     Info (12023): Found entity 1: alu_tb File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv Line: 1
-Info (12127): Elaborating entity "alu" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file comparator.sv
+    Info (12023): Found entity 1: comparator File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/comparator.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file comparator_tb.sv
+    Info (12023): Found entity 1: comparator_tb File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/comparator_tb.sv Line: 1
+Info (12127): Elaborating entity "comparator" for the top level hierarchy
 Info (144001): Generated suppressed messages file C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/output_files/Unicycle.map.smsg
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4769 megabytes
-    Info: Processing ended: Tue Oct 15 07:21:28 2024
+    Info: Peak virtual memory: 4770 megabytes
+    Info: Processing ended: Tue Oct 15 07:31:25 2024
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
 
 
 +--------------------------------------------+

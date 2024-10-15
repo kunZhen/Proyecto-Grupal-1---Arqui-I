@@ -10,34 +10,34 @@
 # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv}
+# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/comparator.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:21:37 on Oct 15,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv 
-# -- Compiling module alu
+# Start time: 07:31:34 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/comparator.sv 
+# -- Compiling module comparator
 # 
 # Top level modules:
-# 	alu
-# End time: 07:21:37 on Oct 15,2024, Elapsed time: 0:00:00
+# 	comparator
+# End time: 07:31:35 on Oct 15,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/comparator_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 07:21:37 on Oct 15,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv 
-# -- Compiling module alu_tb
+# Start time: 07:31:35 on Oct 15,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/comparator_tb.sv 
+# -- Compiling module comparator_tb
 # 
 # Top level modules:
-# 	alu_tb
-# End time: 07:21:37 on Oct 15,2024, Elapsed time: 0:00:00
+# 	comparator_tb
+# End time: 07:31:35 on Oct 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  alu_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" alu_tb 
-# Start time: 07:21:37 on Oct 15,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  comparator_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" comparator_tb 
+# Start time: 07:31:35 on Oct 15,2024
 # Loading sv_std.std
-# Loading work.alu_tb
-# Loading work.alu
+# Loading work.comparator_tb
+# Loading work.comparator
 # 
 # add wave *
 # view structure
@@ -45,18 +45,12 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# A = 80000, B = 80000, Opcode = 000, Result = 00000, Z = 1
-# A = aaaaa, B = 55555, Opcode = 001, Result = 55555, Z = 0
-# A = 00006, B = 00002, Opcode = 010, Result = 0000c, Z = 0
-# A = 00006, B = 00004, Opcode = 011, Result = 00001, Z = 0
-# A = aaaaa, B = 55555, Opcode = 100, Result = 00000, Z = 1
-# A = aaaaa, B = 55555, Opcode = 101, Result = fffff, Z = 0
-# A = 00003, B = 00004, Opcode = 110, Result = 00030, Z = 0
-# A = 00020, B = 00002, Opcode = 111, Result = 00008, Z = 0
+# a = 0000f, b = 00010, lt = 1, ge = 0
+# a = 0000a, b = 00005, lt = 0, ge = 1
 # Testbench completed successfully
-# ** Note: $finish    : C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv(99)
-#    Time: 80 ps  Iteration: 0  Instance: /alu_tb
+# ** Note: $finish    : C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/comparator_tb.sv(40)
+#    Time: 20 ps  Iteration: 0  Instance: /comparator_tb
 # 1
-# Break in Module alu_tb at C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_tb.sv line 99
-# End time: 07:22:14 on Oct 15,2024, Elapsed time: 0:00:37
+# Break in Module comparator_tb at C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/comparator_tb.sv line 40
+# End time: 07:31:55 on Oct 15,2024, Elapsed time: 0:00:20
 # Errors: 0, Warnings: 0
