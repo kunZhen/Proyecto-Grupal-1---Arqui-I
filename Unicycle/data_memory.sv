@@ -7,7 +7,8 @@ module data_memory #(
     input logic rst,                           // Reset
     input logic [ADDRESS_WIDTH-1:0] address,   // Address
     input logic [DATA_WIDTH-1:0] write_data,   // Data input for writing
-    input logic we,                     		  // Memory write/read enable
+    input logic we,                     		  // Memory write enable
+	 input logic re,                     		  // Memory read enable
 	 input logic be, 						           // Byte enable for lbp/sbp
     output logic [DATA_WIDTH-1:0] read_data    // Data output for reading
 );
@@ -45,7 +46,7 @@ module data_memory #(
     
 	 // Read operation
     always @(*) begin
-        if (!we && (address < MEM_SIZE)) begin
+        if (re && (address < MEM_SIZE)) begin
 			   if (be) begin
 					// Read byte (lbp)
 					case (address[1:0])
