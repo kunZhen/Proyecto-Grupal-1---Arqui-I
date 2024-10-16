@@ -18,6 +18,7 @@ module alu_control (
                     4'b1001: ALUSel = 3'b001; // sub
                     4'b1010: ALUSel = 3'b010; // mul
 						  4'b1011: ALUSel = 3'b011; // div
+						  default: ALUSel = 3'b000;
                 endcase
             end
 				
@@ -26,6 +27,7 @@ module alu_control (
                     4'b1000: ALUSel = 3'b100; // and
                     4'b1001: ALUSel = 3'b101; // or
                     4'b1010: ALUSel = 3'b001; // cmp (sub)
+						  default: ALUSel = 3'b000;
                 endcase
             end
 
@@ -35,6 +37,7 @@ module alu_control (
                     4'b0000: ALUSel = 3'b000; // addi
                     4'b0001: ALUSel = 3'b110; // slli
                     4'b0010: ALUSel = 3'b111; // srli
+						  default: ALUSel = 3'b000;
                 endcase
             end
 

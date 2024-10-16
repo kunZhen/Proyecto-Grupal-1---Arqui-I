@@ -15,11 +15,11 @@ module register_file #(parameter DATA_WIDTH = 20, parameter REG_NUMBER = 5) (
 	 reg [DATA_WIDTH-1:0] registers [(2**REG_NUMBER)-1:0];
 
     // Initialize all registers to 0
-    initial begin
-        for (int i = 0; i < 2**REG_NUMBER; i++) begin
-            registers[i] = 20'h0;
-        end
-    end
+    //initial begin
+    //    for (int i = 0; i < 2**REG_NUMBER; i++) begin
+    //        registers[i] = 20'h0;
+    //    end
+    //end
 
     // Write operation on positive edge of clock
     always_ff @(posedge clk) begin : write
