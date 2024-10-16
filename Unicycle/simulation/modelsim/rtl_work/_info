@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/simulation/modelsim
 valu
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1729078263
+Z2 !s110 1729085912
 !i10b 1
 !s100 AQ[4SEiYbfBP4zX9JQz<M0
 IoYzkWWWh<V_5=KBNI7<];0
@@ -26,7 +26,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1729078263.000000
+Z5 !s108 1729085912.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv|
 !i113 1
@@ -60,7 +60,7 @@ R7
 R8
 vcompare
 R1
-R2
+Z9 !s110 1729085913
 !i10b 1
 !s100 g@<OhLHa1:oW?3<RKn7Z>1
 I7MJDLfB?eR<7R>Ra@dL[a1
@@ -76,7 +76,7 @@ R4
 r1
 !s85 0
 31
-R5
+Z10 !s108 1729085913.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/compare.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/compare.sv|
 !i113 1
@@ -85,7 +85,7 @@ R7
 R8
 vcontrol_unit
 R1
-R2
+R9
 !i10b 1
 !s100 QK=A27odNhGY]6CEQ@]>B2
 IUogkNAQJf5FA[NR<6M>_i3
@@ -110,15 +110,15 @@ R7
 R8
 vdata_memory
 R1
-Z9 !s110 1729078264
+R9
 !i10b 1
-!s100 5VIP^zoRl4IZY]Y8;12NU2
-I3=UfZCPNdLegR]QlRCH653
+!s100 `TCDE68nT6>fjIhfg^TcH0
+If855SI:`4ALH5Y<^RV:E_1
 R3
 !s105 data_memory_sv_unit
 S1
 R0
-w1728993259
+w1729085869
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv
 L0 1
@@ -126,7 +126,7 @@ R4
 r1
 !s85 0
 31
-Z10 !s108 1729078264.000000
+R10
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv|
 !i113 1
@@ -135,15 +135,15 @@ R7
 R8
 vdatapath_unit
 R1
-R2
+R9
 !i10b 1
-!s100 7?8O7?kU@`B>ngY^ddI]d1
-IOZzT13kKBHQP[gLIOQ_WE0
+!s100 LT@>kCz@1jZ84YD6Gm2;N0
+IjXUD@2Q2NLnJ?fT]VFcKl2
 R3
 !s105 datapath_unit_sv_unit
 S1
 R0
-w1729076410
+w1729085877
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv
 L0 1
@@ -151,7 +151,7 @@ R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv|
 !i113 1
@@ -162,13 +162,13 @@ vdatapath_unit_tb
 R1
 R9
 !i10b 1
-!s100 i7CXJX9_iO=jQGgZQ6@Pm1
-I[2JB5Lc16M<@P3`B:mcS71
+!s100 N8[eZ`L4ME2G6h2XHFTUX0
+IoX3AAVR>3IL=4nlVo3OO?3
 R3
 !s105 datapath_unit_tb_sv_unit
 S1
 R0
-w1729078235
+w1729085384
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit_tb.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit_tb.sv
 L0 1
@@ -187,13 +187,13 @@ vimm_gen
 R1
 R2
 !i10b 1
-!s100 DFjbE73W46dU;00W<UlWU3
-I0Jg?8Q<1JGo7:><`MZf_H1
+!s100 6>YgBhDhf4?V06C[K@G[C2
+I9Q4`bJC6o<DQ:Z]Z2Q5^92
 R3
 !s105 imm_gen_sv_unit
 S1
 R0
-w1728987714
+w1729081089
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen.sv
 L0 1
@@ -212,13 +212,13 @@ vinstruction_memory
 R1
 R9
 !i10b 1
-!s100 hnRPIYNd8BUI^:<?hgIho3
-I=R^_^@2VROh^VNMKTzQ>P3
+!s100 h0Uo?Y6ziaVb7h7jhQ>742
+IYGXLz;`[Ihc^zE4hHSHOA3
 R3
 !s105 instruction_memory_sv_unit
 S1
 R0
-w1729077935
+w1729082753
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv
 L0 1
@@ -226,7 +226,7 @@ R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv|
 !i113 1
@@ -260,7 +260,7 @@ R7
 R8
 vmux4
 R1
-R2
+R9
 !i10b 1
 !s100 0kC]]cj^]e=A_0GA83<zo3
 IfKc`l19C]h5=Ib>1oGOE:2
@@ -276,7 +276,7 @@ R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/mux4.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/mux4.sv|
 !i113 1

@@ -25,7 +25,7 @@ module datapath_unit #(
 );
     logic [ADDRESS_WIDTH-1:0] pc = 0;
 	 
-	 logic [ADDRESS_WIDTH-1:0] pc_4;
+	 logic [ADDRESS_WIDTH-1:0] pc_next;
     logic [ADDRESS_WIDTH-1:0] pc_jump;
 	 
 	 logic reg_write;
@@ -39,12 +39,12 @@ module datapath_unit #(
     logic [DATA_WIDTH-1:0] alu_operand1;
     logic [DATA_WIDTH-1:0] alu_operand2;
 	 
-	 assign pc_4 = pc + 1; 
+	 assign pc_next = pc + 1; 
 	 
-	 // Instantiate the mux2 module to determine which value between pc_4 and pc_jump passes to pc
-    mux2 #(DATA_WIDTH) mux_pc4_pcj (
+	 // Instantiate the mux2 module to determine which value between pc_next and pc_jump passes to pc
+    mux2 #(ADDRESS_WIDTH) mux_pcn_pcj (
         .sel((sel0 === 1'bx) ? 1'b0: sel0), 
-        .a(pc_4),
+        .a(pc_next),
         .b(pc_jump),
         .y(pc_result)
     );
@@ -99,7 +99,7 @@ module datapath_unit #(
     assign rd = instruction[9:5];
 	 
 	 // Instantiate the mux2 module to determine which value between 1 and rs2 passes to rs2
-    mux2 #(DATA_WIDTH) mux_1_rs2 (
+    mux2 #(REG_NUMBER) mux_1_rs2 (
         .sel(RegSrc), 
         .a(instruction[19:15]),
         .b(1),
@@ -174,7 +174,7 @@ module datapath_unit #(
     // Instantiate the data_memory module
     data_memory #(
         .DATA_WIDTH(32),
-        .ADDRESS_WIDTH(32),
+        .ADDRESS_WIDTH(20),
         .MEM_SIZE(1024)
     ) data_memory_inst(
         .clk(clk),

@@ -60,7 +60,7 @@ module datapath_unit_tb;
     always #5 clk = ~clk;
 
     initial begin
-        #100;
+        #200;
 
         $display("Testbench completed successfully");
         $finish;
