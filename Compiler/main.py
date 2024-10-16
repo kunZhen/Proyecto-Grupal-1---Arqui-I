@@ -99,9 +99,16 @@ def readFile():
         for line in f:
             if(line.split()[0] in arithmeticOps):
                 artimeticInstruction = arithmeticAddressing(line)
+                binaryFile.write(artimeticInstruction)
+                num = 1
 
             elif (line.split()[0] in logicOps):
                 #logicInstruction = logicAddressing(line)
+                result = 1
+
+            elif (line.split()[0] in immOps):
+                immediateInstruction = arithmeticAddressing(line)
+                binaryFile.write(immediateInstruction)
                 result = 1
 
             elif (line.split()[0] in memOps):
@@ -126,21 +133,33 @@ def readFile():
 
 def arithmeticAddressing(syntax):
     instr = syntax.split()
+    instr = [s.rstrip(',') for s in instr]
     operation = instr[0]
     
     if operation in instructionDictionary:
-        currentFunction = instructionDictionary[operation]
+        currentOp = instructionDictionary[operation]
     else:
         pass
 
     def extract_register(value):
-        return '0' if value == 'zero' else re.findall(r'\d+', value)[0]
 
-    rd = extract_register(instr[1])
-    rs1 = extract_register(instr[2])
-    rs2 = extract_register(instr[3])
+        if isinstance(value, (int, str)) and str(value).isdigit():
+            return str(value)
+
+        if value == 'zero':
+            return '0'
+
+        digits = re.findall(r'\d+', value)
+        if digits:   
+            return digits[0]
+
+    rd = format(int(extract_register(instr[1])), 'b').zfill(5)
+    rs1 = format(int(extract_register(instr[2])), 'b').zfill(5)
+    rs2 = format(int(extract_register(instr[3])), 'b').zfill(5)
+
     
-    value = '1110' + rs1 + rs2 + rd
+    value = rs2 + rs1 + rd + currentOp
+    print(value)
     return value
 
 
