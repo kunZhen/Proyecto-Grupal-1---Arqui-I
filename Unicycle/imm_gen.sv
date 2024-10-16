@@ -10,9 +10,9 @@ module imm_gen #(parameter DATA_WIDTH = 20)(
 
     // Extract fields from the instruction
     assign opcode = instruction[2:0];
-    assign imm_i = { {15{instruction[19]}}, instruction[19:15] }; // Sign-extend for I-type
-    assign imm_s = { {15{instruction[9]}}, instruction[9:5] }; 	// Sign-extend for S-type
-    assign imm_b = { {5{instruction[19]}}, instruction[19:5] }; 	// Sign-extend for B-type
+    assign imm_i = { {15{1'b0}}, instruction[19:15] };
+    assign imm_s = { {15{1'b0}}, instruction[9:5] };
+    assign imm_b = { {5{1'b0}}, instruction[19:5] };
 
     // Immediate selection based on instruction type
     always_comb begin
