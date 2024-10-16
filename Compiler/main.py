@@ -96,26 +96,26 @@ def readFile():
     with open('Compiler/intermediate.txt', 'r') as f:
         f.seek(0)
         binaryFile = open('Compiler/binary_out.txt', 'w')
+        
         for line in f:
-            if(line.split()[0] in arithmeticOps):
-                artimeticInstruction = arithmeticAddressing(line)
+            instr = line.split()
+            instr = [s.rstrip(',') for s in instr] # Remove ","
+
+            # Remove comments
+            if '#' in instr: comment_index = instr.index('#')
+            clean_instr = instr[:comment_index]
+
+            if instr[0] in (arithmeticOps + logicOps + immOps):
+                
+                artimeticInstruction = RITypeAddressing(clean_instr)
                 binaryFile.write(artimeticInstruction)
                 num = 1
 
-            elif (line.split()[0] in logicOps):
-                #logicInstruction = logicAddressing(line)
-                result = 1
-
-            elif (line.split()[0] in immOps):
-                immediateInstruction = arithmeticAddressing(line)
-                binaryFile.write(immediateInstruction)
-                result = 1
-
-            elif (line.split()[0] in memOps):
+            elif (instr[0] in memOps):
                 #memInstruction = memoryAddressing(line)
                 result = 1
 
-            elif (line.split()[0] in controlOps):
+            elif (instr[0] in controlOps):
                 #controlInstruction = controlAddressing(line, lineCounter)
                 result = 1
 
@@ -129,11 +129,9 @@ def readFile():
 
 #def memoryAddressing(syntax):
 
-#def logicAddressing(syntax):
 
-def arithmeticAddressing(syntax):
-    instr = syntax.split()
-    instr = [s.rstrip(',') for s in instr]
+
+def RITypeAddressing(instr):
     operation = instr[0]
     
     if operation in instructionDictionary:
@@ -153,14 +151,17 @@ def arithmeticAddressing(syntax):
         if digits:   
             return digits[0]
 
-    rd = format(int(extract_register(instr[1])), 'b').zfill(5)
-    rs1 = format(int(extract_register(instr[2])), 'b').zfill(5)
-    rs2 = format(int(extract_register(instr[3])), 'b').zfill(5)
-
-    
-    value = rs2 + rs1 + rd + currentOp
-    print(value)
+    if len(instr) > 3:
+        rd = format(int(extract_register(instr[1])), 'b').zfill(5)
+        rs1 = format(int(extract_register(instr[2])), 'b').zfill(5)
+        rs2 = format(int(extract_register(instr[3])), 'b').zfill(5)
+        value =  rs2 + rs1 + rd + currentOp
+    else:
+        rs1 = format(int(extract_register(instr[1])), 'b').zfill(5)
+        rs2 = format(int(extract_register(instr[2])), 'b').zfill(5)
+        value = rs2 + rs1 + '00000' + currentOp
     return value
+
 
 
 def main():
