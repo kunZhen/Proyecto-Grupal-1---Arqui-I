@@ -38,31 +38,36 @@ controlOps = ['bltp', 'bgep', 'jump']
 controlOpsDictionary = {}
 
 # Memory Initialization File
-def romInit(wordSize, depth):
-
-    romDataFile = open("Compiler/rom_data.mif", "r+")
-    romDataFile.truncate(0)
+def initializeRom(wordSize, depth):
+    file_path = "Compiler/rom_data.mif"
     
-    romDataFile.write("PISA\n\n")
-
+    try:
+        romDataFile = open(file_path, "r+")
+        # Clear existing content
+        romDataFile.truncate(0)
+        
+    except FileNotFoundError:
+        # If the file doesn't exist, create it
+        romDataFile = open(file_path, "w")
+    
+    # Write initial content
+    romDataFile.write("--PISA--\n\n")
     romDataFile.write(f'WIDTH={wordSize};\nDEPTH={depth};\n \n')
     romDataFile.write("ADDRESS_RADIX=UNS;\nDATA_RADIX=BIN;\n \n")
     romDataFile.write("CONTENT BEGIN\n")
     
     lineCounter = 0
 
-    binaryFile = open('Compiler/binary_out.txt', 'r')
-    lastLine = binaryFile.readlines()[-1]
-    binaryFile.seek(0)
-    for instruction in binaryFile:
-        romDataFile.write(f'\t{lineCounter}\t :\t {instruction[:-1]};\n')
-        lineCounter += 1
+    with open('Compiler/binary_out.txt', 'r') as binaryFile:
+        for instruction in binaryFile:
+            romDataFile.write(f'\t{lineCounter}\t :\t {instruction.rstrip()};\n')
+            lineCounter += 1
 
     romDataFile.write(f'\t[{lineCounter}..{depth-1}]\t :\t {0};\n')
-    
     romDataFile.write("END;")
-    romDataFile.write("\n\nPISA\n\n")
+    romDataFile.write("\n\n--PISA--\n\n")
     romDataFile.close()
+
 
 def remove_tags():
 
@@ -127,8 +132,6 @@ def controlAddressing(instr, lineCounter):
     operation = instructionDictionary[instr[0]]
     imm = format(lineCounter + 2 - (int(controlOpsDictionary[instr[1]], 2)), 'b').zfill(15)
     negativeImm = format(int(''.join('1' if bit == '0' else '0' for bit in imm), 2) + int('1', 2), 'b')
-    print("Imm: ", imm)
-    print("Imm Neg: ", negativeImm)
     value =  imm + operation
     return value
 
@@ -183,6 +186,7 @@ def extract_register(value):
 def main():
     remove_tags()
     readFile()
+    initializeRom(20, 256)
 
 if __name__ == '__main__':
     main()
