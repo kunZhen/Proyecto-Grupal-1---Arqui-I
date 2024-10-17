@@ -13,7 +13,7 @@ module instruction_memory #(
 
     // Initialize memory with content from file
     initial begin
-		  $readmemh("pisa_test5.hex", instruction_memory);
+		  $readmemh("pisa_bi_ext.hex", instruction_memory);
     end
 
     // Assign instruction based on address

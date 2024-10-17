@@ -1,5 +1,5 @@
 Flow report for Unicycle
-Wed Oct 16 08:40:51 2024
+Thu Oct 17 07:41:57 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Wed Oct 16 08:40:51 2024       ;
+; Flow Status                 ; Successful - Thu Oct 17 07:41:57 2024       ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; Unicycle                                    ;
 ; Top-level Entity Name       ; unicycle                                    ;
@@ -62,7 +62,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/16/2024 08:40:35 ;
+; Start date & time ; 10/17/2024 07:41:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Unicycle            ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id            ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------+
-; COMPILER_SIGNATURE_ID                ; 9447191579688.172908963500292          ; --            ; --          ; --                    ;
+; COMPILER_SIGNATURE_ID                ; 9447191579688.172917249422092          ; --            ; --          ; --                    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; instruction_memory_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; register_file_tb      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; unicycle_tb           ;
@@ -123,8 +123,8 @@ refer to the applicable agreement for further details.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:17     ; 1.0                     ; 4899 MB             ; 00:00:17                           ;
-; Total                  ; 00:00:17     ; --                      ; --                  ; 00:00:17                           ;
+; Analysis & Elaboration ; 00:00:24     ; 1.0                     ; 5126 MB             ; 00:00:23                           ;
+; Total                  ; 00:00:24     ; --                      ; --                  ; 00:00:23                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

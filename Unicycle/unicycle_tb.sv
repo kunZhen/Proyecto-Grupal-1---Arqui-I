@@ -60,9 +60,10 @@ module unicycle_tb;
     always #5 clk = ~clk;
 
     initial begin
-        #200;
+        #200000;
 
         $display("Testbench completed successfully");
+		  $writememh("../../data_out.hex", dut.datapath_unit_inst.data_memory_inst.memory);
         $finish;
     end
 
