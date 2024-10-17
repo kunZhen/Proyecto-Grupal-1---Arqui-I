@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MAIN
-Thu Oct 17 03:12:44 2024
+Thu Oct 17 03:41:20 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -14,9 +14,9 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. General Register Statistics
- 11. Inverted Register Statistics
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Analysis & Synthesis IP Cores Summary
+ 11. General Register Statistics
  12. Multiplexer Restructuring Statistics (Restructuring Performed)
  13. Source assignments for PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated
  14. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga
@@ -54,17 +54,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct 17 03:12:44 2024          ;
+; Analysis & Synthesis Status     ; Successful - Thu Oct 17 03:41:20 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; MAIN                                           ;
 ; Top-level Entity Name           ; MAIN                                           ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 111                                            ;
+; Total registers                 ; 73                                             ;
 ; Total pins                      ; 109                                            ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 1,600,000                                      ;
-; Total DSP Blocks                ; 0                                              ;
+; Total DSP Blocks                ; 1                                              ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
 ; Total HSSI TX PCSs              ; 0                                              ;
@@ -174,7 +174,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -211,27 +212,27 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 124       ;
+; Estimate of Logic utilization (ALMs needed) ; 100       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 164       ;
+; Combinational ALUT usage for logic          ; 119       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 79        ;
+;     -- 6 input functions                    ; 76        ;
 ;     -- 5 input functions                    ; 6         ;
-;     -- 4 input functions                    ; 10        ;
-;     -- <=3 input functions                  ; 69        ;
+;     -- 4 input functions                    ; 9         ;
+;     -- <=3 input functions                  ; 28        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 111       ;
+; Dedicated logic registers                   ; 73        ;
 ;                                             ;           ;
 ; I/O pins                                    ; 109       ;
 ; Total MLAB memory bits                      ; 0         ;
 ; Total block memory bits                     ; 1600000   ;
 ;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
+; Total DSP Blocks                            ; 1         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 291       ;
-; Total fan-out                               ; 4384      ;
-; Average fan-out                             ; 6.33      ;
+; Maximum fan-out                             ; 253       ;
+; Total fan-out                               ; 4153      ;
+; Average fan-out                             ; 6.80      ;
 +---------------------------------------------+-----------+
 
 
@@ -240,14 +241,14 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Entity Name     ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |MAIN                                         ; 164 (1)             ; 111 (0)                   ; 1600000           ; 0          ; 109  ; 0            ; |MAIN                                                                                                             ; MAIN            ; work         ;
-;    |PISA:pisa|                                ; 163 (0)             ; 111 (0)                   ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa                                                                                                   ; PISA            ; work         ;
+; |MAIN                                         ; 119 (1)             ; 73 (0)                    ; 1600000           ; 1          ; 109  ; 0            ; |MAIN                                                                                                             ; MAIN            ; work         ;
+;    |PISA:pisa|                                ; 118 (0)             ; 73 (0)                    ; 1600000           ; 1          ; 0    ; 0            ; |MAIN|PISA:pisa                                                                                                   ; PISA            ; work         ;
 ;       |RAM_pixels:ram_pixels|                 ; 74 (0)              ; 10 (0)                    ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels                                                                             ; RAM_pixels      ; work         ;
 ;          |altsyncram:altsyncram_component|    ; 74 (0)              ; 10 (0)                    ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component                                             ; altsyncram      ; work         ;
 ;             |altsyncram_m002:auto_generated|  ; 74 (0)              ; 10 (10)                   ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated              ; altsyncram_m002 ; work         ;
 ;                |mux_ehb:mux3|                 ; 74 (74)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|mux_ehb:mux3 ; mux_ehb         ; work         ;
-;       |vga:vga|                               ; 89 (0)              ; 101 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga                                                                                           ; vga             ; work         ;
-;          |draw_board:draw_board_inst|         ; 58 (58)             ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst                                                                ; draw_board      ; work         ;
+;       |vga:vga|                               ; 44 (0)              ; 63 (0)                    ; 0                 ; 1          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga                                                                                           ; vga             ; work         ;
+;          |draw_board:draw_board_inst|         ; 13 (13)             ; 42 (42)                   ; 0                 ; 1          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst                                                                ; draw_board      ; work         ;
 ;          |pll:vgapll|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|pll:vgapll                                                                                ; pll             ; work         ;
 ;          |vga_controller:vga_controller_inst| ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|vga_controller:vga_controller_inst                                                        ; vga_controller  ; work         ;
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
@@ -261,6 +262,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------------+
 ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 200000       ; 8            ; 200000       ; 8            ; 1600000 ; pixels.mif ;
 +-----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary           ;
++------------------------------------------+-------------+
+; Statistic                                ; Number Used ;
++------------------------------------------+-------------+
+; Independent 18x18 plus 36                ; 1           ;
+; Total number of DSP blocks               ; 1           ;
+;                                          ;             ;
+; Fixed Point Unsigned Multiplier          ; 1           ;
+; Fixed Point Dedicated Output Accumulator ; 1           ;
++------------------------------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------+
@@ -277,24 +291,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 111   ;
-; Number of registers using Synchronous Clear  ; 57    ;
+; Total registers                              ; 73    ;
+; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 66    ;
+; Number of registers using Clock Enable       ; 28    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+---------------------------------------------------------------------------+
-; Inverted Register Statistics                                              ;
-+-----------------------------------------------------------------+---------+
-; Inverted Register                                               ; Fan out ;
-+-----------------------------------------------------------------+---------+
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|current_address[4] ; 2       ;
-; Total number of inverted registers = 1                          ;         ;
-+-----------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -302,7 +306,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst|current_y[8]                                                                        ;
 ; 25:1               ; 8 bits    ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|mux_ehb:mux3|l5_w0_n0_mux_dataout ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -452,27 +455,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 111                         ;
-;     ENA               ; 19                          ;
-;     ENA SCLR          ; 47                          ;
+; arriav_ff             ; 73                          ;
+;     ENA               ; 18                          ;
+;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 10                          ;
 ;     plain             ; 35                          ;
-; arriav_lcell_comb     ; 165                         ;
-;     arith             ; 58                          ;
-;         1 data inputs ; 58                          ;
-;     normal            ; 107                         ;
+; arriav_lcell_comb     ; 120                         ;
+;     arith             ; 20                          ;
+;         1 data inputs ; 20                          ;
+;     normal            ; 100                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 6                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 4                           ;
 ;         3 data inputs ; 2                           ;
-;         4 data inputs ; 10                          ;
+;         4 data inputs ; 9                           ;
 ;         5 data inputs ; 6                           ;
-;         6 data inputs ; 79                          ;
+;         6 data inputs ; 76                          ;
+; arriav_mac            ; 1                           ;
 ; boundary_port         ; 109                         ;
 ; stratixv_ram_block    ; 200                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.79                        ;
+; Average LUT depth     ; 2.89                        ;
 +-----------------------+-----------------------------+
 
 
@@ -491,7 +495,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Thu Oct 17 03:12:31 2024
+    Info: Processing started: Thu Oct 17 03:41:08 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PISA -c MAIN
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -519,8 +523,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file ram_pix
     Info (12023): Found entity 1: RAM_pixels File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file testbench/ram_pixels_tb.sv
     Info (12023): Found entity 1: RAM_pixels_tb File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/TestBench/RAM_pixels_tb.sv Line: 3
+Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(14): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 14
 Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(15): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 15
-Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(16): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 16
 Info (12127): Elaborating entity "MAIN" for the top level hierarchy
 Info (12128): Elaborating entity "PISA" for hierarchy "PISA:pisa" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 40
 Info (12128): Elaborating entity "vga" for hierarchy "PISA:pisa|vga:vga" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 37
@@ -528,9 +532,7 @@ Warning (10036): Verilog HDL or VHDL warning at vga.sv(25): object "reset" assig
 Info (12128): Elaborating entity "pll" for hierarchy "PISA:pisa|vga:vga|pll:vgapll" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 30
 Info (12128): Elaborating entity "vga_controller" for hierarchy "PISA:pisa|vga:vga|vga_controller:vga_controller_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 43
 Info (12128): Elaborating entity "draw_board" for hierarchy "PISA:pisa|vga:vga|draw_board:draw_board_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 58
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(37): truncated value with size 32 to match size of target (10) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 37
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(38): truncated value with size 32 to match size of target (18) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 38
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(43): truncated value with size 32 to match size of target (10) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 43
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(21): truncated value with size 32 to match size of target (18) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 21
 Info (12128): Elaborating entity "RAM_pixels" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 46
 Info (12128): Elaborating entity "altsyncram" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
 Info (12130): Elaborated megafunction instantiation "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
@@ -614,15 +616,16 @@ Warning (21074): Design contains 26 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "data[29]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
     Warning (15610): No output dependent on input pin "data[30]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
     Warning (15610): No output dependent on input pin "data[31]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
-Info (21057): Implemented 544 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 501 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 36 input pins
     Info (21059): Implemented 73 output pins
-    Info (21061): Implemented 235 logic cells
+    Info (21061): Implemented 191 logic cells
     Info (21064): Implemented 200 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
-    Info: Peak virtual memory: 4870 megabytes
-    Info: Processing ended: Thu Oct 17 03:12:44 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 4864 megabytes
+    Info: Processing ended: Thu Oct 17 03:41:20 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:28
 
 
