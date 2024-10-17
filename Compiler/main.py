@@ -78,7 +78,7 @@ def remove_tags():
             if(line[-2] == ':'):
 
                 # Tag name
-                temp = line[:-2]
+                temp = line[:-2] # 2 ':' and '\n'
                 # Line number to binary and fill for 24 bits
                 lineNumber = bin(lineCounter)[2:].zfill(24)
                 controlOpsDictionary[temp] = lineNumber
@@ -114,8 +114,8 @@ def readFile():
 
 
             elif (instr[0] in controlOps):
-                #controlInstruction = controlAddressing(line, lineCounter)
-                result = 1
+                controlInstruction = controlAddressing(clean_instr, lineCounter)
+                binaryFile.write(controlInstruction)
 
             binaryFile.write('\n')
             lineCounter += 1
@@ -123,7 +123,15 @@ def readFile():
 
     os.remove("Compiler/intermediate.txt")
 
-#def controlAddressing(syntax, lineCounter):
+def controlAddressing(instr, lineCounter):
+    operation = instructionDictionary[instr[0]]
+    imm = format(lineCounter + 2 - (int(controlOpsDictionary[instr[1]], 2)), 'b').zfill(15)
+    negativeImm = format(int(''.join('1' if bit == '0' else '0' for bit in imm), 2) + int('1', 2), 'b')
+    print("Imm: ", imm)
+    print("Imm Neg: ", negativeImm)
+    value =  imm + operation
+    return value
+
 
 def memoryAddressing(instr):
     
@@ -133,23 +141,19 @@ def memoryAddressing(instr):
     instrToList = [instr[0], instr[1]] + instr[2][:-1].split('(')
     instrToList[-1] = instrToList[-1].replace(')', '')
 
-    print(instrToList)
     if instrToList[0] in I_memOps:
         rd = format(int(extract_register(instrToList[1])), 'b').zfill(5)
         rs1 = format(int(extract_register(instrToList[2])), 'b').zfill(5)
         imm = format(int(extract_register(instrToList[3])), 'b').zfill(5)
         value =  imm + rs1 + rd + operation
-        print("I type:", value)
     else:
         rs1 = format(int(extract_register(instrToList[1])), 'b').zfill(5)
         imm = format(int(extract_register(instrToList[2])), 'b').zfill(5)
         rs2 = format(int(extract_register(instrToList[3])), 'b').zfill(5)
         value =  rs2 + rs1 + imm + operation
-        print("S type:", value)
     return value
         
     
-
 def RITypeAddressing(instr):
     operation = instructionDictionary[instr[0]]
 
@@ -161,7 +165,7 @@ def RITypeAddressing(instr):
     else:
         rs1 = format(int(extract_register(instr[1])), 'b').zfill(5)
         rs2 = format(int(extract_register(instr[2])), 'b').zfill(5)
-        value = rs2 + rs1 + '00000' + operation
+        value = rs2 + rs1 + '00001' + operation
     return value
 
 def extract_register(value):
