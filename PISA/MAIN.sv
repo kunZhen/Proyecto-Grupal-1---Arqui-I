@@ -13,8 +13,8 @@ module MAIN (
 	
 	input logic wren,
 	input logic [31:0] data,       
-	output [31:0] q, 
-	output [16:0] rdaddress, wraddress
+	output [7:0] q, 
+	output [17:0] rdaddress, wraddress
 	
 );
 

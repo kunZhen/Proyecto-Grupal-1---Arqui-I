@@ -13,8 +13,8 @@ module PISA(
 	
 	input logic wren,
 	input logic [31:0] data,       
-	output [31:0] q, 
-	output [16:0] rdaddress, wraddress
+	output [7:0] q, 
+	output [17:0] rdaddress, wraddress
 	
 );
 
@@ -36,7 +36,7 @@ module PISA(
 		 .blue(blue)              // Salida de color azul (8 bits)
 	);
 	
-	RAM_data ram_data (
+	RAM_pixels ram_pixels (
     .clock(clk), 
     .data(data), 
     .rdaddress(rdaddress), 

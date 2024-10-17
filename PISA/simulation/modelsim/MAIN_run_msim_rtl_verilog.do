@@ -45,11 +45,11 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA {C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_data.v}
+vlog -vlog01compat -work work +incdir+C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA {C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v}
 
-vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/TestBench {C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/TestBench/RAM_data_tb.sv}
+vlog -sv -work work +incdir+C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/TestBench {C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/TestBench/RAM_pixels_tb.sv}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  RAM_data_tb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  RAM_pixels_tb
 
 add wave *
 view structure

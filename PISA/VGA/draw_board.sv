@@ -5,8 +5,8 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
 	 input logic switch,
 	 input logic [3:0] nboat,
 	 
-	 input [31:0] q, 
-	 output [16:0] rdaddress,
+	 input [7:0] q, 
+	 output [17:0] rdaddress,
 	 
     output logic [7:0] red,
     output logic [7:0] green,
@@ -303,7 +303,7 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
 		  
 		  // Dibujado barco 1x1
 		if (rect_x >= lim_x && rect_x <= (lim_x + RECT_WIDTH) && rect_y >= lim_y && rect_y <= (lim_y + RECT_HEIGHT)) begin
-			rdaddress <= 17'b1;
+			rdaddress <= 18'h10;
 			red = q[7:0];
          green = q[7:0];
          blue = q[7:0];

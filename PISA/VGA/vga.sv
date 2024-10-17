@@ -5,8 +5,8 @@ module vga #(
     input logic clk,
 	 input logic switch,
 	 
-	 input [31:0] q, 
-	 output [16:0] rdaddress,
+	 input [7:0] q, 
+	 output [17:0] rdaddress,
 	 
     output logic vgaclk,
     output logic hsync,
