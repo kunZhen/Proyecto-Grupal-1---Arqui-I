@@ -1,5 +1,5 @@
 Flow report for MAIN
-Thu Oct 17 01:55:41 2024
+Thu Oct 17 03:14:55 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Thu Oct 17 01:55:41 2024          ;
+; Flow Status                     ; Successful - Thu Oct 17 03:14:55 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; MAIN                                           ;
 ; Top-level Entity Name           ; MAIN                                           ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSXFC6D6F31C6                                 ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 30 / 41,910 ( < 1 % )                          ;
-; Total registers                 ; 74                                             ;
+; Logic utilization (in ALMs)     ; 123 / 41,910 ( < 1 % )                         ;
+; Total registers                 ; 119                                            ;
 ; Total pins                      ; 109 / 499 ( 22 % )                             ;
 ; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 256 / 5,662,720 ( < 1 % )                      ;
+; Total block memory bits         ; 1,600,000 / 5,662,720 ( 28 % )                 ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                                ;
 ; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                                  ;
 ; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                                  ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/17/2024 01:54:19 ;
+; Start date & time ; 10/17/2024 03:12:32 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MAIN                ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 154027285978271.172915165904852        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 154027285978271.172915635213792        ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; RAM_data_tb                       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; RAM_pixels_tb                     ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
@@ -119,12 +119,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4852 MB             ; 00:00:24                           ;
-; Fitter               ; 00:00:52     ; 1.0                     ; 6599 MB             ; 00:01:41                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 4880 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.1                     ; 5177 MB             ; 00:00:08                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4729 MB             ; 00:00:01                           ;
-; Total                ; 00:01:16     ; --                      ; --                  ; 00:02:20                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4870 MB             ; 00:00:28                           ;
+; Fitter               ; 00:01:44     ; 1.2                     ; 6536 MB             ; 00:03:29                           ;
+; Assembler            ; 00:00:09     ; 1.0                     ; 4900 MB             ; 00:00:09                           ;
+; Timing Analyzer      ; 00:00:12     ; 1.8                     ; 5202 MB             ; 00:00:17                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4753 MB             ; 00:00:01                           ;
+; Total                ; 00:02:18     ; --                      ; --                  ; 00:04:24                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

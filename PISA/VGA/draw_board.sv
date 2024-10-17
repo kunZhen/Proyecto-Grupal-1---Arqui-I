@@ -1,317 +1,58 @@
 module draw_board #(parameter HRES = 640, VRES = 480) (
     input logic clk,
-    input logic [9:0] x,
-    input logic [9:0] y,
-	 input logic switch,
-	 input logic [3:0] nboat,
+    input logic [9:0] x,  // Coordenada X (0 a HRES-1)
+    input logic [9:0] y,  // Coordenada Y (0 a VRES-1)
 	 
-	 input [7:0] q, 
-	 output [17:0] rdaddress,
+    input [7:0] q,          // Datos leídos desde RAM (1 byte por píxel)
+    output logic [17:0] rdaddress, // Dirección de lectura de RAM
 	 
-    output logic [7:0] red,
-    output logic [7:0] green,
-    output logic [7:0] blue
+    output logic [7:0] red,   // Salida del canal rojo
+    output logic [7:0] green, // Salida del canal verde
+    output logic [7:0] blue   // Salida del canal azul
 );
-	parameter RECT_WIDTH = 48;
-   parameter RECT_HEIGHT = 58;
-	
-	// Definición de colores
-   logic [7:0] background_red = 8'b00010111; 
-   logic [7:0] background_green = 8'b10010101;
-   logic [7:0] background_blue = 8'b10110101;
-	
-   logic [7:0] rect_red = 8'b11111111;
-   logic [7:0] rect_green = 8'b11111111;
-   logic [7:0] rect_blue = 8'b11111111;
-	
-	// Variables para almacenar las coordenadas del rectángulo
-	logic [9:0] rect_x = 36;
-	logic [9:0] rect_y = 91;
-	
-	logic [9:0] lim_x = 36;
-	logic [9:0] lim_y = 91;
-	
-	logic [9:0] lim_x2 = 36;
-	logic [9:0] lim_y2 = 91;
-	
-	logic [9:0] lim_x3 = 36;
-	logic [9:0] lim_y3 = 91;
-	
-	logic [9:0] lim_x4 = 36;
-	logic [9:0] lim_y4 = 91;
-	
-	logic [9:0] lim_x5 = 36;
-	logic [9:0] lim_y5 = 91;
-	
-	// Para el ataque del jugador a la PC
-	int selectedx = 0;
-	int selectedy = 0;
-	
-	// Matriz del jugador y enemigo
-	int player [5][5] = '{ '{0, 0, 0, 0, 0}, '{0, 0, 0, 0, 0}, '{0, 0, 0, 0, 0}, '{0, 0, 0, 0, 0}, '{0, 0, 0, 0, 0} };
-	int enemy [5][5] = '{ '{0, 0, 0, 0, 0}, '{0, 0, 0, 0, 0}, '{0, 0, 0, 0, 0}, '{0, 0, 0, 0, 0}, '{0, 0, 0, 0, 0} };
-	
-	
-	// Estado del movimiento del rectángulo
-	logic actual = 0;
 
-	logic [3:0] boat = 0;
-
-	// Para indicar cuando se puede dibujar o mover
-	logic canDraw = 0;
+	// Dirección base de la imagen en la memoria
+	parameter BASE_ADDRESS = 18'h10;
+	parameter IMG_WIDTH = 400, IMG_HEIGHT = 433;
 	
+	// Contador para la dirección de memoria
+	logic [17:0] current_address = BASE_ADDRESS;
 	
+	// Contador para la fila actual y el píxel en la fila
+	logic [9:0] current_x = 0;  // Contador para la posición X en la fila
+	logic [9:0] current_y = 0;  // Contador para la fila actual
 	
-	// Variables para generar números aleatorios
-	logic [3:0] clkcount = 0;
-	logic [3:0] clkcount2 = 0;
-	
-	// Para generar un wait
-	logic [9:0] delay = 0;
-	
-	// Asigna las coordenadas iniciales del rectángulo y controla el movimiento
 	always_ff @(posedge clk) begin
-		rect_x <= x;
-		rect_y <= y;
-		
-		if (clkcount > 4) begin
-			clkcount = 0;
-		end else begin
-			clkcount = clkcount + 1;
-		end
-		
-		if (clkcount2 > 5) begin
-			clkcount2 = 0;
-		end else begin
-			clkcount2 = clkcount2 + 1;
-		end
-				  
-		// Si el switch cambia de estado, pone 1 en la matriz,
-		if (switch != actual && boat >= nboat && delay == 0) begin
-			actual <= !actual;
-			enemy[selectedx][selectedy] <= 1;
+		// Si las coordenadas (x, y) están dentro de la resolución de la pantalla
+		if (x < IMG_WIDTH  && y < IMG_HEIGHT) begin
+			// Asignar el color en escala de grises usando el valor de q
+			red   <= q;
+			green <= q;
+			blue  <= q;
 			
-			if (clkcount2 == 5) begin
-				player[clkcount][clkcount2 - 1] <= 1;
-			end else begin
-				player[clkcount][clkcount2] <= 1;
+			// Incrementar la dirección de lectura
+			rdaddress <= current_address;
+			
+			// Avanzar en la fila (incrementar current_x)
+			current_x <= current_x + 1;
+			current_address <= current_address + 1;  // Incrementa la dirección en 1
+			
+			// Si llegamos al final de la fila (ancho de la imagen), pasa a la siguiente fila
+			if (current_x >= (IMG_WIDTH  - 1)) begin
+				current_x <= 0;  // Reinicia el contador de píxeles en X
+				current_y <= current_y + 1;  // Pasa a la siguiente fila
 			end
-		end else if (delay > 1000) begin
-			delay = 0;
+			
+			// Si llegamos al final de la imagen (altura máxima), reiniciamos
+			if (current_y >= (IMG_HEIGHT - 1)) begin
+				current_y <= 0;  // Reinicia el contador de filas
+				current_address <= BASE_ADDRESS;  // Reinicia la dirección de memoria
+			end
 		end else begin
-			delay = delay + 1;
+			// Valores por defecto si estamos fuera del rango
+			red   <= 8'b11111111;
+			green <= 8'b11111111;
+			blue  <= 8'b11111111;
 		end
-		
 	end
-			
-			
-	/*always_ff @(posedge clk) begin
-		// Pintar el fondo
-		if (x < HRES && y < VRES) begin
-			red = background_red;
-			green = background_green;
-			blue = background_blue;
-		end else begin
-			red = 8'b00000000;
-			green = 8'b00000000;
-			blue = 8'b00000000;
-		end
-			
-		if (x == HRES/2 && y >= 0 && y <= VRES) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		
-		// Lineas verticales de la izquierda
-		if (x == 35 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 85 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 135 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 185 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 235 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 285 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		
-		// Lineas horizontales de la izquierda
-		if (x >= (HRES/4 - 125) && x <= (HRES/4 + 125) && y == 90) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 - 125) && x <= (HRES/4 + 125) && y == 150) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 - 125) && x <= (HRES/4 + 125) && y == 210) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 - 125) && x <= (HRES/4 + 125) && y == 270) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 - 125) && x <= (HRES/4 + 125) && y == 330) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 - 125) && x <= (HRES/4 + 125) && y == 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		
-		// Lineas verticales de la derecha
-		if (x == 355 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 405 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 455 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 505 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 555 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x == 605 && y >= 90 && y <= 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		
-		// Lineas horizontales de la derecha
-		if (x >= (HRES/4 + 195) && x <= (HRES/4 + 445) && y == 90) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 + 195) && x <= (HRES/4 + 445) && y == 150) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 + 195) && x <= (HRES/4 + 445) && y == 210) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 + 195) && x <= (HRES/4 + 445) && y == 270) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 + 195) && x <= (HRES/4 + 445) && y == 330) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-		if (x >= (HRES/4 + 195) && x <= (HRES/4 + 445) && y == 390) begin
-			red = rect_red;
-			green = rect_green;
-			blue = rect_blue;
-		end
-		
-
-		// Dibujado barco 1x1
-		if (rect_x >= lim_x && rect_x <= (lim_x + RECT_WIDTH) && rect_y >= lim_y && rect_y <= (lim_y + RECT_HEIGHT)) begin
-			red = 8'b11111111;
-			green = 8'b00000000;
-			blue = 8'b00000000;
-		end
-
-		
-	end*/
-	
-	// Procesar el valor de `q` para generar la imagen en escala de grises
-   always_ff @(posedge clk) begin
-        // Pintar el fondo o la imagen
-        if (x < HRES && y < VRES) begin
-            // Extraer los 8 bits menos significativos de `q` para el color
-            // Si necesitas usar más bits, puedes dividir `q` en canales de color
-            red = 8'b11111111;
-            green = 8'b11111111;
-            blue = 8'b11111111;
-        end else begin
-            red = 8'b11111111;
-            green = 8'b11111111;
-            blue = 8'b11111111;
-        end
-		  
-		  // Dibujado barco 1x1
-		if (rect_x >= lim_x && rect_x <= (lim_x + RECT_WIDTH) && rect_y >= lim_y && rect_y <= (lim_y + RECT_HEIGHT)) begin
-			rdaddress <= 18'h10;
-			red = q[7:0];
-         green = q[7:0];
-         blue = q[7:0];
-			/*red = 8'b11111111;
-			green = 8'b00000000;
-			blue = 8'b00000000;*/
-		end
-   end
-
-
 endmodule

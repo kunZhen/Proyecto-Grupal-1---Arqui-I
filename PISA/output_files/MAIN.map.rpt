@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MAIN
-Thu Oct 17 01:54:29 2024
+Thu Oct 17 03:12:44 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -15,22 +15,19 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Source assignments for PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated
- 15. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga
- 16. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga|vga_controller:vga_controller_inst
- 17. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga|draw_board:draw_board_inst
- 18. Parameter Settings for User Entity Instance: PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component
- 19. altsyncram Parameter Settings by Entity Instance
- 20. Port Connectivity Checks: "PISA:pisa|RAM_pixels:ram_pixels"
- 21. Port Connectivity Checks: "PISA:pisa|vga:vga|draw_board:draw_board_inst"
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
- 25. Analysis & Synthesis Suppressed Messages
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated
+ 14. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga
+ 15. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga|vga_controller:vga_controller_inst
+ 16. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga|draw_board:draw_board_inst
+ 17. Parameter Settings for User Entity Instance: PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "PISA:pisa|RAM_pixels:ram_pixels"
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -57,16 +54,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct 17 01:54:29 2024          ;
+; Analysis & Synthesis Status     ; Successful - Thu Oct 17 03:12:44 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; MAIN                                           ;
 ; Top-level Entity Name           ; MAIN                                           ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 65                                             ;
+; Total registers                 ; 111                                            ;
 ; Total pins                      ; 109                                            ;
 ; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 256                                            ;
+; Total block memory bits         ; 1,600,000                                      ;
 ; Total DSP Blocks                ; 0                                              ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
@@ -214,45 +211,46 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 39        ;
+; Estimate of Logic utilization (ALMs needed) ; 124       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 52        ;
+; Combinational ALUT usage for logic          ; 164       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 14        ;
-;     -- 5 input functions                    ; 5         ;
-;     -- 4 input functions                    ; 3         ;
-;     -- <=3 input functions                  ; 30        ;
+;     -- 6 input functions                    ; 79        ;
+;     -- 5 input functions                    ; 6         ;
+;     -- 4 input functions                    ; 10        ;
+;     -- <=3 input functions                  ; 69        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 65        ;
+; Dedicated logic registers                   ; 111       ;
 ;                                             ;           ;
 ; I/O pins                                    ; 109       ;
 ; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 256       ;
+; Total block memory bits                     ; 1600000   ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 53        ;
-; Total fan-out                               ; 508       ;
-; Average fan-out                             ; 1.48      ;
+; Maximum fan-out                             ; 291       ;
+; Total fan-out                               ; 4384      ;
+; Average fan-out                             ; 6.33      ;
 +---------------------------------------------+-----------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                            ;
-+-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name     ; Library Name ;
-+-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |MAIN                                         ; 52 (1)              ; 65 (0)                    ; 256               ; 0          ; 109  ; 0            ; |MAIN                                                                                                ; MAIN            ; work         ;
-;    |PISA:pisa|                                ; 51 (0)              ; 65 (0)                    ; 256               ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa                                                                                      ; PISA            ; work         ;
-;       |RAM_pixels:ram_pixels|                 ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels                                                                ; RAM_pixels      ; work         ;
-;          |altsyncram:altsyncram_component|    ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;             |altsyncram_m002:auto_generated|  ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated ; altsyncram_m002 ; work         ;
-;       |vga:vga|                               ; 51 (0)              ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga                                                                              ; vga             ; work         ;
-;          |draw_board:draw_board_inst|         ; 20 (20)             ; 44 (44)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst                                                   ; draw_board      ; work         ;
-;          |pll:vgapll|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|pll:vgapll                                                                   ; pll             ; work         ;
-;          |vga_controller:vga_controller_inst| ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|vga_controller:vga_controller_inst                                           ; vga_controller  ; work         ;
-+-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+-----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                         ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Entity Name     ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |MAIN                                         ; 164 (1)             ; 111 (0)                   ; 1600000           ; 0          ; 109  ; 0            ; |MAIN                                                                                                             ; MAIN            ; work         ;
+;    |PISA:pisa|                                ; 163 (0)             ; 111 (0)                   ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa                                                                                                   ; PISA            ; work         ;
+;       |RAM_pixels:ram_pixels|                 ; 74 (0)              ; 10 (0)                    ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels                                                                             ; RAM_pixels      ; work         ;
+;          |altsyncram:altsyncram_component|    ; 74 (0)              ; 10 (0)                    ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component                                             ; altsyncram      ; work         ;
+;             |altsyncram_m002:auto_generated|  ; 74 (0)              ; 10 (10)                   ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated              ; altsyncram_m002 ; work         ;
+;                |mux_ehb:mux3|                 ; 74 (74)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|mux_ehb:mux3 ; mux_ehb         ; work         ;
+;       |vga:vga|                               ; 89 (0)              ; 101 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga                                                                                           ; vga             ; work         ;
+;          |draw_board:draw_board_inst|         ; 58 (58)             ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst                                                                ; draw_board      ; work         ;
+;          |pll:vgapll|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|pll:vgapll                                                                                ; pll             ; work         ;
+;          |vga_controller:vga_controller_inst| ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|vga_controller:vga_controller_inst                                                        ; vga_controller  ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -274,67 +272,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+---------------------------------------+-----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                              ;
-+------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                                                          ; Reason for Removal                     ;
-+------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rdaddress[5..17]                                                          ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rdaddress[4]                                                              ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rdaddress[0..3]                                                           ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|address_reg_b[0..4]     ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|out_address_reg_b[0..4] ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 28                                                                                 ;                                        ;
-+------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                  ;
-+------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------+
-; Register name                                              ; Reason for Removal        ; Registers Removed due to This Register                                                                              ;
-+------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------+
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rdaddress[17] ; Stuck at GND              ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|address_reg_b[4],    ;
-;                                                            ; due to stuck port data_in ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|out_address_reg_b[4] ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rdaddress[16] ; Stuck at GND              ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|address_reg_b[3],    ;
-;                                                            ; due to stuck port data_in ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|out_address_reg_b[3] ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rdaddress[15] ; Stuck at GND              ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|address_reg_b[2],    ;
-;                                                            ; due to stuck port data_in ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|out_address_reg_b[2] ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rdaddress[14] ; Stuck at GND              ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|address_reg_b[1],    ;
-;                                                            ; due to stuck port data_in ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|out_address_reg_b[1] ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rdaddress[13] ; Stuck at GND              ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|address_reg_b[0],    ;
-;                                                            ; due to stuck port data_in ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|out_address_reg_b[0] ;
-+------------------------------------------------------------+---------------------------+---------------------------------------------------------------------------------------------------------------------+
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 65    ;
-; Number of registers using Synchronous Clear  ; 20    ;
+; Total registers                              ; 111   ;
+; Number of registers using Synchronous Clear  ; 57    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 66    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------+
-; Inverted Register Statistics                                     ;
-+--------------------------------------------------------+---------+
-; Inverted Register                                      ; Fan out ;
-+--------------------------------------------------------+---------+
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[1] ; 2       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[0] ; 1       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[4] ; 2       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[3] ; 2       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[6] ; 2       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_x[5] ; 2       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_x[2] ; 1       ;
-; Total number of inverted registers = 7                 ;         ;
-+--------------------------------------------------------+---------+
++---------------------------------------------------------------------------+
+; Inverted Register Statistics                                              ;
++-----------------------------------------------------------------+---------+
+; Inverted Register                                               ; Fan out ;
++-----------------------------------------------------------------+---------+
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|current_address[4] ; 2       ;
+; Total number of inverted registers = 1                          ;         ;
++-----------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst|current_y[8]                                                                        ;
+; 25:1               ; 8 bits    ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|mux_ehb:mux3|l5_w0_n0_mux_dataout ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------+
@@ -477,39 +447,32 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "PISA:pisa|vga:vga|draw_board:draw_board_inst"                                                                                                 ;
-+-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                       ;
-+-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; nboat ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "nboat[3..3]" will be connected to GND. ;
-+-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 65                          ;
-;     ENA SCLR          ; 10                          ;
+; arriav_ff             ; 111                         ;
+;     ENA               ; 19                          ;
+;     ENA SCLR          ; 47                          ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 45                          ;
-; arriav_lcell_comb     ; 54                          ;
-;     arith             ; 20                          ;
-;         1 data inputs ; 20                          ;
-;     normal            ; 34                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 9                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 3                           ;
-;         5 data inputs ; 5                           ;
-;         6 data inputs ; 14                          ;
+;     plain             ; 35                          ;
+; arriav_lcell_comb     ; 165                         ;
+;     arith             ; 58                          ;
+;         1 data inputs ; 58                          ;
+;     normal            ; 107                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 2                           ;
+;         4 data inputs ; 10                          ;
+;         5 data inputs ; 6                           ;
+;         6 data inputs ; 79                          ;
 ; boundary_port         ; 109                         ;
-; stratixv_ram_block    ; 8                           ;
+; stratixv_ram_block    ; 200                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.40                        ;
-; Average LUT depth     ; 2.02                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.79                        ;
 +-----------------------+-----------------------------+
 
 
@@ -528,7 +491,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Thu Oct 17 01:54:18 2024
+    Info: Processing started: Thu Oct 17 03:12:31 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PISA -c MAIN
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -564,29 +527,10 @@ Info (12128): Elaborating entity "vga" for hierarchy "PISA:pisa|vga:vga" File: C
 Warning (10036): Verilog HDL or VHDL warning at vga.sv(25): object "reset" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 25
 Info (12128): Elaborating entity "pll" for hierarchy "PISA:pisa|vga:vga|pll:vgapll" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 30
 Info (12128): Elaborating entity "vga_controller" for hierarchy "PISA:pisa|vga:vga|vga_controller:vga_controller_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 43
-Info (12128): Elaborating entity "draw_board" for hierarchy "PISA:pisa|vga:vga|draw_board:draw_board_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 60
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(19): object "background_red" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 19
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(20): object "background_green" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 20
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(21): object "background_blue" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 21
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(23): object "rect_red" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 23
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(24): object "rect_green" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 24
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(25): object "rect_blue" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 25
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(34): object "lim_x2" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 34
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(35): object "lim_y2" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 35
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(37): object "lim_x3" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 37
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(38): object "lim_y3" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 38
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(40): object "lim_x4" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 40
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(41): object "lim_y4" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 41
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(43): object "lim_x5" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 43
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(44): object "lim_y5" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 44
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(51): object "player" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 51
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(52): object "enemy" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 52
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(61): object "canDraw" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 61
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(80): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 80
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(86): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 86
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(102): truncated value with size 32 to match size of target (10) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 102
-Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "player" into its bus
-Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "enemy" into its bus
+Info (12128): Elaborating entity "draw_board" for hierarchy "PISA:pisa|vga:vga|draw_board:draw_board_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 58
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(37): truncated value with size 32 to match size of target (10) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 37
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(38): truncated value with size 32 to match size of target (18) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 38
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(43): truncated value with size 32 to match size of target (10) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 43
 Info (12128): Elaborating entity "RAM_pixels" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 46
 Info (12128): Elaborating entity "altsyncram" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
 Info (12130): Elaborated megafunction instantiation "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
@@ -620,220 +564,8 @@ Info (12128): Elaborating entity "decode_uma" for hierarchy "PISA:pisa|RAM_pixel
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ehb.tdf
     Info (12023): Found entity 1: mux_ehb File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/mux_ehb.tdf Line: 23
 Info (12128): Elaborating entity "mux_ehb" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|mux_ehb:mux3" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 45
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a8" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 310
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a9" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 343
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a10" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 376
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a11" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 409
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a12" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 442
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a13" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 475
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a14" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 508
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a15" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 541
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a16" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 574
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a17" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 607
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a18" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 640
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a19" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 673
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a20" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 706
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a21" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 739
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a22" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 772
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a23" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 805
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a24" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 838
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a25" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 871
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a26" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 904
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a27" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 937
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a28" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 970
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a29" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1003
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a30" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1036
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a31" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1069
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a32" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1102
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a33" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1135
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a34" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1168
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a35" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1201
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a36" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1234
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a37" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1267
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a38" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1300
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a39" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1333
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a40" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1366
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a41" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1399
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a42" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1432
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a43" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1465
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a44" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1498
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a45" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1531
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a46" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1564
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a47" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1597
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a48" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1630
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a49" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1663
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a50" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1696
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a51" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1729
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a52" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1762
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a53" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1795
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a54" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1828
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a55" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1861
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a56" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1894
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a57" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1927
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a58" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1960
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a59" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 1993
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a60" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2026
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a61" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2059
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a62" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2092
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a63" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2125
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a64" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2158
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a65" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2191
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a66" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2224
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a67" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2257
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a68" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2290
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a69" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2323
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a70" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2356
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a71" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2389
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a72" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2422
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a73" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2455
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a74" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2488
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a75" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2521
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a76" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2554
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a77" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2587
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a78" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2620
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a79" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2653
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a80" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2686
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a81" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2719
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a82" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2752
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a83" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2785
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a84" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2818
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a85" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2851
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a86" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2884
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a87" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2917
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a88" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2950
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a89" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 2983
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a90" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3016
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a91" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3049
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a92" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3082
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a93" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3115
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a94" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3148
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a95" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3181
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a96" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3214
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a97" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3247
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a98" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3280
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a99" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3313
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a100" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3346
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a101" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3379
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a102" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3412
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a103" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3445
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a104" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3478
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a105" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3511
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a106" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3544
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a107" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3577
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a108" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3610
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a109" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3643
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a110" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3676
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a111" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3709
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a112" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3742
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a113" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3775
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a114" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3808
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a115" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3841
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a116" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3874
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a117" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3907
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a118" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3940
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a119" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 3973
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a120" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4006
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a121" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4039
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a122" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4072
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a123" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4105
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a124" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4138
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a125" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4171
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a126" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4204
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a127" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4237
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a128" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4270
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a129" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4303
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a130" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4336
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a131" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4369
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a132" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4402
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a133" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4435
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a134" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4468
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a135" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4501
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a136" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4534
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a137" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4567
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a138" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4600
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a139" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4633
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a140" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4666
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a141" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4699
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a142" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4732
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a143" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4765
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a144" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4798
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a145" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4831
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a146" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4864
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a147" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4897
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a148" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4930
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a149" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4963
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a150" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 4996
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a151" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5029
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a152" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5062
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a153" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5095
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a154" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5128
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a155" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5161
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a156" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5194
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a157" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5227
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a158" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5260
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a159" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5293
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a160" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5326
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a161" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5359
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a162" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5392
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a163" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5425
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a164" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5458
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a165" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5491
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a166" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5524
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a167" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5557
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a168" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5590
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a169" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5623
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a170" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5656
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a171" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5689
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a172" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5722
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a173" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5755
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a174" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5788
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a175" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5821
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a176" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5854
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a177" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5887
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a178" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5920
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a179" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5953
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a180" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 5986
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a181" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6019
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a182" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6052
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a183" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6085
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a184" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6118
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a185" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6151
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a186" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6184
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a187" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6217
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a188" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6250
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a189" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6283
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a190" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6316
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a191" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6349
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a192" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6382
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a193" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6415
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a194" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6448
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a195" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6481
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a196" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6514
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a197" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6547
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a198" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6580
-        Warning (14320): Synthesized away node "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ram_block1a199" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 6613
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "rdaddress[0]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[1]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[2]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[3]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[4]" is stuck at VCC File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[5]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[6]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[7]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[8]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[9]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[10]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[11]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[12]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[13]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[14]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[15]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[16]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
-    Warning (13410): Pin "rdaddress[17]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 17
     Warning (13410): Pin "wraddress[0]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
     Warning (13410): Pin "wraddress[1]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
     Warning (13410): Pin "wraddress[2]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
@@ -853,8 +585,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "wraddress[16]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
     Warning (13410): Pin "wraddress[17]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
 Info (286030): Timing-Driven Synthesis is running
-Info (17036): Removed 8 MSB VCC or GND address nodes from RAM block "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ALTSYNCRAM" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 46
-Info (144001): Generated suppressed messages file C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/output_files/MAIN.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 26 input pin(s) that do not drive logic
@@ -884,21 +614,15 @@ Warning (21074): Design contains 26 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "data[29]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
     Warning (15610): No output dependent on input pin "data[30]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
     Warning (15610): No output dependent on input pin "data[31]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
-Info (21057): Implemented 226 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 544 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 36 input pins
     Info (21059): Implemented 73 output pins
-    Info (21061): Implemented 109 logic cells
-    Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 283 warnings
-    Info: Peak virtual memory: 4852 megabytes
-    Info: Processing ended: Thu Oct 17 01:54:29 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:24
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/output_files/MAIN.map.smsg.
+    Info (21061): Implemented 235 logic cells
+    Info (21064): Implemented 200 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
+    Info: Peak virtual memory: 4870 megabytes
+    Info: Processing ended: Thu Oct 17 03:12:44 2024
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:29
 
 

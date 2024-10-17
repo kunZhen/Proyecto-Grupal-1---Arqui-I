@@ -48,8 +48,6 @@ module vga #(
 		 .clk(clk),
 		 .x(x),
 		 .y(y),
-		 .switch(switch),
-		 .nboat(num_boats),
 		 
 		 .q(q),
 		 .rdaddress(rdaddress),
