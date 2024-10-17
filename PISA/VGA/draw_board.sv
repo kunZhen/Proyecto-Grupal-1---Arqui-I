@@ -42,43 +42,43 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
             state <= INIT_WIDTH_HIGH;
-            rdaddress <= 0;
+            rdaddress <= 18'h0;
             img_width <= 0;
             img_height <= 0;
         end else begin
             case (state)
                 INIT_WIDTH_HIGH: begin
                     width_high <= q;
-                    rdaddress <= 1;
+                    rdaddress <= 18'h1;
                     state <= INIT_WIDTH_LOW;
                 end
                 
                 INIT_WIDTH_LOW: begin
                     width_low <= q;
-                    rdaddress <= 2;
+                    rdaddress <= 18'h4;
                     img_width <= {width_high, width_low};
+						  img_width <= 400;
                     // Calcular divisiones horizontales
-                    div_width_1 <= {width_high, width_low} / 4;
-                    div_width_2 <= ({width_high, width_low} * 2) / 4;
-                    div_width_3 <= ({width_high, width_low} * 3) / 4;
+                    div_width_1 <= img_width / 4;
+                    div_width_2 <= (img_width * 2) / 4;
+                    div_width_3 <= (img_width * 3) / 4;
                     state <= INIT_HEIGHT_HIGH;
                 end
                 
                 INIT_HEIGHT_HIGH: begin
                     height_high <= q;
-                    rdaddress <= 3;
+                    rdaddress <= 18'h5;
                     state <= INIT_HEIGHT_LOW;
                 end
                 
                 INIT_HEIGHT_LOW: begin
                     height_low <= q;
                     img_height <= {height_high, height_low};
-						  img_width <= 400;
 						  img_height <= 433;
                     // Calcular divisiones verticales
-                    div_height_1 <= {height_high, height_low} / 4;
-                    div_height_2 <= ({height_high, height_low} * 2) / 4;
-                    div_height_3 <= ({height_high, height_low} * 3) / 4;
+                    div_height_1 <= img_height/ 4;
+                    div_height_2 <= (img_height * 2) / 4;
+                    div_height_3 <= (img_height * 3) / 4;
                     state <= DISPLAY_IMAGE;
                 end
                 

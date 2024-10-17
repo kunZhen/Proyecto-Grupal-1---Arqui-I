@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Oct 17 04:32:56 2024
+Fitter Status : Successful - Thu Oct 17 10:52:30 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : MAIN
 Top-level Entity Name : MAIN
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 298 / 41,910 ( < 1 % )
-Total registers : 228
+Logic utilization (in ALMs) : 126 / 41,910 ( < 1 % )
+Total registers : 80
 Total pins : 109 / 499 ( 22 % )
 Total virtual pins : 0
 Total block memory bits : 1,600,000 / 5,662,720 ( 28 % )
