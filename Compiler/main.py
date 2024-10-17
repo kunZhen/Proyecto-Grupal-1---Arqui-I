@@ -5,26 +5,26 @@ import re
 instructionDictionary = {
 
     'addp': '00000', # Arithmetic
-    'subp': '00001',
-    'mulp': '00010',
-    'divp': '00011',
+    'subp': '01000',
+    'mulp': '10000',
+    'divp': '11000',
 
-    'andp': '00100', # Logic
-    'orp': '00101',
-    'cmpp': '00110',
+    'andp': '00001', # Logic
+    'orp': '01001',
+    'cmpp': '10001',
 
-    'addip': '01000', # Immediate
-    'sllip': '01001',
-    'srlip': '01010',
+    'addip': '00010', # Immediate
+    'sllip': '01010',
+    'srlip': '10010',
 
-    'lbp': '01100', # Memory
-    'lwp': '01101',
-    'sbp': '10000',
-    'swp': '10001',
+    'lbp': '00011', # Memory
+    'lwp': '01011',
+    'sbp': '00100',
+    'swp': '01100',
 
-    'bltp': '10100', # Control
-    'bgep': '10101',
-    'jump': '10110'
+    'bltp': '00101', # Control
+    'bgep': '01101',
+    'jump': '10101'
 
 }
 
