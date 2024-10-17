@@ -4,7 +4,7 @@ module datapath_unit_tb;
     localparam REG_NUMBER = 5;
     localparam MEM_SIZE = 256;
 
-   // Clock and reset signals
+    // Clock and reset signals
     reg clk = 1;
     reg rst = 1;
 

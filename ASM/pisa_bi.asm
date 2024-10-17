@@ -34,16 +34,17 @@ row_loop:
 
 column_loop:
     # Calculate position in original image with fixed point
-    addip t3, s0, -1         	# t3 = width - 1
+	addip t0, zero, 1
+    subp t3, s0, t0         	# t3 = width - 1
     mulp t3, t11, t3          	# t3 = x * (width - 1)
     sllip t3, t3, 6            	# << 6 (setting for 6 fractional bits)
-    addip t4, s6, -1         	# t4 = new_width - 1
+    subp t4, s6, t0         	# t4 = new_width - 1
     divp t3, t3, t4          	# t3 = fx
 
-    addip t4, s1, -1         	# t4 = height - 1
+    subp t4, s1, t0         	# t4 = height - 1
     mulp t4, t10, t4          	# t4 = y * (height - 1) 
     sllip t4, t4, 6            	# << 6 (setting for 6 fractional bits)
-    addip t5, s7, -1         	# t5 = new_height - 1
+    subp t5, s7, t0         	# t5 = new_height - 1
     divp t4, t4, t5          	# t4 = fy
 
     # Get ox, oy, fx_frac, fy_frac

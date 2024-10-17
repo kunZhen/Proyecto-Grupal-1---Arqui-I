@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Unicycle
-Wed Oct 16 07:38:23 2024
+Wed Oct 16 08:40:51 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -9,23 +9,25 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
-  4. Parameter Settings for User Entity Instance: Top-level Entity: |datapath_unit
-  5. Parameter Settings for User Entity Instance: mux2:mux_pcn_pcj
-  6. Parameter Settings for User Entity Instance: instruction_memory:instruction_memory_inst
-  7. Parameter Settings for User Entity Instance: mux2:mux_1_rs2
-  8. Parameter Settings for User Entity Instance: register_file:register_file_inst
-  9. Parameter Settings for User Entity Instance: imm_gen:imm_gen_inst
- 10. Parameter Settings for User Entity Instance: compare:compare_inst
- 11. Parameter Settings for User Entity Instance: mux2:mux_drs2_imm
- 12. Parameter Settings for User Entity Instance: alu:alu_inst
- 13. Parameter Settings for User Entity Instance: data_memory:data_memory_inst
- 14. Parameter Settings for User Entity Instance: mux4:mux_alu_mem
- 15. Analysis & Elaboration Settings
- 16. Port Connectivity Checks: "mux4:mux_alu_mem"
- 17. Port Connectivity Checks: "data_memory:data_memory_inst"
- 18. Port Connectivity Checks: "mux2:mux_1_rs2"
- 19. Analysis & Elaboration Messages
- 20. Analysis & Elaboration Suppressed Messages
+  4. Parameter Settings for User Entity Instance: Top-level Entity: |unicycle
+  5. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst
+  6. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|mux2:mux_pcn_pcj
+  7. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|instruction_memory:instruction_memory_inst
+  8. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|mux2:mux_1_rs2
+  9. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|register_file:register_file_inst
+ 10. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|imm_gen:imm_gen_inst
+ 11. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|compare:compare_inst
+ 12. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|mux2:mux_drs2_imm
+ 13. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|alu:alu_inst
+ 14. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|data_memory:data_memory_inst
+ 15. Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|mux4:mux_alu_mem
+ 16. Analysis & Elaboration Settings
+ 17. Port Connectivity Checks: "datapath_unit:datapath_unit_inst|mux4:mux_alu_mem"
+ 18. Port Connectivity Checks: "datapath_unit:datapath_unit_inst|data_memory:data_memory_inst"
+ 19. Port Connectivity Checks: "datapath_unit:datapath_unit_inst|mux2:mux_1_rs2"
+ 20. Port Connectivity Checks: "datapath_unit:datapath_unit_inst"
+ 21. Analysis & Elaboration Messages
+ 22. Analysis & Elaboration Suppressed Messages
 
 
 
@@ -51,10 +53,10 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Wed Oct 16 07:38:23 2024       ;
+; Analysis & Elaboration Status ; Successful - Wed Oct 16 08:40:51 2024       ;
 ; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                 ; Unicycle                                    ;
-; Top-level Entity Name         ; datapath_unit                               ;
+; Top-level Entity Name         ; unicycle                                    ;
 ; Family                        ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
 ; Total registers               ; N/A until Partition Merge                   ;
@@ -82,8 +84,21 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |unicycle ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; DATA_WIDTH     ; 20    ; Signed Integer                                  ;
+; ADDRESS_WIDTH  ; 8     ; Signed Integer                                  ;
+; REG_NUMBER     ; 5     ; Signed Integer                                  ;
+; MEM_SIZE       ; 256   ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |datapath_unit ;
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst ;
 +----------------+-------+------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                 ;
 +----------------+-------+------------------------------------------------------+
@@ -95,108 +110,108 @@ refer to the applicable agreement for further details.
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux2:mux_pcn_pcj ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; WIDTH          ; 8     ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|mux2:mux_pcn_pcj ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; WIDTH          ; 8     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: instruction_memory:instruction_memory_inst ;
-+----------------+-------+----------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                           ;
-+----------------+-------+----------------------------------------------------------------+
-; DATA_WIDTH     ; 20    ; Signed Integer                                                 ;
-; ADDRESS_WIDTH  ; 8     ; Signed Integer                                                 ;
-; MEM_SIZE       ; 256   ; Signed Integer                                                 ;
-+----------------+-------+----------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|instruction_memory:instruction_memory_inst ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
+; DATA_WIDTH     ; 20    ; Signed Integer                                                                                  ;
+; ADDRESS_WIDTH  ; 8     ; Signed Integer                                                                                  ;
+; MEM_SIZE       ; 256   ; Signed Integer                                                                                  ;
++----------------+-------+-------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux2:mux_1_rs2 ;
-+----------------+-------+------------------------------------+
-; Parameter Name ; Value ; Type                               ;
-+----------------+-------+------------------------------------+
-; WIDTH          ; 5     ; Signed Integer                     ;
-+----------------+-------+------------------------------------+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|mux2:mux_1_rs2 ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; WIDTH          ; 5     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: register_file:register_file_inst ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; DATA_WIDTH     ; 20    ; Signed Integer                                       ;
-; REG_NUMBER     ; 5     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|register_file:register_file_inst ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                  ;
++----------------+-------+---------------------------------------------------------------------------------------+
+; DATA_WIDTH     ; 20    ; Signed Integer                                                                        ;
+; REG_NUMBER     ; 5     ; Signed Integer                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: imm_gen:imm_gen_inst ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; DATA_WIDTH     ; 20    ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|imm_gen:imm_gen_inst ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; DATA_WIDTH     ; 20    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: compare:compare_inst ;
-+----------------+-------+------------------------------------------+
-; Parameter Name ; Value ; Type                                     ;
-+----------------+-------+------------------------------------------+
-; DATA_WIDTH     ; 20    ; Signed Integer                           ;
-+----------------+-------+------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|compare:compare_inst ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; DATA_WIDTH     ; 20    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux2:mux_drs2_imm ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; WIDTH          ; 20    ; Signed Integer                        ;
-+----------------+-------+---------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|mux2:mux_drs2_imm ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; WIDTH          ; 20    ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------+
-; Parameter Settings for User Entity Instance: alu:alu_inst ;
-+----------------+-------+----------------------------------+
-; Parameter Name ; Value ; Type                             ;
-+----------------+-------+----------------------------------+
-; N              ; 20    ; Signed Integer                   ;
-+----------------+-------+----------------------------------+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|alu:alu_inst ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; N              ; 20    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: data_memory:data_memory_inst ;
-+----------------+-------+--------------------------------------------------+
-; Parameter Name ; Value ; Type                                             ;
-+----------------+-------+--------------------------------------------------+
-; DATA_WIDTH     ; 32    ; Signed Integer                                   ;
-; ADDRESS_WIDTH  ; 20    ; Signed Integer                                   ;
-; MEM_SIZE       ; 1024  ; Signed Integer                                   ;
-+----------------+-------+--------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|data_memory:data_memory_inst ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                              ;
++----------------+-------+-----------------------------------------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                                                    ;
+; ADDRESS_WIDTH  ; 20    ; Signed Integer                                                                    ;
+; MEM_SIZE       ; 1024  ; Signed Integer                                                                    ;
++----------------+-------+-----------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: mux4:mux_alu_mem ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; WIDTH          ; 20    ; Signed Integer                       ;
-+----------------+-------+--------------------------------------+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: datapath_unit:datapath_unit_inst|mux4:mux_alu_mem ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; WIDTH          ; 20    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -206,7 +221,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; datapath_unit      ; Unicycle           ;
+; Top-level entity name                                                           ; unicycle           ; Unicycle           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -287,17 +302,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+----------------------------------------------+
-; Port Connectivity Checks: "mux4:mux_alu_mem" ;
-+------+-------+----------+--------------------+
-; Port ; Type  ; Severity ; Details            ;
-+------+-------+----------+--------------------+
-; d    ; Input ; Info     ; Stuck at GND       ;
-+------+-------+----------+--------------------+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath_unit:datapath_unit_inst|mux4:mux_alu_mem" ;
++------+-------+----------+-----------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                             ;
++------+-------+----------+-----------------------------------------------------+
+; d    ; Input ; Info     ; Stuck at GND                                        ;
++------+-------+----------+-----------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "data_memory:data_memory_inst"                                                                                                                                ;
+; Port Connectivity Checks: "datapath_unit:datapath_unit_inst|data_memory:data_memory_inst"                                                                                               ;
 +------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port       ; Type   ; Severity ; Details                                                                                                                                                ;
 +------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -307,7 +322,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux2:mux_1_rs2"                                                                                                                                                                      ;
+; Port Connectivity Checks: "datapath_unit:datapath_unit_inst|mux2:mux_1_rs2"                                                                                                                                     ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port    ; Type  ; Severity ; Details                                                                                                                                                                            ;
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -317,13 +332,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "datapath_unit:datapath_unit_inst"                                                                        ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; CMP  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; BLT  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; BGE  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; JMP  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
 +---------------------------------+
 ; Analysis & Elaboration Messages ;
 +---------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Oct 16 07:37:59 2024
+    Info: Processing started: Wed Oct 16 08:40:34 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Unicycle -c Unicycle --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -361,29 +388,38 @@ Info (12021): Found 1 design units, including 1 entities, in source file mux4.sv
     Info (12023): Found entity 1: mux4 File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/mux4.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file datapath_unit_tb.sv
     Info (12023): Found entity 1: datapath_unit_tb File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit_tb.sv Line: 1
-Info (12127): Elaborating entity "datapath_unit" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file unicycle.sv
+    Info (12023): Found entity 1: unicycle File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file unicycle_tb.sv
+    Info (12023): Found entity 1: unicycle_tb File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv Line: 1
+Info (12127): Elaborating entity "unicycle" for the top level hierarchy
+Warning (10034): Output port "CMP" at unicycle.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 15
+Warning (10034): Output port "BLT" at unicycle.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 15
+Warning (10034): Output port "BGE" at unicycle.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 15
+Warning (10034): Output port "JMP" at unicycle.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 15
+Info (12128): Elaborating entity "datapath_unit" for hierarchy "datapath_unit:datapath_unit_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 60
 Warning (10230): Verilog HDL assignment warning at datapath_unit.sv(42): truncated value with size 32 to match size of target (8) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 42
 Warning (10230): Verilog HDL assignment warning at datapath_unit.sv(142): truncated value with size 20 to match size of target (8) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 142
 Warning (10034): Output port "CMP" at datapath_unit.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 15
 Warning (10034): Output port "BLT" at datapath_unit.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 15
 Warning (10034): Output port "BGE" at datapath_unit.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 15
 Warning (10034): Output port "JMP" at datapath_unit.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 15
-Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux_pcn_pcj" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 50
-Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:instruction_memory_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 70
+Info (12128): Elaborating entity "mux2" for hierarchy "datapath_unit:datapath_unit_inst|mux2:mux_pcn_pcj" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 50
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "datapath_unit:datapath_unit_inst|instruction_memory:instruction_memory_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 70
 Warning (10850): Verilog HDL warning at instruction_memory.sv(16): number of words (14) in memory file does not match the number of elements in the address range [0:255] File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv Line: 16
 Warning (10030): Net "instruction_memory.data_a" at instruction_memory.sv(12) has no driver or initial value, using a default initial value '0' File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv Line: 12
 Warning (10030): Net "instruction_memory.waddr_a" at instruction_memory.sv(12) has no driver or initial value, using a default initial value '0' File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv Line: 12
 Warning (10030): Net "instruction_memory.we_a" at instruction_memory.sv(12) has no driver or initial value, using a default initial value '0' File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv Line: 12
-Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:control_unit_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 93
+Info (12128): Elaborating entity "control_unit" for hierarchy "datapath_unit:datapath_unit_inst|control_unit:control_unit_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 93
 Warning (10270): Verilog HDL Case Statement warning at control_unit.sv(84): incomplete case statement has no default case item File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/control_unit.sv Line: 84
-Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux_1_rs2" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 107
-Info (12128): Elaborating entity "register_file" for hierarchy "register_file:register_file_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 123
-Info (12128): Elaborating entity "imm_gen" for hierarchy "imm_gen:imm_gen_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 129
-Info (12128): Elaborating entity "compare" for hierarchy "compare:compare_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 137
-Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux_drs2_imm" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 151
-Info (12128): Elaborating entity "alu_control" for hierarchy "alu_control:alu_control_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 159
-Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 170
-Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:data_memory_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 188
+Info (12128): Elaborating entity "mux2" for hierarchy "datapath_unit:datapath_unit_inst|mux2:mux_1_rs2" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 107
+Info (12128): Elaborating entity "register_file" for hierarchy "datapath_unit:datapath_unit_inst|register_file:register_file_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 123
+Info (12128): Elaborating entity "imm_gen" for hierarchy "datapath_unit:datapath_unit_inst|imm_gen:imm_gen_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 129
+Info (12128): Elaborating entity "compare" for hierarchy "datapath_unit:datapath_unit_inst|compare:compare_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 137
+Info (12128): Elaborating entity "mux2" for hierarchy "datapath_unit:datapath_unit_inst|mux2:mux_drs2_imm" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 151
+Info (12128): Elaborating entity "alu_control" for hierarchy "datapath_unit:datapath_unit_inst|alu_control:alu_control_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 159
+Info (12128): Elaborating entity "alu" for hierarchy "datapath_unit:datapath_unit_inst|alu:alu_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 170
+Info (12128): Elaborating entity "data_memory" for hierarchy "datapath_unit:datapath_unit_inst|data_memory:data_memory_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 188
 Warning (10850): Verilog HDL warning at data_memory.sv(21): number of words (10) in memory file does not match the number of elements in the address range [0:1023] File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 21
 Warning (10855): Verilog HDL warning at data_memory.sv(20): initial value for variable memory should be constant File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 20
 Warning (10027): Verilog HDL or VHDL warning at the data_memory.sv(60): index expression is not wide enough to address all of the elements in the array File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 60
@@ -420,14 +456,14 @@ Info (10041): Inferred latch for "read_data[28]" at data_memory.sv(49) File: C:/
 Info (10041): Inferred latch for "read_data[29]" at data_memory.sv(49) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 49
 Info (10041): Inferred latch for "read_data[30]" at data_memory.sv(49) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 49
 Info (10041): Inferred latch for "read_data[31]" at data_memory.sv(49) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 49
-Info (12128): Elaborating entity "mux4" for hierarchy "mux4:mux_alu_mem" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 199
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "mux4" for hierarchy "datapath_unit:datapath_unit_inst|mux4:mux_alu_mem" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 199
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (144001): Generated suppressed messages file C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/output_files/Unicycle.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 5121 megabytes
-    Info: Processing ended: Wed Oct 16 07:38:23 2024
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:22
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 21 warnings
+    Info: Peak virtual memory: 4899 megabytes
+    Info: Processing ended: Wed Oct 16 08:40:51 2024
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:17
 
 
 +--------------------------------------------+
