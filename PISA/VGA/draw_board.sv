@@ -1,34 +1,117 @@
 module draw_board #(parameter HRES = 640, VRES = 480) (
     input logic clk,
-    input logic [9:0] x,  // Coordenada X (0 a HRES-1)
-    input logic [9:0] y,  // Coordenada Y (0 a VRES-1)
+    input logic rst,
+    input logic [9:0] x,
+    input logic [9:0] y,
     
-    input [7:0] q,          // Datos leídos desde RAM
-    output logic [17:0] rdaddress, // Dirección de lectura de RAM
+    input [7:0] q,
+    output logic [17:0] rdaddress,
     
-    output logic [7:0] red,   // Salida del canal rojo
-    output logic [7:0] green, // Salida del canal verde
-    output logic [7:0] blue   // Salida del canal azul
+    output logic [7:0] red,
+    output logic [7:0] green,
+    output logic [7:0] blue
 );
-    // Dirección base de la imagen en la memoria
-    parameter BASE_ADDRESS = 18'h10;
-    parameter IMG_WIDTH = 400, IMG_HEIGHT = 433;
+    // Estados para la máquina de estados
+    typedef enum {
+        INIT_WIDTH_HIGH,
+        INIT_WIDTH_LOW,
+        INIT_HEIGHT_HIGH,
+        INIT_HEIGHT_LOW,
+        DISPLAY_IMAGE
+    } state_t;
     
-    always_ff @(posedge clk) begin
-        // Si las coordenadas (x, y) están dentro del área de la imagen
-        if (x < IMG_WIDTH && y < IMG_HEIGHT) begin
-            // Calcular la dirección de memoria basada en la posición actual
-            rdaddress <= BASE_ADDRESS + (y * IMG_WIDTH + x);
-            
-            // Asignar el color en escala de grises usando el valor de q
-            red   <= q;
-            green <= q;
-            blue  <= q;
+    state_t state;
+    
+    // Registros para almacenar el ancho y alto
+    logic [15:0] img_width;
+    logic [15:0] img_height;
+    logic [7:0] width_high, width_low;
+    logic [7:0] height_high, height_low;
+    
+    // Registros para las líneas divisorias
+    logic [15:0] div_width_1, div_width_2, div_width_3;  // Divisiones horizontales
+    logic [15:0] div_height_1, div_height_2, div_height_3; // Divisiones verticales
+    parameter LINE_WIDTH = 2; // Ancho de las líneas divisorias
+    
+    // Dirección base donde comienza la imagen real
+    parameter BASE_ADDRESS = 18'h10;
+    
+    // Color de las líneas divisorias (rojo en este caso)
+    parameter [7:0] LINE_COLOR = 8'hFF;
+    
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            state <= INIT_WIDTH_HIGH;
+            rdaddress <= 0;
+            img_width <= 0;
+            img_height <= 0;
         end else begin
-            // Valores por defecto si estamos fuera del rango de la imagen
-            red   <= 8'b11111111;
-            green <= 8'b11111111;
-            blue  <= 8'b11111111;
+            case (state)
+                INIT_WIDTH_HIGH: begin
+                    width_high <= q;
+                    rdaddress <= 1;
+                    state <= INIT_WIDTH_LOW;
+                end
+                
+                INIT_WIDTH_LOW: begin
+                    width_low <= q;
+                    rdaddress <= 2;
+                    img_width <= {width_high, width_low};
+                    // Calcular divisiones horizontales
+                    div_width_1 <= {width_high, width_low} / 4;
+                    div_width_2 <= ({width_high, width_low} * 2) / 4;
+                    div_width_3 <= ({width_high, width_low} * 3) / 4;
+                    state <= INIT_HEIGHT_HIGH;
+                end
+                
+                INIT_HEIGHT_HIGH: begin
+                    height_high <= q;
+                    rdaddress <= 3;
+                    state <= INIT_HEIGHT_LOW;
+                end
+                
+                INIT_HEIGHT_LOW: begin
+                    height_low <= q;
+                    img_height <= {height_high, height_low};
+						  img_width <= 400;
+						  img_height <= 433;
+                    // Calcular divisiones verticales
+                    div_height_1 <= {height_high, height_low} / 4;
+                    div_height_2 <= ({height_high, height_low} * 2) / 4;
+                    div_height_3 <= ({height_high, height_low} * 3) / 4;
+                    state <= DISPLAY_IMAGE;
+                end
+                
+                DISPLAY_IMAGE: begin
+                    // Comprobar si estamos en una línea divisoria
+                    if (x < img_width && y < img_height) begin
+                        // Verificar si estamos en una línea vertical
+                        if ((x >= div_width_1 && x < div_width_1 + LINE_WIDTH) ||
+                            (x >= div_width_2 && x < div_width_2 + LINE_WIDTH) ||
+                            (x >= div_width_3 && x < div_width_3 + LINE_WIDTH) ||
+                            // Verificar si estamos en una línea horizontal
+                            (y >= div_height_1 && y < div_height_1 + LINE_WIDTH) ||
+                            (y >= div_height_2 && y < div_height_2 + LINE_WIDTH) ||
+                            (y >= div_height_3 && y < div_height_3 + LINE_WIDTH)) begin
+                            // Dibujar línea divisoria
+                            red   <= LINE_COLOR;
+                            green <= 0;
+                            blue  <= 0;
+                        end else begin
+                            // Mostrar imagen normal
+                            rdaddress <= BASE_ADDRESS + (y * img_width + x);
+                            red   <= q;
+                            green <= q;
+                            blue  <= q;
+                        end
+                    end else begin
+                        // Fuera del área de la imagen
+                        red   <= 8'b11111111;
+                        green <= 8'b11111111;
+                        blue  <= 8'b11111111;
+                    end
+                end
+            endcase
         end
     end
 endmodule
