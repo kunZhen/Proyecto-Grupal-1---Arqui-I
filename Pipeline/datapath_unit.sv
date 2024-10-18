@@ -40,7 +40,11 @@ module datapath_unit #(
    logic [DATA_WIDTH-1:0] alu_operand2;
 	
 	logic [31:0] write_data;
+	
+	
+	// ----------------------------------- IF ----------------------------------- //
 	 
+	
 	assign pc_next = pc + 1; 
 	 
 	// Instantiate the mux2 module to determine which value between pc_next and pc_jump passes to pc
@@ -74,7 +78,11 @@ module datapath_unit #(
       .address(pc),
       .instruction(instruction)
    );
+	
+	
+	// ----------------------------------- ID ----------------------------------- //
 
+	
 	// Extract opcode and funct2 from instruction
 	assign opcode = instruction[2:0];
 	assign funct2 = instruction[4:3];
@@ -147,7 +155,11 @@ module datapath_unit #(
 
    assign pc_jump = pc + immediate;
    assign sel0 = (blt && lt) || (bge && ge) || jmp;
+	
+	
+	// ----------------------------------- EX ----------------------------------- //
 
+	
    // Instantiate the mux2 module to determine which value between data_rs2 and immediate passes to the ALU
    mux2 #(DATA_WIDTH) mux_drs2_imm (
       .sel(ALUSrc), 
@@ -174,7 +186,11 @@ module datapath_unit #(
       .Result(alu_result),
       .Z(zero)
    );
+	
+	
+	// ----------------------------------- MEM ----------------------------------- //
 
+	
    assign mem_write_data = data_rs2;
 	assign write_data = {12'b0, mem_write_data};
 
@@ -193,14 +209,18 @@ module datapath_unit #(
 		.be(ByteEnable),
       .read_data(mem_read_data)
    );
+	
+	
+	// ----------------------------------- WB ----------------------------------- //
 
+	
    // Instantiate the mux4 module to determine which value between
 	// alu_result, mem_read_data or compared_data passes to register_file
    mux4 #(DATA_WIDTH) mux_alu_mem (
       .sel(MemToReg), // From control_unit
       .a(alu_result), // From alu 
       .b(mem_read_data), // From data_memory
-		.c(compared_data),
+		.c(compared_data), // From compare
 		.d(20'h0),
       .y(reg_write_data)
    );
