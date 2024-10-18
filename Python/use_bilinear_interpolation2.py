@@ -134,7 +134,11 @@ def main():
                       [145, 166, 207, 231, 73, 243, 144, 86, 38, 14, 17, 29],
                       [201, 146, 84, 54, 195, 110, 139, 169, 246, 141, 152, 177]]
 
-    image = np.array(image_created2)
+    #image = np.array(image_created2)
+
+    # Load grayscale image
+    image_path = "peppers_small.jpg"
+    image = load_grayscale_image(image_path)
 
     # Draw dividing lines on the image
     draw_grid(image, 4, 4)

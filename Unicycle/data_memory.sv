@@ -1,7 +1,7 @@
 module data_memory #(
     parameter DATA_WIDTH = 32,
     parameter ADDRESS_WIDTH = 20,
-    parameter MEM_SIZE = 1024
+    parameter MEM_SIZE = 8192
 ) (
     input logic clk,                           // Clock 
     input logic rst,                           // Reset
@@ -25,21 +25,21 @@ module data_memory #(
     always_ff @(posedge clk or negedge rst) begin
         if (~rst) begin
             // Reset
-            for (int i = 0; i < MEM_SIZE; i++) begin
-                memory[i] <= '0;
-            end
+            //for (int i = 0; i < MEM_SIZE; i++) begin
+            //    memory[i] <= '0;
+            //end
         end else if (we && (address < MEM_SIZE)) begin
 				if (be) begin
 					// Write byte (sbp)
 					case (address[1:0])
-						2'b00: memory[address[11:2]][7:0] <= write_data[7:0];
-						2'b01: memory[address[11:2]][15:8] <= write_data[7:0];
-						2'b10: memory[address[11:2]][23:16] <= write_data[7:0];
-						2'b11: memory[address[11:2]][31:24] <= write_data[7:0];
+						2'b00: memory[address[19:2]][7:0] <= write_data[7:0];
+						2'b01: memory[address[19:2]][15:8] <= write_data[7:0];
+						2'b10: memory[address[19:2]][23:16] <= write_data[7:0];
+						2'b11: memory[address[19:2]][31:24] <= write_data[7:0];
                endcase
 				end else begin
 					// Write word (swp)
-					memory[address[11:2]] <= write_data;
+					memory[address[19:2]][19:0] <= write_data;
 				end
         end
     end
@@ -50,18 +50,18 @@ module data_memory #(
 			   if (be) begin
 					// Read byte (lbp)
 					case (address[1:0])
-						2'b00: read_data <= {24'b0, (memory[address[11:2]][7:0] === 8'hxx) ? 8'h00 : memory[address[11:2]][7:0]};
-						2'b01: read_data <= {24'b0, (memory[address[11:2]][15:8] === 8'hxx) ? 8'h00 : memory[address[11:2]][15:8]};
-						2'b10: read_data <= {24'b0, (memory[address[11:2]][23:16] === 8'hxx) ? 8'h00 : memory[address[11:2]][23:16]};
-						2'b11: read_data <= {24'b0, (memory[address[11:2]][31:24] === 8'hxx) ? 8'h00 : memory[address[11:2]][31:24]};
+						2'b00: read_data <= {24'b0, (memory[address[19:2]][7:0] === 8'hxx) ? 8'h00 : memory[address[19:2]][7:0]};
+						2'b01: read_data <= {24'b0, (memory[address[19:2]][15:8] === 8'hxx) ? 8'h00 : memory[address[19:2]][15:8]};
+						2'b10: read_data <= {24'b0, (memory[address[19:2]][23:16] === 8'hxx) ? 8'h00 : memory[address[19:2]][23:16]};
+						2'b11: read_data <= {24'b0, (memory[address[19:2]][31:24] === 8'hxx) ? 8'h00 : memory[address[19:2]][31:24]};
                endcase
 				end else begin
 					// Read word (lwp)
-					if (memory[address[9:2]] === 32'hx) begin
-						read_data <= 32'h0;
+					if (memory[address[19:2]] === 32'hx) begin
+						read_data <= 20'h0;
 					end
 					else begin
-						read_data <= memory[address[11:2]];
+						read_data <= memory[address[19:2]][19:0];
 					end
 				end
         end

@@ -15,7 +15,7 @@ _start:
 	# Define the base address to store the quadrant to be interpolated
 	mulp t0, s0, s1				
 	addp t0, s2, t0
-	addip t0, t0, 8
+	addip t0, t0, 16
 	addp s3, t0, zero			# s3 = saved_quadrant
 	
 	# Calculate the size of the quadrants and their scaled size
@@ -35,7 +35,7 @@ _start:
 	# Define the base address to store the interpolated quadrant
 	mulp t0, s4, s6				
 	addp t0, s3, t0
-	addip t0, t0, 8
+	addip t0, t0, 16
 	addp s8, t0, zero			# s8 = scaled_quadrant
 	
 	# Set 0x3F

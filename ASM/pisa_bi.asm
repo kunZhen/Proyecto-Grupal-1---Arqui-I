@@ -14,7 +14,7 @@ _start:
 	
 	# Define the base address of the scaled image
 	mulp t0, s0, s1
-	addip t0, t0, 8
+	addip t0, t0, 16
 	addp t0, t0, s4
 	addp s5, t0, zero			# s5 = scaled_image
 
