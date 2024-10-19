@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MAIN
-Sat Oct 12 01:07:13 2024
+Sat Oct 19 04:01:42 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -13,16 +13,24 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga
- 11. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga|vga_controller:vga_controller_inst
- 12. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga|draw_board:draw_board_inst
- 13. Port Connectivity Checks: "PISA:pisa|vga:vga|draw_board:draw_board_inst"
- 14. Post-Synthesis Netlist Statistics for Top Partition
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
- 17. Analysis & Synthesis Suppressed Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. Analysis & Synthesis IP Cores Summary
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated
+ 16. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga
+ 17. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga|vga_controller:vga_controller_inst
+ 18. Parameter Settings for User Entity Instance: PISA:pisa|vga:vga|draw_board:draw_board_inst
+ 19. Parameter Settings for User Entity Instance: PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "PISA:pisa|RAM_pixels:ram_pixels"
+ 22. Port Connectivity Checks: "PISA:pisa|vga:vga|draw_board:draw_board_inst"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -49,17 +57,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Oct 12 01:07:13 2024          ;
+; Analysis & Synthesis Status     ; Successful - Sat Oct 19 04:01:41 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; MAIN                                           ;
 ; Top-level Entity Name           ; MAIN                                           ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 65                                             ;
-; Total pins                      ; 32                                             ;
+; Total registers                 ; 76                                             ;
+; Total pins                      ; 109                                            ;
 ; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 0                                              ;
-; Total DSP Blocks                ; 0                                              ;
+; Total block memory bits         ; 1,600,000                                      ;
+; Total DSP Blocks                ; 1                                              ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
 ; Total HSSI TX PCSs              ; 0                                              ;
@@ -169,22 +177,37 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                        ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
-; MAIN.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv               ;         ;
-; PISA.sv                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv               ;         ;
-; VGA/pll.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/pll.sv            ;         ;
-; VGA/vga_controller.sv            ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga_controller.sv ;         ;
-; VGA/draw_board.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv     ;         ;
-; VGA/vga.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv            ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
+; MAIN.sv                          ; yes             ; User SystemVerilog HDL File            ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv                ;         ;
+; PISA.sv                          ; yes             ; User SystemVerilog HDL File            ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv                ;         ;
+; VGA/pll.sv                       ; yes             ; User SystemVerilog HDL File            ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/pll.sv             ;         ;
+; VGA/vga_controller.sv            ; yes             ; User SystemVerilog HDL File            ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga_controller.sv  ;         ;
+; VGA/draw_board.sv                ; yes             ; User SystemVerilog HDL File            ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv      ;         ;
+; VGA/vga.sv                       ; yes             ; User SystemVerilog HDL File            ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv             ;         ;
+; RAM_pixels.v                     ; yes             ; User Wizard-Generated File             ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf         ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/stratix_ram_block.inc  ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_mux.inc            ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/lpm_decode.inc         ;         ;
+; aglobal221.inc                   ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/aglobal221.inc         ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/a_rdenreg.inc          ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altrom.inc             ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altram.inc             ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altdpram.inc           ;         ;
+; db/altsyncram_m002.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf ;         ;
+; pixels.mif                       ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/pixels.mif             ;         ;
+; db/decode_uma.tdf                ; yes             ; Auto-Generated Megafunction            ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/decode_uma.tdf      ;         ;
+; db/mux_ehb.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/mux_ehb.tdf         ;         ;
++----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -192,41 +215,198 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 56        ;
+; Estimate of Logic utilization (ALMs needed) ; 118       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 87        ;
-;     -- 7 input functions                    ; 1         ;
-;     -- 6 input functions                    ; 19        ;
-;     -- 5 input functions                    ; 17        ;
-;     -- 4 input functions                    ; 17        ;
-;     -- <=3 input functions                  ; 33        ;
+; Combinational ALUT usage for logic          ; 141       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 85        ;
+;     -- 5 input functions                    ; 13        ;
+;     -- 4 input functions                    ; 14        ;
+;     -- <=3 input functions                  ; 29        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 65        ;
+; Dedicated logic registers                   ; 76        ;
 ;                                             ;           ;
-; I/O pins                                    ; 32        ;
+; I/O pins                                    ; 109       ;
+; Total MLAB memory bits                      ; 0         ;
+; Total block memory bits                     ; 1600000   ;
 ;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
+; Total DSP Blocks                            ; 1         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 45        ;
-; Total fan-out                               ; 552       ;
-; Average fan-out                             ; 2.56      ;
+; Maximum fan-out                             ; 256       ;
+; Total fan-out                               ; 4287      ;
+; Average fan-out                             ; 6.74      ;
 +---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
-+-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+----------------+--------------+
-; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                        ; Entity Name    ; Library Name ;
-+-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+----------------+--------------+
-; |MAIN                                         ; 87 (0)              ; 65 (0)                    ; 0                 ; 0          ; 32   ; 0            ; |MAIN                                                      ; MAIN           ; work         ;
-;    |PISA:pisa|                                ; 87 (0)              ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa                                            ; PISA           ; work         ;
-;       |vga:vga|                               ; 87 (0)              ; 65 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga                                    ; vga            ; work         ;
-;          |draw_board:draw_board_inst|         ; 57 (57)             ; 44 (44)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst         ; draw_board     ; work         ;
-;          |pll:vgapll|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|pll:vgapll                         ; pll            ; work         ;
-;          |vga_controller:vga_controller_inst| ; 29 (29)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|vga_controller:vga_controller_inst ; vga_controller ; work         ;
-+-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                         ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Entity Name     ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |MAIN                                         ; 141 (1)             ; 76 (0)                    ; 1600000           ; 1          ; 109  ; 0            ; |MAIN                                                                                                             ; MAIN            ; work         ;
+;    |PISA:pisa|                                ; 140 (0)             ; 76 (0)                    ; 1600000           ; 1          ; 0    ; 0            ; |MAIN|PISA:pisa                                                                                                   ; PISA            ; work         ;
+;       |RAM_pixels:ram_pixels|                 ; 74 (0)              ; 10 (0)                    ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels                                                                             ; RAM_pixels      ; work         ;
+;          |altsyncram:altsyncram_component|    ; 74 (0)              ; 10 (0)                    ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component                                             ; altsyncram      ; work         ;
+;             |altsyncram_m002:auto_generated|  ; 74 (0)              ; 10 (10)                   ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated              ; altsyncram_m002 ; work         ;
+;                |mux_ehb:mux3|                 ; 74 (74)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|mux_ehb:mux3 ; mux_ehb         ; work         ;
+;       |vga:vga|                               ; 66 (0)              ; 66 (0)                    ; 0                 ; 1          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga                                                                                           ; vga             ; work         ;
+;          |draw_board:draw_board_inst|         ; 35 (35)             ; 45 (45)                   ; 0                 ; 1          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst                                                                ; draw_board      ; work         ;
+;          |pll:vgapll|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|pll:vgapll                                                                                ; pll             ; work         ;
+;          |vga_controller:vga_controller_inst| ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|vga_controller:vga_controller_inst                                                        ; vga_controller  ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                       ;
++-----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------------+
+; Name                                                                                                      ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF        ;
++-----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------------+
+; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 200000       ; 8            ; 200000       ; 8            ; 1600000 ; pixels.mif ;
++-----------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+---------+------------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary           ;
++------------------------------------------+-------------+
+; Statistic                                ; Number Used ;
++------------------------------------------+-------------+
+; Independent 18x18 plus 36                ; 1           ;
+; Total number of DSP blocks               ; 1           ;
+;                                          ;             ;
+; Fixed Point Unsigned Multiplier          ; 1           ;
+; Fixed Point Dedicated Output Accumulator ; 1           ;
++------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                   ;
++--------+--------------+---------+--------------+--------------+---------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                       ; IP Include File ;
++--------+--------------+---------+--------------+--------------+---------------------------------------+-----------------+
+; Altera ; RAM: 2-PORT  ; 22.1    ; N/A          ; N/A          ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels ; RAM_pixels.v    ;
++--------+--------------+---------+--------------+--------------+---------------------------------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                        ;
++------------------------------------------------------------------+----------------------------------------+
+; Register name                                                    ; Reason for Removal                     ;
++------------------------------------------------------------------+----------------------------------------+
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|state[3..31]        ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[7..15]    ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[6]        ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[0..5]     ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[7..15]   ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[6]       ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[0..5]    ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[5..15]  ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[4]      ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[0..3]   ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[6..15]  ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[5]      ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[0..4]   ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[5..15] ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[4]     ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[0..3]  ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[6..15] ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[5]     ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[0..4]  ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[6..15]  ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[4]      ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[0..3]   ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[6..15] ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[4]     ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[0..3]  ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[5]      ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[5]     ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 157                          ;                                        ;
++------------------------------------------------------------------+----------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                              ;
++-------------------------------------------------------------+---------------------------+----------------------------------------------------------------+
+; Register name                                               ; Reason for Removal        ; Registers Removed due to This Register                         ;
++-------------------------------------------------------------+---------------------------+----------------------------------------------------------------+
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[15]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[13],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[14],  ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[14],  ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[13],  ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[12],  ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[11],  ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[10],  ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[9],   ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[8],   ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[7]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[15] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[13], ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[14], ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[14], ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[13], ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[12], ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[11], ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[10], ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[9],  ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[8],  ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[7]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[14]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[12],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[13]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[13]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[11],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[12]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[12]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[10],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[11]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[11]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[9],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[10]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[10]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[8],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[9]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[9]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[7],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[8]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[8]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[6],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[7]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[7]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[5],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[6]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[6]   ; Stuck at VCC              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[4],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[5]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[5]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[3],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[4]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[4]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[2],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[3]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[3]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[1],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[2]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[2]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[0],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[1]    ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[14] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[12], ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[13]  ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[13] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[11], ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[12]  ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[12] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[10], ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[11]  ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[11] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[9],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[10]  ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[10] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[8],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[9]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[9]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[7],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[8]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[8]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[6],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[7]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[7]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[5],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[6]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[6]  ; Stuck at VCC              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[4],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[5]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[5]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[3],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[4]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[4]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[2],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[3]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[3]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[1],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[2]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[2]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[0],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[1]   ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[1]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[0]    ;
+;                                                             ; due to stuck port data_in ;                                                                ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[1]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[0]   ;
+;                                                             ; due to stuck port data_in ;                                                                ;
++-------------------------------------------------------------+---------------------------+----------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -234,30 +414,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 65    ;
+; Total registers                              ; 76    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 34    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------+
-; Inverted Register Statistics                                     ;
-+--------------------------------------------------------+---------+
-; Inverted Register                                      ; Fan out ;
-+--------------------------------------------------------+---------+
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_x[2] ; 1       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_x[5] ; 2       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[4] ; 2       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[1] ; 1       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[0] ; 1       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[6] ; 1       ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|rect_y[3] ; 1       ;
-; Total number of inverted registers = 7                 ;         ;
-+--------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst|red[0]                                                                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst|green                                                                               ;
+; 25:1               ; 8 bits    ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|mux_ehb:mux3|l5_w0_n0_mux_dataout ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Source assignments for PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                      ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                       ;
++---------------------------------+--------------------+------+---------------------------------------------------------+
 
 
 +----------------------------------------------------------------+
@@ -301,13 +485,103 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "PISA:pisa|vga:vga|draw_board:draw_board_inst"                                                                                                 ;
-+-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                       ;
-+-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; nboat ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "nboat[3..3]" will be connected to GND. ;
-+-------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+--------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                             ;
++------------------------------------+----------------------+--------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                          ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                   ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                          ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                          ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                   ;
+; WIDTHAD_A                          ; 18                   ; Signed Integer                                   ;
+; NUMWORDS_A                         ; 200000               ; Signed Integer                                   ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                          ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                          ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                          ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                          ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                          ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                          ;
+; WIDTH_B                            ; 8                    ; Signed Integer                                   ;
+; WIDTHAD_B                          ; 18                   ; Signed Integer                                   ;
+; NUMWORDS_B                         ; 200000               ; Signed Integer                                   ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                          ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                          ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                          ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                          ;
+; OUTDATA_REG_B                      ; CLOCK0               ; Untyped                                          ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                          ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                          ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                          ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                          ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                          ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                          ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                          ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                   ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                          ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                          ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                          ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                          ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                          ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                          ;
+; INIT_FILE                          ; pixels.mif           ; Untyped                                          ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                          ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                          ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                          ;
+; CLOCK_ENABLE_INPUT_B               ; BYPASS               ; Untyped                                          ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                          ;
+; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                                          ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                          ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                          ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                          ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                          ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                          ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                                          ;
+; CBXI_PARAMETER                     ; altsyncram_m002      ; Untyped                                          ;
++------------------------------------+----------------------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                            ;
++-------------------------------------------+-----------------------------------------------------------------+
+; Name                                      ; Value                                                           ;
++-------------------------------------------+-----------------------------------------------------------------+
+; Number of entity instances                ; 1                                                               ;
+; Entity Instance                           ; PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                       ;
+;     -- WIDTH_A                            ; 8                                                               ;
+;     -- NUMWORDS_A                         ; 200000                                                          ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                    ;
+;     -- WIDTH_B                            ; 8                                                               ;
+;     -- NUMWORDS_B                         ; 200000                                                          ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                          ;
+;     -- OUTDATA_REG_B                      ; CLOCK0                                                          ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                        ;
++-------------------------------------------+-----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PISA:pisa|RAM_pixels:ram_pixels"                                                                                                                                                  ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PISA:pisa|vga:vga|draw_board:draw_board_inst"                                                                                               ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; rst  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -315,26 +589,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 65                          ;
+; arriav_ff             ; 76                          ;
+;     ENA               ; 16                          ;
 ;     ENA SCLR          ; 10                          ;
+;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 10                          ;
-;     plain             ; 45                          ;
-; arriav_lcell_comb     ; 88                          ;
+;     plain             ; 32                          ;
+; arriav_lcell_comb     ; 142                         ;
 ;     arith             ; 20                          ;
 ;         1 data inputs ; 20                          ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 67                          ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 17                          ;
-;         5 data inputs ; 17                          ;
-;         6 data inputs ; 19                          ;
-; boundary_port         ; 32                          ;
+;     normal            ; 122                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 13                          ;
+;         6 data inputs ; 85                          ;
+; arriav_mac            ; 1                           ;
+; boundary_port         ; 109                         ;
+; stratixv_ram_block    ; 200                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.13                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.96                        ;
 +-----------------------+-----------------------------+
 
 
@@ -353,7 +630,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sat Oct 12 01:06:53 2024
+    Info: Processing started: Sat Oct 19 04:01:25 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PISA -c MAIN
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -369,53 +646,128 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga/dra
     Info (12023): Found entity 1: draw_board File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga/vga.sv
     Info (12023): Found entity 1: vga File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 1
-Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(11): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 11
-Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(12): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file ram_data.v
+    Info (12023): Found entity 1: RAM_data File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_data.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file ram/ram_test.sv
+    Info (12023): Found entity 1: ram_test File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM/ram_test.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ram/counter.sv
+    Info (12023): Found entity 1: counter File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM/counter.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbench/ram_data_tb.sv
+    Info (12023): Found entity 1: RAM_data_tb File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/TestBench/RAM_data_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file ram_pixels.v
+    Info (12023): Found entity 1: RAM_pixels File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file testbench/ram_pixels_tb.sv
+    Info (12023): Found entity 1: RAM_pixels_tb File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/TestBench/RAM_pixels_tb.sv Line: 3
+Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(34): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 34
+Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(37): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 37
+Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(40): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 40
 Info (12127): Elaborating entity "MAIN" for the top level hierarchy
-Info (12128): Elaborating entity "PISA" for hierarchy "PISA:pisa" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 29
-Info (12128): Elaborating entity "vga" for hierarchy "PISA:pisa|vga:vga" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 28
-Warning (10036): Verilog HDL or VHDL warning at vga.sv(21): object "reset" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 21
-Info (12128): Elaborating entity "pll" for hierarchy "PISA:pisa|vga:vga|pll:vgapll" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 26
-Info (12128): Elaborating entity "vga_controller" for hierarchy "PISA:pisa|vga:vga|vga_controller:vga_controller_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 39
-Info (12128): Elaborating entity "draw_board" for hierarchy "PISA:pisa|vga:vga|draw_board:draw_board_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 52
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(30): object "lim_x2" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 30
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(31): object "lim_y2" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 31
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(33): object "lim_x3" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 33
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(34): object "lim_y3" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 34
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(36): object "lim_x4" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 36
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(37): object "lim_y4" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 37
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(39): object "lim_x5" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 39
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(40): object "lim_y5" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 40
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(47): object "player" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 47
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(48): object "enemy" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 48
-Warning (10036): Verilog HDL or VHDL warning at draw_board.sv(57): object "canDraw" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 57
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(76): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 76
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(82): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 82
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(98): truncated value with size 32 to match size of target (10) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 98
-Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "player" into its bus
-Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "enemy" into its bus
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "PISA" for hierarchy "PISA:pisa" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 40
+Info (12128): Elaborating entity "vga" for hierarchy "PISA:pisa|vga:vga" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 37
+Warning (10036): Verilog HDL or VHDL warning at vga.sv(25): object "reset" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 25
+Info (12128): Elaborating entity "pll" for hierarchy "PISA:pisa|vga:vga|pll:vgapll" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 30
+Info (12128): Elaborating entity "vga_controller" for hierarchy "PISA:pisa|vga:vga|vga_controller:vga_controller_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 43
+Info (12128): Elaborating entity "draw_board" for hierarchy "PISA:pisa|vga:vga|draw_board:draw_board_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 58
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(62): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 62
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(63): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 63
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(64): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 64
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(79): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 79
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(80): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 80
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(81): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 81
+Info (12128): Elaborating entity "RAM_pixels" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 46
+Info (12128): Elaborating entity "altsyncram" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
+Info (12130): Elaborated megafunction instantiation "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
+Info (12133): Instantiated megafunction "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
+    Info (12134): Parameter "address_aclr_b" = "NONE"
+    Info (12134): Parameter "address_reg_b" = "CLOCK0"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
+    Info (12134): Parameter "init_file" = "pixels.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "200000"
+    Info (12134): Parameter "numwords_b" = "200000"
+    Info (12134): Parameter "operation_mode" = "DUAL_PORT"
+    Info (12134): Parameter "outdata_aclr_b" = "NONE"
+    Info (12134): Parameter "outdata_reg_b" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "OLD_DATA"
+    Info (12134): Parameter "widthad_a" = "18"
+    Info (12134): Parameter "widthad_b" = "18"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_b" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m002.tdf
+    Info (12023): Found entity 1: altsyncram_m002 File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 32
+Info (12128): Elaborating entity "altsyncram_m002" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Critical Warning (127005): Memory depth (200000) in the design file differs from memory depth (5000) in the Memory Initialization File "C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/pixels.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_uma.tdf
+    Info (12023): Found entity 1: decode_uma File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/decode_uma.tdf Line: 23
+Info (12128): Elaborating entity "decode_uma" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|decode_uma:decode2" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 44
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ehb.tdf
+    Info (12023): Found entity 1: mux_ehb File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/mux_ehb.tdf Line: 23
+Info (12128): Elaborating entity "mux_ehb" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|mux_ehb:mux3" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 45
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "wraddress[0]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[1]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[2]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[3]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[4]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[5]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[6]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[7]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[8]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[9]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[10]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[11]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[12]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[13]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[14]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[15]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[16]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
+    Warning (13410): Pin "wraddress[17]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/output_files/MAIN.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
+Warning (21074): Design contains 26 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "reset" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 2
     Warning (15610): No output dependent on input pin "switch" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 4
-Info (21057): Implemented 176 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 144 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 22 warnings
-    Info: Peak virtual memory: 4835 megabytes
-    Info: Processing ended: Sat Oct 12 01:07:13 2024
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:46
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/output_files/MAIN.map.smsg.
+    Warning (15610): No output dependent on input pin "data[8]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[9]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[10]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[11]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[12]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[13]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[14]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[15]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[16]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[17]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[18]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[19]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[20]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[21]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[22]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[23]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[24]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[25]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[26]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[27]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[28]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[29]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[30]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+    Warning (15610): No output dependent on input pin "data[31]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
+Info (21057): Implemented 505 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 36 input pins
+    Info (21059): Implemented 73 output pins
+    Info (21061): Implemented 195 logic cells
+    Info (21064): Implemented 200 RAM segments
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 4858 megabytes
+    Info: Processing ended: Sat Oct 19 04:01:42 2024
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:37
 
 
