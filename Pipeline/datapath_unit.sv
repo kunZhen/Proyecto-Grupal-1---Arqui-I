@@ -12,7 +12,7 @@ module datapath_unit #(
    output logic [2:0] ALUSel,
 	output logic [1:0] MemToReg,
 	output logic [1:0] ForwardA, ForwardB,
-	output logic Flush, Stall, Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
+	output logic Flush, Stall, IF_ID_Write, PCWrite, Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
 	output logic CMP, BLT, BGE, JMP,
    output logic [REG_NUMBER-1:0] rs1, rs2, rd,
    output logic [DATA_WIDTH-1:0] data_rs1, data_rs2,
@@ -27,9 +27,6 @@ module datapath_unit #(
    logic [ADDRESS_WIDTH-1:0] pc = 0;
 	logic [ADDRESS_WIDTH-1:0] pc_next;
    logic [ADDRESS_WIDTH-1:0] pc_jump;
-	
-	logic PCWrite;
-   logic IF_ID_Write;
 	
 	logic lt, ge;
    logic cmp, blt, bge, jmp;
@@ -143,8 +140,8 @@ module datapath_unit #(
       if (~rst) begin
          pc <= 8'h0;
       end else begin
-			if (PCWrite) begin
-				pc = pc_result;
+			if (PCWrite && (pc_result < 8'hff)) begin
+				pc <= pc_result;
 			end 
       end
    end
@@ -161,12 +158,15 @@ module datapath_unit #(
    );
 	
 	// Write IF/ID	
-	always_ff @(posedge clk) begin
-        if (IF_ID_Write) begin
-            IF_ID_pc <= pc;
-            IF_ID_instruction <= instruction;
-        end
-    end
+   always_ff @(posedge clk) begin
+      if (Flush) begin
+         IF_ID_pc <= 0; 
+         IF_ID_instruction <= 20'b0;
+      end else if (IF_ID_Write) begin
+         IF_ID_pc <= pc;
+         IF_ID_instruction <= instruction;
+      end
+   end
 	
 	
 	// ----------------------------------- ID ----------------------------------- //
@@ -457,6 +457,7 @@ module datapath_unit #(
 	
 	
 	// ----------------------------------- WB ----------------------------------- //
+	
 	
 	// Read MEM/WB
    always_ff @(negedge clk) begin

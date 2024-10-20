@@ -1,4 +1,3 @@
-nop
 addip t0, zero, 5      # t0 = 5
 addip t1, zero, 10     # t1 = a
 cmpp t0, t1
@@ -12,4 +11,3 @@ lwp t0, 0(zero)        # t0 = c
 lwp t1, 4(zero)        # t1 = c
 End:
 subp t4, t1, t0        # t4 = 5/0
-syscall
