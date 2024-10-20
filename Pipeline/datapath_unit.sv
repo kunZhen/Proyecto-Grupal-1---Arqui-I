@@ -12,7 +12,7 @@ module datapath_unit #(
    output logic [2:0] ALUSel,
 	output logic [1:0] MemToReg,
 	output logic [1:0] ForwardA, ForwardB,
-	output logic Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
+	output logic Flush, Stall, Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
 	output logic CMP, BLT, BGE, JMP,
    output logic [REG_NUMBER-1:0] rs1, rs2, rd,
    output logic [DATA_WIDTH-1:0] data_rs1, data_rs2,
@@ -28,6 +28,9 @@ module datapath_unit #(
 	logic [ADDRESS_WIDTH-1:0] pc_next;
    logic [ADDRESS_WIDTH-1:0] pc_jump;
 	
+	logic PCWrite;
+   logic IF_ID_Write;
+	
 	logic lt, ge;
    logic cmp, blt, bge, jmp;
 
@@ -42,6 +45,8 @@ module datapath_unit #(
 	logic [31:0] write_data;
 	
 	logic [ADDRESS_WIDTH-1:0] ID_pc;
+	logic [REG_NUMBER-1:0] ID_rd;
+	logic ID_MemRead;
 
    logic [DATA_WIDTH-1:0] EX_data_rs1;
    logic [DATA_WIDTH-1:0] EX_data_rs2;
@@ -138,11 +143,9 @@ module datapath_unit #(
       if (~rst) begin
          pc <= 8'h0;
       end else begin
-			if (pc_result >= 8'hfa) begin
-				pc <= 8'hfa;
-			end else begin
+			if (PCWrite) begin
 				pc = pc_result;
-			end
+			end 
       end
    end
 
@@ -157,11 +160,13 @@ module datapath_unit #(
       .instruction(instruction)
    );
 	
-	// Write IF/ID
+	// Write IF/ID	
 	always_ff @(posedge clk) begin
-      IF_ID_pc <= pc;
-      IF_ID_instruction <= instruction;
-   end
+        if (IF_ID_Write) begin
+            IF_ID_pc <= pc;
+            IF_ID_instruction <= instruction;
+        end
+    end
 	
 	
 	// ----------------------------------- ID ----------------------------------- //
@@ -178,6 +183,12 @@ module datapath_unit #(
       // Extract rd and rs1 from instruction
 		rd = IF_ID_instruction[9:5];
       rs1 = IF_ID_instruction[14:10];
+   end
+	
+	// Read ID/EX
+   always_ff @(negedge clk) begin
+      ID_MemRead = ID_EX_MemRead;
+      ID_rd = ID_EX_rd;
    end
 
    // Read MEM/WB
@@ -211,6 +222,17 @@ module datapath_unit #(
       .a(IF_ID_instruction[19:15]),
       .b(5'b00001),
       .y(rs2)
+   );
+	
+	// Instantiate the hazard_detection_unit module
+   hazard_detection_unit #(REG_NUMBER) hazard_detection_unit_inst (
+      .ID_EX_MemRead(ID_MemRead),
+      .IF_ID_rs1(rs1),
+      .IF_ID_rs2(rs2),
+      .ID_EX_rd(ID_rd),
+      .IF_ID_Write(IF_ID_Write),
+      .PCWrite(PCWrite),
+      .Stall(Stall)
    );
 
    // Instantiate the register_file module
@@ -248,6 +270,7 @@ module datapath_unit #(
 
    assign pc_jump = ID_pc + immediate;
    assign sel0 = (blt && lt) || (bge && ge) || jmp;
+	assign Flush = (sel0 === 1'bx) ? 1'b0: sel0;
 	
 	// Write ID/EX
    always_ff @(posedge clk) begin
@@ -263,14 +286,25 @@ module datapath_unit #(
       ID_EX_opcode <= opcode;
       ID_EX_funct2 <= funct2;
 		
-      ID_EX_ALUOp <= ALUOp;
-		ID_EX_MemToReg <= MemToReg;
-      ID_EX_Branch <= Branch;
-		ID_EX_ByteEnable <= ByteEnable;
-      ID_EX_MemRead <= MemRead;
-      ID_EX_MemWrite <= MemWrite;
-      ID_EX_ALUSrc <= ALUSrc;
-      ID_EX_RegWrite <= RegWrite;
+		if (!Stall) begin
+			ID_EX_ALUOp <= ALUOp;
+			ID_EX_MemToReg <= MemToReg;
+			ID_EX_Branch <= Branch;
+			ID_EX_ByteEnable <= ByteEnable;
+			ID_EX_MemRead <= MemRead;
+			ID_EX_MemWrite <= MemWrite;
+			ID_EX_ALUSrc <= ALUSrc;
+			ID_EX_RegWrite <= RegWrite;
+		end else begin
+			ID_EX_ALUOp <= 2'b00;
+			ID_EX_MemToReg <= 2'b00;
+			ID_EX_Branch <= 1'b0;
+			ID_EX_ByteEnable <= 1'b0;
+			ID_EX_MemRead <= 1'b0;
+			ID_EX_MemWrite <= 1'b0;
+			ID_EX_ALUSrc <= 1'b0;
+			ID_EX_RegWrite <= 1'b0;
+		end
    end
 	
 	
@@ -414,8 +448,10 @@ module datapath_unit #(
       MEM_WB_alu_result <= MEM_alu_result;
       MEM_WB_mem_read_data <= mem_read_data;
 		MEM_WB_compared_data <= MEM_compared_data;
-      MEM_WB_rd <= MEM_rd;
-      MEM_WB_RegWrite <= MEM_RegWrite;
+      //MEM_WB_rd <= MEM_rd;
+		MEM_WB_rd <= EX_MEM_rd;
+      //MEM_WB_RegWrite <= MEM_RegWrite;
+		MEM_WB_RegWrite <= EX_MEM_RegWrite;
       MEM_WB_MemToReg <= MEM_MemToReg;
    end
 	
