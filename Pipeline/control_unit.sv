@@ -3,7 +3,7 @@ module control_unit (
    input logic [1:0] funct2,
    output logic [1:0] ALUOp,
 	output logic MemToReg,
-	output logic Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
+	output logic ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
    output logic CMP, BLT, BGE, JMP
 );
 
@@ -16,7 +16,6 @@ module control_unit (
       JMP = 1'b0;
       case (opcode)
 			3'b000: begin // R-type: addp, subp, mulp, divp
-            Branch = 1'b0;
             MemRead = 1'b0;
             MemToReg = 1'b0;
             ALUOp = 2'b10;
@@ -32,7 +31,6 @@ module control_unit (
 				end else begin
 					MemToReg = 1'b0;
 				end
-            Branch = 1'b0;
             MemRead = 1'b0;
             ALUOp = 2'b10;
             MemWrite = 1'b0;
@@ -41,7 +39,6 @@ module control_unit (
          end
 
          3'b010: begin // addip, sllip, srlip
-            Branch = 1'b0;
             MemRead = 1'b0;
             MemToReg = 1'b0;
             ALUOp = 2'b00;
@@ -56,7 +53,6 @@ module control_unit (
 				end else begin
 					ByteEnable = 1'b0;
 				end
-            Branch = 1'b0;
             MemRead = 1'b1;
             MemToReg = 1'b1;
             ALUOp = 2'b00;
@@ -71,7 +67,6 @@ module control_unit (
 				end else begin
 					ByteEnable = 1'b0;
 				end
-            Branch = 1'b0;
             MemRead = 1'b0;
             MemToReg = 1'b0;
             ALUOp = 2'b00;
@@ -91,7 +86,6 @@ module control_unit (
 						JMP = 1'b0;
 					end
             endcase
-            Branch = 1'b1;
             MemRead = 1'b0;
             MemToReg = 1'b0;
             ALUOp = 2'b01;
@@ -102,7 +96,6 @@ module control_unit (
          end
 				
          default: begin // Default is R-type
-            Branch = 1'b0;
             MemRead = 1'b0;
             MemToReg = 1'b0;
             ALUOp = 2'b10;

@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/simulation/modelsim
 valu
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1729427072
+Z2 !s110 1729427706
 !i10b 1
 !s100 n<QYDWSQPlV8MYgU_m^^Z2
 IG^A^]iMZkJ0VQmQ9FD2So1
@@ -26,7 +26,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1729427072.000000
+Z5 !s108 1729427706.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv|
 !i113 1
@@ -62,13 +62,13 @@ vcontrol_unit
 R1
 R2
 !i10b 1
-!s100 VkVBFU>mj;T1PB2^gUQVS2
-IBNoZ=k;kNoPhMDz0[hd<[0
+!s100 KWk2Meh6Bc5fPP?XJ^NGn3
+IM?RZ_`^UKjm1n39aLDR3l3
 R3
 !s105 control_unit_sv_unit
 S1
 R0
-w1729411152
+w1729427518
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/control_unit.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/control_unit.sv
 L0 1
@@ -85,7 +85,7 @@ R7
 R8
 vdata_memory
 R1
-Z9 !s110 1729427073
+Z9 !s110 1729427707
 !i10b 1
 !s100 6M[4OXYWbBJDLIngbZo:73
 I[YNc:OBV`NUfi4lZaFTUR2
@@ -101,7 +101,7 @@ R4
 r1
 !s85 0
 31
-Z10 !s108 1729427073.000000
+Z10 !s108 1729427707.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv|
 !i113 1
@@ -112,13 +112,13 @@ vdatapath_unit
 R1
 R9
 !i10b 1
-!s100 X5j=58CZU2OK4W62Z6O><3
-Ig2o4Fk8C6_7OU>;V=DR2B2
+!s100 `Q1TPHZWi]oKEE?nGBUH`2
+I^i0jaZF5IW<oGMTLk_;cJ0
 R3
 !s105 datapath_unit_sv_unit
 S1
 R0
-w1729420010
+w1729427655
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv
 L0 1
@@ -137,13 +137,13 @@ vdatapath_unit_tb
 R1
 R9
 !i10b 1
-!s100 >KimY0jdBYaMaWTDWR7Z?3
-I9eETC_00j@45??jT7z[^?1
+!s100 JnYdMW8V_8NDg_Wk]Xe9F0
+Ikn]7GDnAc=GLMcj?S0b463
 R3
 !s105 datapath_unit_tb_sv_unit
 S1
 R0
-w1729418443
+w1729427657
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv
 L0 1

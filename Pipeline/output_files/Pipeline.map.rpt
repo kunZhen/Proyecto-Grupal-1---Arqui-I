@@ -1,5 +1,5 @@
 Analysis & Elaboration report for Pipeline
-Sun Oct 20 05:57:01 2024
+Sun Oct 20 06:34:56 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -55,7 +55,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Sun Oct 20 05:57:01 2024       ;
+; Analysis & Elaboration Status ; Successful - Sun Oct 20 06:34:56 2024       ;
 ; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                 ; Pipeline                                    ;
 ; Top-level Entity Name         ; datapath_unit                               ;
@@ -364,7 +364,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Oct 20 05:56:44 2024
+    Info: Processing started: Sun Oct 20 06:34:39 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Pipeline -c Pipeline --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -405,27 +405,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file forward
 Info (12021): Found 1 design units, including 1 entities, in source file hazard_detection_unit.sv
     Info (12023): Found entity 1: hazard_detection_unit File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/hazard_detection_unit.sv Line: 1
 Info (12127): Elaborating entity "datapath_unit" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at datapath_unit.sv(104): object "EX_MEM_Branch" assigned a value but never read File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 104
-Warning (10230): Verilog HDL assignment warning at datapath_unit.sv(120): truncated value with size 32 to match size of target (8) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 120
-Warning (10230): Verilog HDL assignment warning at datapath_unit.sv(255): truncated value with size 20 to match size of target (8) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 255
-Warning (10230): Verilog HDL assignment warning at datapath_unit.sv(283): truncated value with size 2 to match size of target (1) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 283
-Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux_pcn_pcj" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 128
-Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:instruction_memory_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 150
-Warning (10850): Verilog HDL warning at instruction_memory.sv(16): number of words (193) in memory file does not match the number of elements in the address range [0:255] File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv Line: 16
+Warning (10230): Verilog HDL assignment warning at datapath_unit.sv(117): truncated value with size 32 to match size of target (8) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 117
+Warning (10230): Verilog HDL assignment warning at datapath_unit.sv(251): truncated value with size 20 to match size of target (8) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 251
+Warning (10230): Verilog HDL assignment warning at datapath_unit.sv(278): truncated value with size 2 to match size of target (1) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 278
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux_pcn_pcj" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 125
+Info (12128): Elaborating entity "instruction_memory" for hierarchy "instruction_memory:instruction_memory_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 147
+Warning (10850): Verilog HDL warning at instruction_memory.sv(16): number of words (139) in memory file does not match the number of elements in the address range [0:255] File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv Line: 16
 Warning (10030): Net "instruction_memory.data_a" at instruction_memory.sv(12) has no driver or initial value, using a default initial value '0' File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv Line: 12
 Warning (10030): Net "instruction_memory.waddr_a" at instruction_memory.sv(12) has no driver or initial value, using a default initial value '0' File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv Line: 12
 Warning (10030): Net "instruction_memory.we_a" at instruction_memory.sv(12) has no driver or initial value, using a default initial value '0' File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv Line: 12
-Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:control_unit_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 209
-Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux_1_rs2" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 217
-Info (12128): Elaborating entity "hazard_detection_unit" for hierarchy "hazard_detection_unit:hazard_detection_unit_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 228
-Info (12128): Elaborating entity "register_file" for hierarchy "register_file:register_file_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 244
-Info (12128): Elaborating entity "imm_gen" for hierarchy "imm_gen:imm_gen_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 250
-Info (12128): Elaborating entity "forwarding_unit" for hierarchy "forwarding_unit:forwarding_unit_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 333
-Info (12128): Elaborating entity "mux4" for hierarchy "mux4:mux4_A" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 343
-Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux_drs2_imm" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 361
-Info (12128): Elaborating entity "alu_control" for hierarchy "alu_control:alu_control_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 369
-Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 378
-Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:data_memory_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 424
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:control_unit_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 205
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux_1_rs2" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 213
+Info (12128): Elaborating entity "hazard_detection_unit" for hierarchy "hazard_detection_unit:hazard_detection_unit_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 224
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:register_file_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 240
+Info (12128): Elaborating entity "imm_gen" for hierarchy "imm_gen:imm_gen_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 246
+Info (12128): Elaborating entity "forwarding_unit" for hierarchy "forwarding_unit:forwarding_unit_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 326
+Info (12128): Elaborating entity "mux4" for hierarchy "mux4:mux4_A" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 336
+Info (12128): Elaborating entity "mux2" for hierarchy "mux2:mux_drs2_imm" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 354
+Info (12128): Elaborating entity "alu_control" for hierarchy "alu_control:alu_control_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 362
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 371
+Info (12128): Elaborating entity "data_memory" for hierarchy "data_memory:data_memory_inst" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv Line: 416
 Warning (10850): Verilog HDL warning at data_memory.sv(21): number of words (40) in memory file does not match the number of elements in the address range [0:1023] File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv Line: 21
 Warning (10855): Verilog HDL warning at data_memory.sv(20): initial value for variable memory should be constant File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv Line: 20
 Warning (10230): Verilog HDL assignment warning at data_memory.sv(42): truncated value with size 32 to match size of target (20) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv Line: 42
@@ -455,11 +454,11 @@ Info (10041): Inferred latch for "read_data[17]" at data_memory.sv(49) File: C:/
 Info (10041): Inferred latch for "read_data[18]" at data_memory.sv(49) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv Line: 49
 Info (10041): Inferred latch for "read_data[19]" at data_memory.sv(49) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv Line: 49
 Info (144001): Generated suppressed messages file C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/output_files/Pipeline.map.smsg
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4907 megabytes
-    Info: Processing ended: Sun Oct 20 05:57:01 2024
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4908 megabytes
+    Info: Processing ended: Sun Oct 20 06:34:56 2024
     Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Total CPU time (on all processors): 00:00:17
 
 
 +--------------------------------------------+

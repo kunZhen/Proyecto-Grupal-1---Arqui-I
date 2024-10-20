@@ -12,7 +12,7 @@ module datapath_unit #(
    output logic [3:0] ALUSel,
 	output logic MemToReg,
 	output logic [1:0] ForwardA, ForwardB,
-	output logic Flush, Stall, IF_ID_Write, PCWrite, Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
+	output logic Flush, Stall, IF_ID_Write, PCWrite, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
 	output logic CMP, BLT, BGE, JMP,
    output logic [REG_NUMBER-1:0] rs1, rs2, rd,
    output logic [DATA_WIDTH-1:0] data_rs1, data_rs2,
@@ -54,7 +54,6 @@ module datapath_unit #(
    logic [1:0] EX_funct2;
    logic [1:0] EX_ALUOp;
 	logic EX_MemToReg;
-	logic EX_Branch;
 	logic EX_ByteEnable;
 	logic EX_MemRead;
 	logic EX_MemWrite;
@@ -90,7 +89,6 @@ module datapath_unit #(
    logic [1:0] ID_EX_funct2;
    logic [1:0] ID_EX_ALUOp;
 	logic ID_EX_MemToReg;
-   logic ID_EX_Branch;
 	logic ID_EX_ByteEnable;
    logic ID_EX_MemRead;
    logic ID_EX_MemWrite;
@@ -101,7 +99,6 @@ module datapath_unit #(
    logic [DATA_WIDTH-1:0] EX_MEM_data_rs2;
    logic [REG_NUMBER-1:0] EX_MEM_rd;
 	logic EX_MEM_MemToReg;
-   logic EX_MEM_Branch;
 	logic EX_MEM_ByteEnable;
    logic EX_MEM_MemRead;
    logic EX_MEM_MemWrite;
@@ -194,7 +191,6 @@ module datapath_unit #(
       .opcode(opcode),
 		.funct2(funct2),
       .ALUOp(ALUOp),
-      .Branch(Branch),
 		.ByteEnable(ByteEnable),
       .MemRead(MemRead),
       .MemToReg(MemToReg),
@@ -272,7 +268,6 @@ module datapath_unit #(
 		if (!Stall) begin
 			ID_EX_ALUOp <= ALUOp;
 			ID_EX_MemToReg <= MemToReg;
-			ID_EX_Branch <= Branch;
 			ID_EX_ByteEnable <= ByteEnable;
 			ID_EX_MemRead <= MemRead;
 			ID_EX_MemWrite <= MemWrite;
@@ -281,7 +276,6 @@ module datapath_unit #(
 		end else begin
 			ID_EX_ALUOp <= 2'b00;
 			ID_EX_MemToReg <= 2'b00;
-			ID_EX_Branch <= 1'b0;
 			ID_EX_ByteEnable <= 1'b0;
 			ID_EX_MemRead <= 1'b0;
 			ID_EX_MemWrite <= 1'b0;
@@ -306,7 +300,6 @@ module datapath_unit #(
 		
       EX_ALUOp = ID_EX_ALUOp;
 		EX_MemToReg = ID_EX_MemToReg;
-		EX_Branch = ID_EX_Branch;
 		EX_ByteEnable = ID_EX_ByteEnable;
 		EX_MemRead = ID_EX_MemRead;
 		EX_MemWrite = ID_EX_MemWrite;
@@ -382,7 +375,6 @@ module datapath_unit #(
       EX_MEM_alu_result <= alu_result;
       EX_MEM_data_rs2 <= EX_data_rs2;
       EX_MEM_rd <= ID_EX_rd;
-      EX_MEM_Branch <= EX_Branch;
 		EX_MEM_ByteEnable <= EX_ByteEnable;
       EX_MEM_MemRead <= EX_MemRead;
       EX_MEM_MemWrite <= EX_MemWrite;

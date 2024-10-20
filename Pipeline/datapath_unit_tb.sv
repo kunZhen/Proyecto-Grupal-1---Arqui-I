@@ -13,7 +13,7 @@ module datapath_unit_tb;
    reg [3:0] ALUSel;
 	reg MemToReg;
 	reg [1:0] ForwardA, ForwardB;
-   reg Flush, Stall, IF_ID_Write, PCWrite, Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite;
+   reg Flush, Stall, IF_ID_Write, PCWrite, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite;
 	reg CMP, BLT, BGE, JMP;
 	reg clk = 1;
 	reg [ADDRESS_WIDTH-1:0] pc_result;
@@ -40,7 +40,6 @@ module datapath_unit_tb;
 		.Stall(Stall),
 		.IF_ID_Write(IF_ID_Write),
 		.PCWrite(PCWrite),
-      .Branch(Branch),
 		.MemToReg(MemToReg),
 		.ForwardA(ForwardA),
 		.ForwardB(ForwardB),
