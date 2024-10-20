@@ -2,60 +2,77 @@
 
 module RAM_pixels_tb;
 
-  // Parameters
-  reg clock;
-  reg [7:0] data;
-  reg [17:0] rdaddress;
-  reg [17:0] wraddress;
-  reg wren;
-  wire [7:0] q;
+    // Definir los registros y cables para las entradas y salidas
+    reg [18:0] address_a;
+    reg [18:0] address_b;
+    reg [3:0] byteena_a;
+    reg [3:0] byteena_b;
+    reg clock;
+    reg [31:0] data_a;
+    reg [31:0] data_b;
+    reg wren_a;
+    reg wren_b;
+    wire [31:0] q_a;
+    wire [31:0] q_b;
 
-  // Instantiate the RAM_pixels module
-  RAM_pixels UUT (
-    .clock(clock),
-    .data(data),
-    .rdaddress(rdaddress),
-    .wraddress(wraddress),
-    .wren(wren),
-    .q(q)
-  );
+    // Instanciar el módulo bajo prueba (DUT - Device Under Test)
+    RAM_pixels uut (
+        .address_a(address_a),
+        .address_b(address_b),
+        .byteena_a(byteena_a),
+        .byteena_b(byteena_b),
+        .clock(clock),
+        .data_a(data_a),
+        .data_b(data_b),
+        .wren_a(wren_a),
+        .wren_b(wren_b),
+        .q_a(q_a),
+        .q_b(q_b)
+    );
 
-  // Clock generation
-  always #5 clock = ~clock;
+    // Generar el reloj
+    always #5 clock = ~clock; // El periodo de reloj es de 10 ns (50 MHz)
 
-  initial begin
-    // Initialize signals
-    clock = 0;
-    wren = 0;
-    data = 8'h00;
-    wraddress = 18'h00000;
-    rdaddress = 18'h00000;
+    // Inicialización de señales
+    initial begin
+        // Inicializar señales
+        clock = 0;
+        address_a = 0;
+        address_b = 0;
+        byteena_a = 4'b1111;
+        byteena_b = 4'b1111;
+        data_a = 0;
+        data_b = 0;
+        wren_a = 0;
+        wren_b = 0;
 
-    // Test scenario
-    $display("Starting RAM test...");
+        // Esperar 20 ns
+        #20;
 
-    // Read cycle 1: Read data from address 0
-    #10;
-    rdaddress = 18'h00000;
-    #10;
-    $display("Read data from address 0: %h (Expected: AA)", q);
+        // Escribir datos en el puerto B en la dirección 1
+        address_b = 19'd1;
+        data_b = 32'hCAFEBABE;
+        wren_b = 1;            // Activar escritura
 
-    // Read cycle 2: Read data from address 1
-    #10;
-    rdaddress = 18'h00001;
-    #10;
-    $display("Read data from address 1: %h (Expected: BB)", q);
-	 
-	 #10;
-    rdaddress = 18'h00010;
-    #10;
-	 rdaddress = 18'h00011;
-    #50;
+        #10; // Esperar un ciclo de reloj
 
+        // Desactivar escritura
+        wren_b = 0;
 
-    // Test complete
-    $display("RAM test complete.");
-    $stop;
-  end
+        // Leer de la dirección 1
+        #10;
+        address_b = 19'd1;
+
+        #50; // Esperar otro ciclo de reloj
+
+        // Terminar la simulación
+        $stop;
+    end
+
+    // Monitorear las señales
+    initial begin
+        $monitor("Time: %0dns, address_a: %d, q_a: %h, address_b: %d, q_b: %h", 
+                 $time, address_a, q_a, address_b, q_b);
+    end
 
 endmodule
