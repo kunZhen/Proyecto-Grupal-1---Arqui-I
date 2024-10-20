@@ -45,6 +45,8 @@ module RAM_pixels (
 	clock,
 	data_a,
 	data_b,
+	rden_a,
+	rden_b,
 	wren_a,
 	wren_b,
 	q_a,
@@ -57,6 +59,8 @@ module RAM_pixels (
 	input	  clock;
 	input	[31:0]  data_a;
 	input	[31:0]  data_b;
+	input	  rden_a;
+	input	  rden_b;
 	input	  wren_a;
 	input	  wren_b;
 	output	[31:0]  q_a;
@@ -67,6 +71,8 @@ module RAM_pixels (
 	tri1	[3:0]  byteena_a;
 	tri1	[3:0]  byteena_b;
 	tri1	  clock;
+	tri1	  rden_a;
+	tri1	  rden_b;
 	tri0	  wren_a;
 	tri0	  wren_b;
 `ifndef ALTERA_RESERVED_QIS
@@ -86,6 +92,8 @@ module RAM_pixels (
 				.clock0 (clock),
 				.data_a (data_a),
 				.data_b (data_b),
+				.rden_a (rden_a),
+				.rden_b (rden_b),
 				.wren_a (wren_a),
 				.wren_b (wren_b),
 				.q_a (sub_wire0),
@@ -99,9 +107,7 @@ module RAM_pixels (
 				.clocken1 (1'b1),
 				.clocken2 (1'b1),
 				.clocken3 (1'b1),
-				.eccstatus (),
-				.rden_a (1'b1),
-				.rden_b (1'b1));
+				.eccstatus ());
 	defparam
 		altsyncram_component.address_reg_b = "CLOCK0",
 		altsyncram_component.byteena_reg_b = "CLOCK0",
@@ -111,7 +117,7 @@ module RAM_pixels (
 		altsyncram_component.clock_enable_output_a = "BYPASS",
 		altsyncram_component.clock_enable_output_b = "BYPASS",
 		altsyncram_component.indata_reg_b = "CLOCK0",
-		altsyncram_component.init_file = "../Memory/pixels.mif",
+		altsyncram_component.init_file = "pixels.mif",
 		altsyncram_component.intended_device_family = "Cyclone V",
 		altsyncram_component.lpm_type = "altsyncram",
 		altsyncram_component.numwords_a = 125200,
@@ -171,7 +177,7 @@ endmodule
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
 // Retrieval info: PRIVATE: MEMSIZE NUMERIC "4006400"
 // Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "../Memory/pixels.mif"
+// Retrieval info: PRIVATE: MIFfilename STRING "pixels.mif"
 // Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "3"
 // Retrieval info: PRIVATE: OUTDATA_ACLR_B NUMERIC "0"
 // Retrieval info: PRIVATE: OUTDATA_REG_B NUMERIC "1"
@@ -182,7 +188,7 @@ endmodule
 // Retrieval info: PRIVATE: REGdata NUMERIC "1"
 // Retrieval info: PRIVATE: REGq NUMERIC "1"
 // Retrieval info: PRIVATE: REGrdaddress NUMERIC "0"
-// Retrieval info: PRIVATE: REGrren NUMERIC "0"
+// Retrieval info: PRIVATE: REGrren NUMERIC "1"
 // Retrieval info: PRIVATE: REGwraddress NUMERIC "1"
 // Retrieval info: PRIVATE: REGwren NUMERIC "1"
 // Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
@@ -197,7 +203,7 @@ endmodule
 // Retrieval info: PRIVATE: WRADDR_REG_B NUMERIC "1"
 // Retrieval info: PRIVATE: WRCTRL_ACLR_B NUMERIC "0"
 // Retrieval info: PRIVATE: enable NUMERIC "0"
-// Retrieval info: PRIVATE: rden NUMERIC "0"
+// Retrieval info: PRIVATE: rden NUMERIC "1"
 // Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 // Retrieval info: CONSTANT: ADDRESS_REG_B STRING "CLOCK0"
 // Retrieval info: CONSTANT: BYTEENA_REG_B STRING "CLOCK0"
@@ -207,7 +213,7 @@ endmodule
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_B STRING "BYPASS"
 // Retrieval info: CONSTANT: INDATA_REG_B STRING "CLOCK0"
-// Retrieval info: CONSTANT: INIT_FILE STRING "../Memory/pixels.mif"
+// Retrieval info: CONSTANT: INIT_FILE STRING "pixels.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
 // Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "125200"
@@ -237,6 +243,8 @@ endmodule
 // Retrieval info: USED_PORT: data_b 0 0 32 0 INPUT NODEFVAL "data_b[31..0]"
 // Retrieval info: USED_PORT: q_a 0 0 32 0 OUTPUT NODEFVAL "q_a[31..0]"
 // Retrieval info: USED_PORT: q_b 0 0 32 0 OUTPUT NODEFVAL "q_b[31..0]"
+// Retrieval info: USED_PORT: rden_a 0 0 0 0 INPUT VCC "rden_a"
+// Retrieval info: USED_PORT: rden_b 0 0 0 0 INPUT VCC "rden_b"
 // Retrieval info: USED_PORT: wren_a 0 0 0 0 INPUT GND "wren_a"
 // Retrieval info: USED_PORT: wren_b 0 0 0 0 INPUT GND "wren_b"
 // Retrieval info: CONNECT: @address_a 0 0 17 0 address_a 0 0 17 0
@@ -246,6 +254,8 @@ endmodule
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 // Retrieval info: CONNECT: @data_a 0 0 32 0 data_a 0 0 32 0
 // Retrieval info: CONNECT: @data_b 0 0 32 0 data_b 0 0 32 0
+// Retrieval info: CONNECT: @rden_a 0 0 0 0 rden_a 0 0 0 0
+// Retrieval info: CONNECT: @rden_b 0 0 0 0 rden_b 0 0 0 0
 // Retrieval info: CONNECT: @wren_a 0 0 0 0 wren_a 0 0 0 0
 // Retrieval info: CONNECT: @wren_b 0 0 0 0 wren_b 0 0 0 0
 // Retrieval info: CONNECT: q_a 0 0 32 0 @q_a 0 0 32 0

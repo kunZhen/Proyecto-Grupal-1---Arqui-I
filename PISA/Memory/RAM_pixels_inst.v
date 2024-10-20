@@ -6,6 +6,8 @@ RAM_pixels	RAM_pixels_inst (
 	.clock ( clock_sig ),
 	.data_a ( data_a_sig ),
 	.data_b ( data_b_sig ),
+	.rden_a ( rden_a_sig ),
+	.rden_b ( rden_b_sig ),
 	.wren_a ( wren_a_sig ),
 	.wren_b ( wren_b_sig ),
 	.q_a ( q_a_sig ),
