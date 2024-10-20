@@ -12,7 +12,7 @@ def generate_and_save_image(image_width, image_height, file_name):
     image.save(file_name)
 
 # Example usage
-image_width = 64
-image_height = 64
+image_width = 100
+image_height = 100
 file_name = "Python/random_image.jpg"
 generate_and_save_image(image_width, image_height, file_name)

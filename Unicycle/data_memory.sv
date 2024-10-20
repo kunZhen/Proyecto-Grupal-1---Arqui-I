@@ -1,7 +1,7 @@
 module data_memory #(
     parameter DATA_WIDTH = 32,
     parameter ADDRESS_WIDTH = 20,
-    parameter MEM_SIZE = 8192
+    parameter MEM_SIZE = 16384
 ) (
     input logic clk,                           // Clock 
     input logic rst,                           // Reset

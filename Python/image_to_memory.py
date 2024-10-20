@@ -36,5 +36,5 @@ def image_to_memory(image_path, output_file):
                 # Write the value in 32-bit hexadecimal format
                 f.write(f"{block_value:08x}\n")
 
-image_to_memory('peppers_small.jpg', 'data.hex')
+image_to_memory('random_image.jpg', 'data.hex')
 print("Done")

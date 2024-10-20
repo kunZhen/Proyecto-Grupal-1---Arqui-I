@@ -137,7 +137,7 @@ def main():
     #image = np.array(image_created2)
 
     # Load grayscale image
-    image_path = "peppers_small.jpg"
+    image_path = "random_image.jpg"
     image = load_grayscale_image(image_path)
 
     # Draw dividing lines on the image

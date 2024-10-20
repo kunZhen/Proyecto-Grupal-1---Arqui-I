@@ -179,7 +179,7 @@ module datapath_unit #(
     data_memory #(
         .DATA_WIDTH(32),
         .ADDRESS_WIDTH(20),
-        .MEM_SIZE(8192)
+        .MEM_SIZE(16384)
     ) data_memory_inst(
         .clk(clk),
         .rst(rst),

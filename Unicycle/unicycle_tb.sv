@@ -10,14 +10,14 @@ module unicycle_tb;
 
     // Unicycle unit output signals
     reg zero;
-    reg [ADDRESS_WIDTH-1:0] pc_result;
-	 reg [DATA_WIDTH-1:0] instruction;
     reg [1:0] ALUOp;
     reg [2:0] ALUSel;
 	 reg [1:0] MemToReg;
     reg Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite;
 	 reg CMP, BLT, BGE, JMP;
     reg [REG_NUMBER-1:0] rs1, rs2, rd;
+	 reg [ADDRESS_WIDTH-1:0] pc_result;
+	 reg [DATA_WIDTH-1:0] instruction;
     reg [DATA_WIDTH-1:0] data_rs1, data_rs2, reg_write_data, immediate, alu_result, compared_data;
     reg [DATA_WIDTH-1:0] mem_read_data;
     reg [DATA_WIDTH-1:0] mem_write_data;
