@@ -1,70 +1,111 @@
-module data_memory #(
-    parameter DATA_WIDTH = 32,
-    parameter ADDRESS_WIDTH = 20,
-    parameter MEM_SIZE = 8192
-) (
-    input logic clk,                           // Clock 
-    input logic rst,                           // Reset
-    input logic [ADDRESS_WIDTH-1:0] address,   // Address
-    input logic [DATA_WIDTH-1:0] write_data,   // Data input for writing
-    input logic we,                     		  // Memory write enable
-	 input logic re,                     		  // Memory read enable
-	 input logic be, 						           // Byte enable for lbp/sbp
-    output logic [DATA_WIDTH-1:0] read_data    // Data output for reading
-);
-
-    // Array to store data
-    logic [DATA_WIDTH-1:0] memory [0:MEM_SIZE-1];
-
-    // Initialize memory with content from file
-    initial begin
-        $readmemh("data.hex", memory);
-    end
-
-    // Write operation
-    always_ff @(posedge clk or negedge rst) begin
-        if (~rst) begin
-            // Reset
-            //for (int i = 0; i < MEM_SIZE; i++) begin
-            //    memory[i] <= '0;
-            //end
-        end else if (we && (address < MEM_SIZE)) begin
-				if (be) begin
-					// Write byte (sbp)
-					case (address[1:0])
-						2'b00: memory[address[19:2]][7:0] <= write_data[7:0];
-						2'b01: memory[address[19:2]][15:8] <= write_data[7:0];
-						2'b10: memory[address[19:2]][23:16] <= write_data[7:0];
-						2'b11: memory[address[19:2]][31:24] <= write_data[7:0];
-               endcase
-				end else begin
-					// Write word (swp)
-					memory[address[19:2]][19:0] <= write_data;
-				end
-        end
-    end
+module draw_board #(parameter HRES = 640, VRES = 480) (
+    input logic clk,
+    input logic rst,
+    input logic [9:0] x,
+    input logic [9:0] y,
     
-	 // Read operation
-    always @(*) begin
-        if (re && (address < MEM_SIZE)) begin
-			   if (be) begin
-					// Read byte (lbp)
-					case (address[1:0])
-						2'b00: read_data <= {24'b0, (memory[address[19:2]][7:0] === 8'hxx) ? 8'h00 : memory[address[19:2]][7:0]};
-						2'b01: read_data <= {24'b0, (memory[address[19:2]][15:8] === 8'hxx) ? 8'h00 : memory[address[19:2]][15:8]};
-						2'b10: read_data <= {24'b0, (memory[address[19:2]][23:16] === 8'hxx) ? 8'h00 : memory[address[19:2]][23:16]};
-						2'b11: read_data <= {24'b0, (memory[address[19:2]][31:24] === 8'hxx) ? 8'h00 : memory[address[19:2]][31:24]};
-               endcase
-				end else begin
-					// Read word (lwp)
-					if (memory[address[19:2]] === 32'hx) begin
-						read_data <= 20'h0;
-					end
-					else begin
-						read_data <= memory[address[19:2]][19:0];
-					end
-				end
-        end
+    input logic [31:0] q_b,
+    output logic [16:0] address_b,
+    output logic [3:0] byteena_b,
+    output logic rden_b,
+    
+    output logic [7:0] red,
+    output logic [7:0] green,
+    output logic [7:0] blue
+);
+    // States
+    typedef enum {
+        INIT_WIDTH,
+        INIT_HEIGHT,
+        DISPLAY_IMAGE
+    } state_t;
+    
+    state_t state;
+    
+    // Registers for dimensions
+    logic [15:0] img_width;
+    logic [15:0] img_height;
+    
+    // Division line positions
+    logic [15:0] div_width_1, div_width_2, div_width_3;
+    logic [15:0] div_height_1, div_height_2, div_height_3;
+    parameter LINE_WIDTH = 2;
+    
+    parameter BASE_ADDRESS = 16'h4;
+    parameter [7:0] LINE_COLOR = 8'hFF;
+
+    // Pipeline registers
+    logic [9:0] x_delay, y_delay;
+    logic in_image_area;
+    logic [33:0] pixel_address;
+    
+    // Read enable control
+    assign rden_b = (state == DISPLAY_IMAGE);
+    
+    // Safe address calculation
+    assign pixel_address = BASE_ADDRESS + (y * img_width + x);
+    
+    always_ff @(posedge clk) begin
+        x_delay <= x;
+        y_delay <= y;
+        in_image_area <= (x < img_width && y < img_height);
     end
 
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            state <= INIT_WIDTH;
+            address_b <= 17'h0;
+            img_width <= 0;
+            img_height <= 0;
+            byteena_b <= 4'b1111;
+            {red, green, blue} <= 24'h0;
+        end else begin
+            case (state)
+                INIT_WIDTH: begin
+                    img_width <= q_b[15:0];
+                    address_b <= 17'h1;
+                    byteena_b <= 4'b1111;
+                    div_width_1 <= q_b[15:0] / 4;
+                    div_width_2 <= (q_b[15:0] * 2) / 4;
+                    div_width_3 <= (q_b[15:0] * 3) / 4;
+                    state <= INIT_HEIGHT;
+                end
+                
+                INIT_HEIGHT: begin
+                    img_height <= q_b[15:0];
+                    div_height_1 <= q_b[15:0] / 4;
+                    div_height_2 <= (q_b[15:0] * 2) / 4;
+                    div_height_3 <= (q_b[15:0] * 3) / 4;
+                    state <= DISPLAY_IMAGE;
+                end
+                
+                DISPLAY_IMAGE: begin
+                    // Use delayed coordinates for timing alignment
+                    if (in_image_area) begin
+                        address_b <= pixel_address[16:0];
+                        
+                        if ((x_delay >= div_width_1 && x_delay < div_width_1 + LINE_WIDTH) ||
+                            (x_delay >= div_width_2 && x_delay < div_width_2 + LINE_WIDTH) ||
+                            (x_delay >= div_width_3 && x_delay < div_width_3 + LINE_WIDTH) ||
+                            (y_delay >= div_height_1 && y_delay < div_height_1 + LINE_WIDTH) ||
+                            (y_delay >= div_height_2 && y_delay < div_height_2 + LINE_WIDTH) ||
+                            (y_delay >= div_height_3 && y_delay < div_height_3 + LINE_WIDTH)) begin
+                            red   <= LINE_COLOR;
+                            green <= 8'h0;
+                            blue  <= 8'h0;
+                        end else begin
+                            red   <= q_b[7:0];
+                            green <= q_b[7:0];
+                            blue  <= q_b[7:0];
+                        end
+                    end else begin
+                        red   <= 8'hFF;
+                        green <= 8'hFF;
+                        blue  <= 8'hFF;
+                        address_b <= 17'h0;
+                    end
+                end
+            endcase
+        end
+    end
 endmodule

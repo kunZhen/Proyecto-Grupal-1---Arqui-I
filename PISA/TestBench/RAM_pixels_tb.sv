@@ -1,78 +1,82 @@
-`timescale 1ns / 1ps
+`timescale 1ns/1ps
 
 module RAM_pixels_tb;
 
-    // Definir los registros y cables para las entradas y salidas
-    reg [18:0] address_a;
-    reg [18:0] address_b;
-    reg [3:0] byteena_a;
-    reg [3:0] byteena_b;
-    reg clock;
-    reg [31:0] data_a;
-    reg [31:0] data_b;
-    reg wren_a;
-    reg wren_b;
-    wire [31:0] q_a;
-    wire [31:0] q_b;
+  // Testbench signals
+  reg [16:0] address_a, address_b;
+  reg [3:0] byteena_a, byteena_b;
+  reg clock;
+  reg [31:0] data_a, data_b;
+  reg rden_a, rden_b;
+  reg wren_a, wren_b;
+  wire [31:0] q_a, q_b;
 
-    // Instanciar el módulo bajo prueba (DUT - Device Under Test)
-    RAM_pixels uut (
-        .address_a(address_a),
-        .address_b(address_b),
-        .byteena_a(byteena_a),
-        .byteena_b(byteena_b),
-        .clock(clock),
-        .data_a(data_a),
-        .data_b(data_b),
-        .wren_a(wren_a),
-        .wren_b(wren_b),
-        .q_a(q_a),
-        .q_b(q_b)
-    );
+  // Instantiate the RAM_pixels module
+  RAM_pixels uut (
+    .address_a(address_a),
+    .address_b(address_b),
+    .byteena_a(byteena_a),
+    .byteena_b(byteena_b),
+    .clock(clock),
+    .data_a(data_a),
+    .data_b(data_b),
+    .rden_a(rden_a),
+    .rden_b(rden_b),
+    .wren_a(wren_a),
+    .wren_b(wren_b),
+    .q_a(q_a),
+    .q_b(q_b)
+  );
 
-    // Generar el reloj
-    always #5 clock = ~clock; // El periodo de reloj es de 10 ns (50 MHz)
+  // Clock generation
+  always #5 clock = ~clock;  // Toggle clock every 5ns (100 MHz clock)
 
-    // Inicialización de señales
-    initial begin
-        // Inicializar señales
-        clock = 0;
-        address_a = 0;
-        address_b = 0;
-        byteena_a = 4'b1111;
-        byteena_b = 4'b1111;
-        data_a = 0;
-        data_b = 0;
-        wren_a = 0;
-        wren_b = 0;
+  // Testbench sequence
+  initial begin
+    // Initialize inputs
+    address_a = 0;
+    address_b = 0;
+    byteena_a = 4'b1111;  // Enable all bytes for both ports
+    byteena_b = 4'b1111;
+    clock = 0;
+    data_a = 0;
+    data_b = 0;
+    rden_a = 0;
+    rden_b = 0;
+    wren_a = 0;
+    wren_b = 0;
 
-        // Esperar 20 ns
-        #20;
+    // Wait for the reset (if any) or initialization phase
+    #10;
 
-        // Escribir datos en el puerto B en la dirección 1
-        address_b = 19'd1;
-        data_b = 32'hCAFEBABE;
-        wren_b = 1;            // Activar escritura
+    // Read from address 1 on port B
+    address_b = 17'd0;
+    rden_b = 1;
+    #10;  // Wait for one clock cycle
+    $display("Read from address 1 on port B: %h", q_b);
+	 
+	 address_b = 17'd1;
+	 #10;
+	 
+	 address_b = 17'd3;
+	 #10;
+	 
+	 
+	 address_b = 17'd4;
+	 #20;
+	 
+	 //rden_b = 0;
+	 address_b = 17'd4;
+	 #10;
+	 
+	 
+	 address_b = 17'h35f;
+	 #10;
+	 
 
-        #10; // Esperar un ciclo de reloj
-
-        // Desactivar escritura
-        wren_b = 0;
-
-        // Leer de la dirección 1
-        #10;
-        address_b = 19'd1;
-
-        #50; // Esperar otro ciclo de reloj
-
-        // Terminar la simulación
-        $stop;
-    end
-
-    // Monitorear las señales
-    initial begin
-        $monitor("Time: %0dns, address_a: %d, q_a: %h, address_b: %d, q_b: %h", 
-                 $time, address_a, q_a, address_b, q_b);
-    end
+    // End the simulation
+    #20;
+    $stop;
+  end
 
 endmodule

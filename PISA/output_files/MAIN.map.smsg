@@ -1,1 +1,2 @@
-Warning (10268): Verilog HDL information at draw_board.sv(44): always construct contains both blocking and non-blocking assignments File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 44
+Info (10281): Verilog HDL Declaration information at draw_board.sv(4): object "IMG_WIDTH" differs only in case from object "img_width" in the same scope File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 4
+Info (10281): Verilog HDL Declaration information at draw_board.sv(5): object "IMG_HEIGHT" differs only in case from object "img_height" in the same scope File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 5

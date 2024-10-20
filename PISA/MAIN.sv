@@ -13,6 +13,8 @@ module MAIN (
 	
 	input logic wren_a,
 	input logic wren_b,
+	input	logic rden_a,
+	input	logic rden_b,
 	input logic [31:0] data_a,       
 	input logic [31:0] data_b, 
 	output logic [31:0] q_a, 
@@ -45,6 +47,8 @@ module MAIN (
       .data_b(data_b),
       .wren_a(wren_a),
       .wren_b(wren_b),
+		.rden_a(rden_a),
+		.rden_b(rden_b),
       .q_a(q_a),
       .q_b(q_b)
 	);

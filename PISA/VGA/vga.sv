@@ -8,6 +8,7 @@ module vga #(
 	 input logic [31:0] q_b, 
 	 output logic [16:0] address_b,
 	 output logic [3:0] byteena_b,
+	 output logic rden_b,
 	 
     output logic vgaclk,
     output logic hsync,
@@ -53,6 +54,7 @@ module vga #(
 		 .address_b(address_b),
 		 .q_b(q_b),
 		 .byteena_b(byteena_b),
+		 .rden_b(rden_b),
 		 
 		 .red(red),
 		 .green(green),

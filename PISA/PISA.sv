@@ -13,6 +13,8 @@ module PISA(
 	
 	input logic wren_a,
 	input logic wren_b,
+	input	logic rden_a,
+	output logic rden_b,
 	input logic [31:0] data_a,       
 	input logic [31:0] data_b, 
 	output logic [31:0] q_a, 
@@ -30,6 +32,7 @@ module PISA(
 		 .address_b(address_b),
 		 .q_b(q_b),
 		 .byteena_b(byteena_b),
+		 .rden_b(rden_b),
 		 
 		 .vgaclk(vgaclk),          // Señal de reloj para VGA
 		 .hsync(hsync),            // Señal de sincronización horizontal
@@ -51,6 +54,8 @@ module PISA(
         .data_b(data_b),
         .wren_a(wren_a),
         .wren_b(wren_b),
+		  .rden_a(rden_a),
+		  .rden_b(rden_b),
         .q_a(q_a),
         .q_b(q_b)
     );

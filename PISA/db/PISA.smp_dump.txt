@@ -1,0 +1,9 @@
+
+State Machine - |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst|state
+Name state.DISPLAY_IMAGE state.CALC_DIVIDERS state.WAIT_HEIGHT state.INIT_HEIGHT state.WAIT_WIDTH state.INIT_WIDTH 
+state.INIT_WIDTH 0 0 0 0 0 0 
+state.WAIT_WIDTH 0 0 0 0 1 1 
+state.INIT_HEIGHT 0 0 0 1 0 1 
+state.WAIT_HEIGHT 0 0 1 0 0 1 
+state.CALC_DIVIDERS 0 1 0 0 0 1 
+state.DISPLAY_IMAGE 1 0 0 0 0 1 

@@ -436,19 +436,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "byteena_b[0]",
+					"name" : "address_b[15]",
 					"strict" : false
 				},
 				{
-					"name" : "byteena_b[1]",
-					"strict" : false
-				},
-				{
-					"name" : "byteena_b[2]",
-					"strict" : false
-				},
-				{
-					"name" : "byteena_b[3]",
+					"name" : "address_b[16]",
 					"strict" : false
 				},
 				{
@@ -457,6 +449,10 @@
 				},
 				{
 					"name" : "wren_a",
+					"strict" : false
+				},
+				{
+					"name" : "rden_a",
 					"strict" : false
 				},
 				{
