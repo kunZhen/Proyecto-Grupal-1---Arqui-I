@@ -91,10 +91,6 @@ set_location_assignment PIN_AA30 -to switch
 set_location_assignment PIN_AJ22 -to sync_b
 set_location_assignment PIN_AK21 -to vgaclk
 set_location_assignment PIN_AK18 -to vsync
-set_global_assignment -name MIF_FILE data.mif
-set_global_assignment -name QIP_FILE RAM_data.qip
-set_global_assignment -name SYSTEMVERILOG_FILE RAM/ram_test.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RAM/counter.sv
 set_global_assignment -name SYSTEMVERILOG_FILE TestBench/RAM_data_tb.sv
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
@@ -103,7 +99,6 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH RAM_pixels_tb -
 set_global_assignment -name EDA_TEST_BENCH_NAME RAM_data_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id RAM_data_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RAM_data_tb -section_id RAM_data_tb
-set_global_assignment -name QIP_FILE RAM_pixels.qip
 set_global_assignment -name SYSTEMVERILOG_FILE TestBench/RAM_pixels_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_FILE TestBench/RAM_data_tb.sv -section_id RAM_data_tb
 set_global_assignment -name EDA_TEST_BENCH_NAME RAM_pixels_tb -section_id eda_simulation
@@ -113,4 +108,5 @@ set_global_assignment -name EDA_TEST_BENCH_FILE TestBench/RAM_pixels_tb.sv -sect
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name QIP_FILE Memory/RAM_pixels.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
