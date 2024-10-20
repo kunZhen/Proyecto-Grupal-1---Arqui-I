@@ -137,8 +137,10 @@ def main():
     #image = np.array(image_created2)
 
     # Load grayscale image
-    image_path = "peppers_small.jpg"
+    # Load grayscale image
+    image_path = "C:\\Users\\Usuario\\Documents\\ArquidecomputadoresI\\Proyecto-Grupal-1---Arqui-I\\Python\\peppers_small.jpg"
     image = load_grayscale_image(image_path)
+
 
     # Draw dividing lines on the image
     draw_grid(image, 4, 4)

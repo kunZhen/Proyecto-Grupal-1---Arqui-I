@@ -76,4 +76,6 @@ I4 = [[10, 20, 30, 40],
       [90, 100, 110, 120],
       [130, 140, 150, 160]]
 
-bilinear_interpolation(I3_2)
+
+
+bilinear_interpolation(I2)
