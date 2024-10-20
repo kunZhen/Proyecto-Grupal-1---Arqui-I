@@ -6,8 +6,15 @@
 _start:
 	nop
     # Load original image dimensions     
-    lwp s0, 0(zero)         	# s0 = width
-    lwp s1, 4(zero)        		# s1 = height
+	lbp t0, 0(zero)
+    lbp t1, 1(zero)  
+    sllip t1, t1, 8          
+    orp s0, t0, t1           	# s0 = width
+
+    lbp t2, 4(zero) 
+    lbp t3, 5(zero) 
+    sllip t3, t3, 8           
+    orp s1, t2, t3          		# s1 = height
 	
 	# Store base address of original image
 	addip s2, zero, 16			# s2 = original_image
@@ -47,8 +54,8 @@ _start:
 	addip t2, zero, 15
 	orp s9, s9, t2				# s9 = 0x3F
 	
-	# Load selected_quadrant
-    lwp t1, 8(zero)				# t1 = selected_quadrant
+	# Load selected_quadrant			
+	lbp t1, 8(zero)				# t1 = selected_quadrant
 	
 	# To calculate the row, shift right is used (division by 4)
     srlip t3, t1, 2       		# t3 = t1 / 4
