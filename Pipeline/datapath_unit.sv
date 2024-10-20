@@ -9,8 +9,8 @@ module datapath_unit #(
    output logic zero,
    output logic [ADDRESS_WIDTH-1:0] pc_result,
    output logic [1:0] ALUOp,
-   output logic [2:0] ALUSel,
-	output logic [1:0] MemToReg,
+   output logic [3:0] ALUSel,
+	output logic MemToReg,
 	output logic [1:0] ForwardA, ForwardB,
 	output logic Flush, Stall, IF_ID_Write, PCWrite, Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
 	output logic CMP, BLT, BGE, JMP,
@@ -20,7 +20,6 @@ module datapath_unit #(
    output logic [DATA_WIDTH-1:0] reg_write_data,
    output logic [DATA_WIDTH-1:0] alu_result,
    output logic [DATA_WIDTH-1:0] instruction,
-	output logic [DATA_WIDTH-1:0] compared_data,
    output logic [DATA_WIDTH-1:0] mem_read_data,
    output logic [DATA_WIDTH-1:0] mem_write_data
 );
@@ -29,7 +28,6 @@ module datapath_unit #(
    logic [ADDRESS_WIDTH-1:0] pc_jump;
 	
 	logic lt, ge;
-   logic cmp, blt, bge, jmp;
 
    logic [2:0] opcode;
 	logic [1:0] funct2;
@@ -49,14 +47,13 @@ module datapath_unit #(
    logic [DATA_WIDTH-1:0] EX_data_rs2;
    logic [DATA_WIDTH-1:0] EX_immediate;  
 	logic [DATA_WIDTH-1:0] EX_alu_result;
-	logic [DATA_WIDTH-1:0] EX_compared_data;
    logic [REG_NUMBER-1:0] EX_rd;
 	logic [REG_NUMBER-1:0] EX_rs1;
 	logic [REG_NUMBER-1:0] EX_rs2;
    logic [2:0] EX_opcode;
    logic [1:0] EX_funct2;
    logic [1:0] EX_ALUOp;
-	logic [1:0] EX_MemToReg;
+	logic EX_MemToReg;
 	logic EX_Branch;
 	logic EX_ByteEnable;
 	logic EX_MemRead;
@@ -66,9 +63,8 @@ module datapath_unit #(
 	
    logic [DATA_WIDTH-1:0] MEM_alu_result;
    logic [DATA_WIDTH-1:0] MEM_write_data;
-	logic [DATA_WIDTH-1:0] MEM_compared_data;
    logic [REG_NUMBER-1:0] MEM_rd;
-	logic [1:0] MEM_MemToReg;
+	logic MEM_MemToReg;
 	logic MEM_ByteEnable;
 	logic MEM_MemRead;
    logic MEM_MemWrite;
@@ -76,9 +72,8 @@ module datapath_unit #(
 
    logic [DATA_WIDTH-1:0] WB_alu_result;
    logic [DATA_WIDTH-1:0] WB_mem_read_data;
-	logic [DATA_WIDTH-1:0] WB_compared_data;
 	logic [REG_NUMBER-1:0] WB_rd;
-	logic [1:0] WB_MemToReg;
+	logic WB_MemToReg;
 	logic WB_RegWrite;
 	
 	// Define stage registers
@@ -88,14 +83,13 @@ module datapath_unit #(
    logic [DATA_WIDTH-1:0] ID_EX_data_rs1;
    logic [DATA_WIDTH-1:0] ID_EX_data_rs2;
    logic [DATA_WIDTH-1:0] ID_EX_immediate;
-	logic [DATA_WIDTH-1:0] ID_EX_compared_data;
 	logic [REG_NUMBER-1:0] ID_EX_rd;
    logic [REG_NUMBER-1:0] ID_EX_rs1;
    logic [REG_NUMBER-1:0] ID_EX_rs2;
    logic [2:0] ID_EX_opcode;
    logic [1:0] ID_EX_funct2;
    logic [1:0] ID_EX_ALUOp;
-	logic [1:0] ID_EX_MemToReg;
+	logic ID_EX_MemToReg;
    logic ID_EX_Branch;
 	logic ID_EX_ByteEnable;
    logic ID_EX_MemRead;
@@ -105,9 +99,8 @@ module datapath_unit #(
 
    logic [DATA_WIDTH-1:0] EX_MEM_alu_result;
    logic [DATA_WIDTH-1:0] EX_MEM_data_rs2;
-	logic [DATA_WIDTH-1:0] EX_MEM_compared_data;
    logic [REG_NUMBER-1:0] EX_MEM_rd;
-	logic [1:0] EX_MEM_MemToReg;
+	logic EX_MEM_MemToReg;
    logic EX_MEM_Branch;
 	logic EX_MEM_ByteEnable;
    logic EX_MEM_MemRead;
@@ -116,7 +109,6 @@ module datapath_unit #(
    
    logic [DATA_WIDTH-1:0] MEM_WB_alu_result;
    logic [DATA_WIDTH-1:0] MEM_WB_mem_read_data;
-	logic [DATA_WIDTH-1:0] MEM_WB_compared_data;
    logic [REG_NUMBER-1:0] MEM_WB_rd;
    logic MEM_WB_RegWrite;
    logic MEM_WB_MemToReg;
@@ -210,10 +202,10 @@ module datapath_unit #(
 		.RegSrc(RegSrc),
       .ALUSrc(ALUSrc),
       .RegWrite(RegWrite),
-		.CMP(cmp),
-		.BLT(blt),
-		.BGE(bge),
-		.JMP(jmp)
+		.CMP(CMP),
+		.BLT(BLT),
+		.BGE(BGE),
+		.JMP(JMP)
    );
 	 
 	// Instantiate the mux2 module to determine which value between 1 and rs2 passes to rs2
@@ -257,19 +249,11 @@ module datapath_unit #(
       .immediate(immediate)
    );
 	 
-	// Instantiate the comparator module
-   compare #(DATA_WIDTH) compare_inst (
-		.cmp(cmp),
-      .a(data_rs1),
-      .b(data_rs2),
-      .result(compared_data)
-   );
-	 
 	assign lt = data_rs2[0];
 	assign ge = data_rs2[1];
 
    assign pc_jump = ID_pc + immediate;
-   assign sel0 = (blt && lt) || (bge && ge) || jmp;
+   assign sel0 = (BLT && lt) || (BGE && ge) || JMP;
 	assign Flush = (sel0 === 1'bx) ? 1'b0: sel0;
 	
 	// Write ID/EX
@@ -277,7 +261,6 @@ module datapath_unit #(
       ID_EX_data_rs1 <= data_rs1;
       ID_EX_data_rs2 <= data_rs2;
       ID_EX_immediate <= immediate;
-		ID_EX_compared_data <= compared_data;
 		
 		ID_EX_rd <= rd;
 		ID_EX_rs1 <= rs1;
@@ -317,7 +300,6 @@ module datapath_unit #(
       EX_data_rs2 = ID_EX_data_rs2;
       EX_immediate = ID_EX_immediate;
 		EX_alu_result = EX_MEM_alu_result;
-		EX_compared_data = ID_EX_compared_data;
 		
       EX_opcode = ID_EX_opcode;
 		EX_funct2 = ID_EX_funct2;
@@ -399,7 +381,6 @@ module datapath_unit #(
    always_ff @(posedge clk) begin
       EX_MEM_alu_result <= alu_result;
       EX_MEM_data_rs2 <= EX_data_rs2;
-		EX_MEM_compared_data <= EX_compared_data;
       EX_MEM_rd <= ID_EX_rd;
       EX_MEM_Branch <= EX_Branch;
 		EX_MEM_ByteEnable <= EX_ByteEnable;
@@ -417,7 +398,6 @@ module datapath_unit #(
    always_ff @(negedge clk) begin
       MEM_alu_result = EX_MEM_alu_result;
       MEM_write_data = EX_MEM_data_rs2;
-		MEM_compared_data = EX_MEM_compared_data;
       MEM_ByteEnable = EX_MEM_ByteEnable;
       MEM_MemRead = EX_MEM_MemRead;
 		MEM_MemWrite = EX_MEM_MemWrite;
@@ -447,7 +427,6 @@ module datapath_unit #(
    always_ff @(posedge clk) begin
       MEM_WB_alu_result <= MEM_alu_result;
       MEM_WB_mem_read_data <= mem_read_data;
-		MEM_WB_compared_data <= MEM_compared_data;
       //MEM_WB_rd <= MEM_rd;
 		MEM_WB_rd <= EX_MEM_rd;
       //MEM_WB_RegWrite <= MEM_RegWrite;
@@ -464,17 +443,14 @@ module datapath_unit #(
         WB_MemToReg = MEM_WB_MemToReg; // From control_unit
         WB_alu_result = MEM_WB_alu_result;
         WB_mem_read_data = MEM_WB_mem_read_data;
-		  WB_compared_data = MEM_WB_compared_data;
    end
 	
-   // Instantiate the mux4 module to determine which value between
-	// alu_result, mem_read_data or compared_data passes to register_file
-   mux4 #(DATA_WIDTH) mux_alu_mem (
+   // Instantiate the mux2 module to determine which value between
+	// alu_result and mem_read_data passes to register_file
+   mux2 #(DATA_WIDTH) mux_alu_mem (
       .sel(WB_MemToReg), // From control_unit
       .a(WB_alu_result), // From alu 
       .b(WB_mem_read_data), // From data_memory
-		.c(WB_compared_data), // From compare
-		.d(20'h0),
       .y(reg_write_data)
    );
 

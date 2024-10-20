@@ -7,7 +7,6 @@ vmap work rtl_work
 
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv}
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu_control.sv}
-vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/compare.sv}
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/control_unit.sv}
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/imm_gen.sv}
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/mux2.sv}

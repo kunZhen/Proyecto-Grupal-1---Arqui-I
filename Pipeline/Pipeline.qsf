@@ -47,7 +47,6 @@ set_global_assignment -name BOARD "DE1-SoC Board"
 set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alu_tb.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alu_control.sv
-set_global_assignment -name SYSTEMVERILOG_FILE compare.sv
 set_global_assignment -name SYSTEMVERILOG_FILE control_unit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE data_memory.sv
 set_global_assignment -name SYSTEMVERILOG_FILE data_memory_tb.sv

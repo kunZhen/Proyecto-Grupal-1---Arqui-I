@@ -1,6 +1,6 @@
 nop
-addip t0, zero, 5      # t0 = 5
-addip t1, zero, 10     # t1 = a
+addip t0, zero, 10    # t0 = a
+addip t1, zero, 5     # t1 = 5
 cmpp t0, t1
 nop
 nop
@@ -16,6 +16,9 @@ bgep End
 Major:
 lwp t0, 0(zero)        # t0 = c
 lwp t1, 4(zero)        # t1 = c
+nop
+nop
+nop
 End:
 subp t4, t1, t0        # t4 = 5/0
 syscall

@@ -10,8 +10,8 @@ module datapath_unit_tb;
    // Datapath unit output signals
    reg zero;
    reg [1:0] ALUOp;
-   reg [2:0] ALUSel;
-	reg [1:0] MemToReg;
+   reg [3:0] ALUSel;
+	reg MemToReg;
 	reg [1:0] ForwardA, ForwardB;
    reg Flush, Stall, IF_ID_Write, PCWrite, Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite;
 	reg CMP, BLT, BGE, JMP;
@@ -19,7 +19,7 @@ module datapath_unit_tb;
 	reg [ADDRESS_WIDTH-1:0] pc_result;
 	reg [DATA_WIDTH-1:0] instruction;
    reg [REG_NUMBER-1:0] rs1, rs2, rd;
-   reg [DATA_WIDTH-1:0] data_rs1, data_rs2, reg_write_data, immediate, alu_result, compared_data;
+   reg [DATA_WIDTH-1:0] data_rs1, data_rs2, reg_write_data, immediate, alu_result;
    reg [DATA_WIDTH-1:0] mem_read_data;
    reg [DATA_WIDTH-1:0] mem_write_data;
 
@@ -62,7 +62,6 @@ module datapath_unit_tb;
       .immediate(immediate),
       .reg_write_data(reg_write_data),
       .alu_result(alu_result),
-		.compared_data(compared_data),
       .instruction(instruction),
       .mem_read_data(mem_read_data),
       .mem_write_data(mem_write_data)

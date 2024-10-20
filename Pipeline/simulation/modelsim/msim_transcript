@@ -12,149 +12,139 @@
 # 
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:08 on Oct 20,2024
+# Start time: 03:24:21 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv 
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
-# End time: 00:54:08 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:21 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu_control.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:08 on Oct 20,2024
+# Start time: 03:24:21 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu_control.sv 
 # -- Compiling module alu_control
 # 
 # Top level modules:
 # 	alu_control
-# End time: 00:54:08 on Oct 20,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/compare.sv}
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:08 on Oct 20,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/compare.sv 
-# -- Compiling module compare
-# 
-# Top level modules:
-# 	compare
-# End time: 00:54:08 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:22 on Oct 20,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/control_unit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:08 on Oct 20,2024
+# Start time: 03:24:22 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/control_unit.sv 
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
-# End time: 00:54:08 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:22 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/imm_gen.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:08 on Oct 20,2024
+# Start time: 03:24:22 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/imm_gen.sv 
 # -- Compiling module imm_gen
 # 
 # Top level modules:
 # 	imm_gen
-# End time: 00:54:08 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:22 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/mux2.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:08 on Oct 20,2024
+# Start time: 03:24:22 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/mux2.sv 
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
-# End time: 00:54:08 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:22 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/mux4.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:08 on Oct 20,2024
+# Start time: 03:24:22 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/mux4.sv 
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
-# End time: 00:54:08 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:22 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/register_file.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:08 on Oct 20,2024
+# Start time: 03:24:22 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/register_file.sv 
 # -- Compiling module register_file
 # 
 # Top level modules:
 # 	register_file
-# End time: 00:54:09 on Oct 20,2024, Elapsed time: 0:00:01
+# End time: 03:24:22 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:09 on Oct 20,2024
+# Start time: 03:24:22 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv 
 # -- Compiling module datapath_unit
 # 
 # Top level modules:
 # 	datapath_unit
-# End time: 00:54:09 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:22 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/forwarding_unit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:09 on Oct 20,2024
+# Start time: 03:24:22 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/forwarding_unit.sv 
 # -- Compiling module forwarding_unit
 # 
 # Top level modules:
 # 	forwarding_unit
-# End time: 00:54:09 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:22 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/hazard_detection_unit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:09 on Oct 20,2024
+# Start time: 03:24:22 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/hazard_detection_unit.sv 
 # -- Compiling module hazard_detection_unit
 # 
 # Top level modules:
 # 	hazard_detection_unit
-# End time: 00:54:09 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:23 on Oct 20,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:09 on Oct 20,2024
+# Start time: 03:24:23 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv 
 # -- Compiling module data_memory
 # 
 # Top level modules:
 # 	data_memory
-# End time: 00:54:09 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:23 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:09 on Oct 20,2024
+# Start time: 03:24:23 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv 
 # -- Compiling module instruction_memory
 # 
 # Top level modules:
 # 	instruction_memory
-# End time: 00:54:09 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:23 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 00:54:09 on Oct 20,2024
+# Start time: 03:24:23 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv 
 # -- Compiling module datapath_unit_tb
 # 
 # Top level modules:
 # 	datapath_unit_tb
-# End time: 00:54:09 on Oct 20,2024, Elapsed time: 0:00:00
+# End time: 03:24:23 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  datapath_unit_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" datapath_unit_tb 
-# Start time: 00:54:09 on Oct 20,2024
+# Start time: 03:24:23 on Oct 20,2024
 # Loading sv_std.std
 # Loading work.datapath_unit_tb
 # Loading work.datapath_unit
@@ -164,7 +154,6 @@
 # Loading work.hazard_detection_unit
 # Loading work.register_file
 # Loading work.imm_gen
-# Loading work.compare
 # Loading work.forwarding_unit
 # Loading work.mux4
 # Loading work.alu_control
@@ -178,9 +167,9 @@
 # .main_pane.objects.interior.cs.body.tree
 # run -all
 # Testbench completed successfully
-# ** Note: $finish    : C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv(78)
+# ** Note: $finish    : C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv(77)
 #    Time: 1 ns  Iteration: 0  Instance: /datapath_unit_tb
 # 1
-# Break in Module datapath_unit_tb at C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv line 78
-# End time: 01:27:24 on Oct 20,2024, Elapsed time: 0:33:15
+# Break in Module datapath_unit_tb at C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv line 77
+# End time: 03:25:24 on Oct 20,2024, Elapsed time: 0:01:01
 # Errors: 0, Warnings: 0

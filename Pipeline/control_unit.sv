@@ -2,7 +2,7 @@ module control_unit (
    input logic [2:0] opcode,
    input logic [1:0] funct2,
    output logic [1:0] ALUOp,
-	output logic [1:0] MemToReg,
+	output logic MemToReg,
 	output logic Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
    output logic CMP, BLT, BGE, JMP
 );
@@ -18,7 +18,7 @@ module control_unit (
 			3'b000: begin // R-type: addp, subp, mulp, divp
             Branch = 1'b0;
             MemRead = 1'b0;
-            MemToReg = 2'b00;
+            MemToReg = 1'b0;
             ALUOp = 2'b10;
             MemWrite = 1'b0;
             ALUSrc = 1'b0;
@@ -28,9 +28,9 @@ module control_unit (
 			3'b001: begin // R-type: andp, orp, cmpp
 				if (funct2 == 2'b10) begin
 					CMP = 1'b1;
-					MemToReg = 2'b10;
+					MemToReg = 1'b0;
 				end else begin
-					MemToReg = 2'b00;
+					MemToReg = 1'b0;
 				end
             Branch = 1'b0;
             MemRead = 1'b0;
@@ -43,7 +43,7 @@ module control_unit (
          3'b010: begin // addip, sllip, srlip
             Branch = 1'b0;
             MemRead = 1'b0;
-            MemToReg = 2'b00;
+            MemToReg = 1'b0;
             ALUOp = 2'b00;
             MemWrite = 1'b0;
             ALUSrc = 1'b1; // Take immediate value
@@ -58,7 +58,7 @@ module control_unit (
 				end
             Branch = 1'b0;
             MemRead = 1'b1;
-            MemToReg = 2'b01;
+            MemToReg = 1'b1;
             ALUOp = 2'b00;
             MemWrite = 1'b0;
             ALUSrc = 1'b1;
@@ -73,7 +73,7 @@ module control_unit (
 				end
             Branch = 1'b0;
             MemRead = 1'b0;
-            MemToReg = 2'b00;
+            MemToReg = 1'b0;
             ALUOp = 2'b00;
             MemWrite = 1'b1;
             ALUSrc = 1'b1;
@@ -93,7 +93,7 @@ module control_unit (
             endcase
             Branch = 1'b1;
             MemRead = 1'b0;
-            MemToReg = 2'b00;
+            MemToReg = 1'b0;
             ALUOp = 2'b01;
             MemWrite = 1'b0;
 				RegSrc = 1'b1;
@@ -104,7 +104,7 @@ module control_unit (
          default: begin // Default is R-type
             Branch = 1'b0;
             MemRead = 1'b0;
-            MemToReg = 2'b00;
+            MemToReg = 1'b0;
             ALUOp = 2'b10;
             MemWrite = 1'b0;
             ALUSrc = 1'b0;

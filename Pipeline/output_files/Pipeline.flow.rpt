@@ -1,5 +1,5 @@
 Flow report for Pipeline
-Sun Oct 20 00:53:58 2024
+Sun Oct 20 03:24:12 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,7 +40,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Sun Oct 20 00:53:58 2024       ;
+; Flow Status                 ; Successful - Sun Oct 20 03:24:12 2024       ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; Pipeline                                    ;
 ; Top-level Entity Name       ; datapath_unit                               ;
@@ -62,7 +62,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/20/2024 00:53:43 ;
+; Start date & time ; 10/20/2024 03:23:56 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pipeline            ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+---------------+------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name   ; Section Id       ;
 +--------------------------------------+----------------------------------------+---------------+---------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 9447191579688.172940722218584          ; --            ; --            ; --               ;
+; COMPILER_SIGNATURE_ID                ; 9447191579688.172941623610520          ; --            ; --            ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --            ; datapath_unit_tb ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; datapath_unit_tb                       ; --            ; --            ; eda_simulation   ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --            ; eda_simulation   ;
@@ -100,8 +100,8 @@ refer to the applicable agreement for further details.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:16     ; 1.0                     ; 4910 MB             ; 00:00:15                           ;
-; Total                  ; 00:00:16     ; --                      ; --                  ; 00:00:15                           ;
+; Analysis & Elaboration ; 00:00:17     ; 1.0                     ; 4910 MB             ; 00:00:17                           ;
+; Total                  ; 00:00:17     ; --                      ; --                  ; 00:00:17                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
