@@ -436,6 +436,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "byteena_b[0]",
+					"strict" : false
+				},
+				{
+					"name" : "byteena_b[1]",
+					"strict" : false
+				},
+				{
+					"name" : "byteena_b[2]",
+					"strict" : false
+				},
+				{
+					"name" : "byteena_b[3]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},

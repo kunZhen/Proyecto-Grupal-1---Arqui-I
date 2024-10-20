@@ -44,11 +44,12 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
             address_b <= 17'h0; // Comienza leyendo el ancho en la dirección 1
             img_width <= 0;
             img_height <= 0;
+            byteena_b <= 4'b1111;  // Inicialmente habilitar todos los bytes
         end else begin
             case (state)
                 INIT_WIDTH: begin
                     img_width <= q_b[6:0];  // Leer el ancho completo desde la dirección 1
-						  img_width <= 16'd450;
+                    img_width <= 16'd450;
                     address_b <= 17'h1;      // Luego leer la altura desde la dirección 2
                     // Calcular divisiones horizontales
                     div_width_1 <= img_width / 4;
@@ -59,7 +60,7 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
                 
                 INIT_HEIGHT: begin
                     img_height <= q_b[6:0];  // Leer la altura completa desde la dirección 2
-						  img_height <= 16'd450;
+                    img_height <= 16'd450;
                     // Calcular divisiones verticales
                     div_height_1 <= img_height / 4;
                     div_height_2 <= (img_height * 2) / 4;
@@ -84,6 +85,14 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
                             // Calcular la dirección dividiendo entre 4
                             address_b <= BASE_ADDRESS + (y * img_width + x) >> 2;
                             pixel_offset <= x[1:0];
+
+                            // Configurar byteena_b para habilitar solo el byte relevante
+                            case (x[1:0])
+                                2'b00: byteena_b <= 4'b0001;  // Habilitar el primer byte
+                                2'b01: byteena_b <= 4'b0010;  // Habilitar el segundo byte
+                                2'b10: byteena_b <= 4'b0100;  // Habilitar el tercer byte
+                                2'b11: byteena_b <= 4'b1000;  // Habilitar el cuarto byte
+                            endcase
 
                             // Leer los píxeles de derecha a izquierda
                             case (x[1:0])  // Usar los 2 bits menos significativos de x
