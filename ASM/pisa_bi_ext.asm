@@ -11,9 +11,11 @@ _start:
 	
 	# Store base address of original image
 	addip s2, zero, 16			# s2 = original_image
+	nop
+	nop
 	
 	# Define the base address to store the quadrant to be interpolated
-	mulp t0, s0, s1				
+	mulp t0, s0, s1	
 	addp t0, s2, t0
 	addip t0, t0, 16
 	addp s3, t0, zero			# s3 = saved_quadrant
@@ -33,7 +35,8 @@ _start:
 	addp s7, t0, zero           # s7 = scaled_quadrant_height
 	
 	# Define the base address to store the interpolated quadrant
-	mulp t0, s4, s6				
+	nop
+	mulp t0, s4, s6			
 	addp t0, s3, t0
 	addip t0, t0, 16
 	addp s8, t0, zero			# s8 = scaled_quadrant
@@ -70,35 +73,47 @@ _start:
 	
 load_row: 
 	cmpp t8, s6
+	nop
+	nop
+	nop
 	bgep start_scaling
 
 	addip t9, zero, 0	
 
 load_column:	
 	cmpp t9, s4
+	nop
+	nop
+	nop
 	bgep next_row
     
     lbp t0, 0(a0)            	# Load byte
+	nop
+	nop
+	nop
 	sbp t0, 0(a1)				# Store byte 
 	
-	addip a0, a0, 1			
-	addip a1, a1, 1 
+	addip a0, a0, 1
+	addip a1, a1, 1
     
-    addip t9, t9, 1           
+    addip t9, t9, 1
+	nop
     jump load_column
 
 next_row:
 	subp a0, a0, s4		   		# Subtract quadrant width
     addp a0, a0, s0          	# Move to next row (jump image width)
-    addip t8, t8, 1           	
+    addip t8, t8, 1
+	nop
     jump load_row
 	
 start_scaling:							
     addip t10, zero, 0          # t10 = y iterator for rows
     addip t12, zero, 0          # t12 = offset to point to the next pixel in the scaled image
-
+	
 row_loop:
     addip t11, zero, 0          # t11 = x iterator for columns
+	nop
 
 column_loop:
     # Calculate position with fixed point
@@ -123,16 +138,25 @@ column_loop:
 
     # Load the values ​​of P11, P12, P21, P22
     addp t0, s3, zero			# t0 = saved_quadrant
+	nop
     mulp t1, s4, t6          	# t1 = quadrant_width * oy
     addp t1, t1, t5          	# t1 = (quadrant_width * oy) + ox
 
     addp t0, t0, t1          	# Pixel address in (ox, oy)
     lbp a0, 0(t0)             	# P11 (top left)
+	nop
+	nop
     lbp a1, 1(t0)            	# P12 (top right)
+	nop
+	nop
 
     addp t0, t0, s4          	# Pixel address at (ox, oy + 1)
     lbp a2, 0(t0)             	# P21 (bottom left)
+	nop
+	nop
     lbp a3, 1(t0)            	# P22 (bottom right)
+	nop
+	nop
 
     # Bilinear interpolation
     # 1 - fx_frac and 1 - fy_frac
@@ -165,16 +189,23 @@ column_loop:
     # Save the interpolated pixel
     addp t1, s8, zero			# t1 = scaled_quadrant
     addp t1, t1, t12
+	nop
     sbp t0, 0(t1)
     addip t12, t12, 1
 
     # Increment indexes and loops
     addip t11, t11, 1
 	cmpp t11, s5
+	nop
+	nop
+	nop
 	bltp column_loop
 
     addip t10, t10, 1
 	cmpp t10, s7
+	nop
+	nop
+	nop
 	bltp row_loop
 
     # End of program

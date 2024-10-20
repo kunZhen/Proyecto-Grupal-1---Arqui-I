@@ -70,7 +70,7 @@ module datapath_unit_tb;
    always #5 clk = ~clk;
 
    initial begin
-      #1000;
+      #200000;
 		
       $display("Testbench completed successfully");
 		$writememh("../../data_out.hex", dut.data_memory_inst.memory);
