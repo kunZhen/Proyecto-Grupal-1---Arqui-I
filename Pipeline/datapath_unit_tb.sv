@@ -12,6 +12,7 @@ module datapath_unit_tb;
    reg [1:0] ALUOp;
    reg [2:0] ALUSel;
 	reg [1:0] MemToReg;
+	reg [1:0] ForwardA, ForwardB;
    reg Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite;
 	reg CMP, BLT, BGE, JMP;
 	reg clk = 1;
@@ -37,6 +38,8 @@ module datapath_unit_tb;
       .ALUSel(ALUSel),
       .Branch(Branch),
 		.MemToReg(MemToReg),
+		.ForwardA(ForwardA),
+		.ForwardB(ForwardB),
 		.ByteEnable(ByteEnable),
       .MemRead(MemRead),
       .MemWrite(MemWrite),

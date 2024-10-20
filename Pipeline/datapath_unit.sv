@@ -11,6 +11,7 @@ module datapath_unit #(
    output logic [1:0] ALUOp,
    output logic [2:0] ALUSel,
 	output logic [1:0] MemToReg,
+	output logic [1:0] ForwardA, ForwardB,
 	output logic Branch, ByteEnable, MemRead, MemWrite, RegSrc, ALUSrc, RegWrite,
 	output logic CMP, BLT, BGE, JMP,
    output logic [REG_NUMBER-1:0] rs1, rs2, rd,
@@ -35,6 +36,7 @@ module datapath_unit #(
 
    logic sel0;
    logic [DATA_WIDTH-1:0] alu_operand1;
+	logic [DATA_WIDTH-1:0] temp_operand2;
    logic [DATA_WIDTH-1:0] alu_operand2;
 	
 	logic [31:0] write_data;
@@ -43,7 +45,8 @@ module datapath_unit #(
 
    logic [DATA_WIDTH-1:0] EX_data_rs1;
    logic [DATA_WIDTH-1:0] EX_data_rs2;
-   logic [DATA_WIDTH-1:0] EX_immediate;
+   logic [DATA_WIDTH-1:0] EX_immediate;  
+	logic [DATA_WIDTH-1:0] EX_alu_result;
 	logic [DATA_WIDTH-1:0] EX_compared_data;
    logic [REG_NUMBER-1:0] EX_rd;
 	logic [REG_NUMBER-1:0] EX_rs1;
@@ -279,12 +282,9 @@ module datapath_unit #(
       EX_data_rs1 = ID_EX_data_rs1;
       EX_data_rs2 = ID_EX_data_rs2;
       EX_immediate = ID_EX_immediate;
+		EX_alu_result = EX_MEM_alu_result;
 		EX_compared_data = ID_EX_compared_data;
 		
-		EX_rd = ID_EX_rd;
-		EX_rs1 = ID_EX_rs1;
-		EX_rs2 = ID_EX_rs2;
-
       EX_opcode = ID_EX_opcode;
 		EX_funct2 = ID_EX_funct2;
 		
@@ -295,13 +295,51 @@ module datapath_unit #(
 		EX_MemRead = ID_EX_MemRead;
 		EX_MemWrite = ID_EX_MemWrite;
 		EX_ALUSrc = ID_EX_ALUSrc;
-		EX_RegWrite = ID_EX_RegWrite;
+		
+		EX_RegWrite = EX_MEM_RegWrite;
+		MEM_RegWrite =  MEM_WB_RegWrite;
+		EX_rs1 = ID_EX_rs1;
+		EX_rs2 = ID_EX_rs2;
+		EX_rd = EX_MEM_rd;
+		MEM_rd = MEM_WB_rd;
    end
 	
-   // Instantiate the mux2 module to determine which value between data_rs2 and immediate passes to the ALU
+	// Instantiate the forwarding_unit module
+   forwarding_unit #(REG_NUMBER) forwarding_unit_inst (
+      .EX_MEM_RegWrite(EX_RegWrite),
+      .MEM_WB_RegWrite(MEM_RegWrite),
+      .ID_EX_rs1(EX_rs1),
+      .ID_EX_rs2(EX_rs2),
+      .EX_MEM_rd(EX_rd),
+      .MEM_WB_rd(MEM_rd),
+      .ForwardA(ForwardA), 
+      .ForwardB(ForwardB)
+   );
+	
+	// Instantiate the mux4 module to determine ForwardA
+   mux4 #(DATA_WIDTH) mux4_A (
+      .sel(ForwardA), 
+      .a(EX_data_rs1),
+      .b(reg_write_data),
+      .c(EX_alu_result),
+      .d(20'h0),
+      .y(alu_operand1)
+   );
+
+   // Instantiate the mux4 module to determine ForwardB
+   mux4 #(DATA_WIDTH) mux4_B (
+      .sel(ForwardB), 
+      .a(EX_data_rs2),
+      .b(reg_write_data),
+      .c(EX_alu_result),
+      .d(20'h0),
+      .y(temp_operand2)
+   );
+	
+   // Instantiate the mux2 module to determine which value between temp_operand2 and immediate passes to the ALU
    mux2 #(DATA_WIDTH) mux_drs2_imm (
       .sel(EX_ALUSrc), 
-      .a(EX_data_rs2), 
+      .a(temp_operand2), 
       .b(EX_immediate),
       .y(alu_operand2)
    );
@@ -313,8 +351,6 @@ module datapath_unit #(
       .ALUOp(EX_ALUOp),
       .ALUSel(ALUSel)
     );
-
-   assign alu_operand1 = EX_data_rs1; // From register_file
 
    // Instantiate the alu module
    alu #(DATA_WIDTH) alu_inst (
@@ -330,12 +366,12 @@ module datapath_unit #(
       EX_MEM_alu_result <= alu_result;
       EX_MEM_data_rs2 <= EX_data_rs2;
 		EX_MEM_compared_data <= EX_compared_data;
-      EX_MEM_rd <= EX_rd;
+      EX_MEM_rd <= ID_EX_rd;
       EX_MEM_Branch <= EX_Branch;
 		EX_MEM_ByteEnable <= EX_ByteEnable;
       EX_MEM_MemRead <= EX_MemRead;
       EX_MEM_MemWrite <= EX_MemWrite;
-      EX_MEM_RegWrite <= EX_RegWrite;
+      EX_MEM_RegWrite <= ID_EX_RegWrite;
       EX_MEM_MemToReg <= EX_MemToReg;
    end
 	
@@ -348,11 +384,9 @@ module datapath_unit #(
       MEM_alu_result = EX_MEM_alu_result;
       MEM_write_data = EX_MEM_data_rs2;
 		MEM_compared_data = EX_MEM_compared_data;
-		MEM_rd = EX_MEM_rd;
       MEM_ByteEnable = EX_MEM_ByteEnable;
       MEM_MemRead = EX_MEM_MemRead;
 		MEM_MemWrite = EX_MEM_MemWrite;
-		MEM_RegWrite = EX_MEM_RegWrite;
 		MEM_MemToReg = EX_MEM_MemToReg;
    end
 	

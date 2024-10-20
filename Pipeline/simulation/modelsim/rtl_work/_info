@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/simulation/modelsim
 valu
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1729386619
+Z2 !s110 1729390172
 !i10b 1
 !s100 AQ[4SEiYbfBP4zX9JQz<M0
 Ib?T_M9g`LemMg5O5XXU0_3
@@ -26,7 +26,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1729386619.000000
+Z5 !s108 1729390172.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv|
 !i113 1
@@ -110,7 +110,7 @@ R7
 R8
 vdata_memory
 R1
-Z9 !s110 1729386620
+Z9 !s110 1729390173
 !i10b 1
 !s100 6M[4OXYWbBJDLIngbZo:73
 I[YNc:OBV`NUfi4lZaFTUR2
@@ -126,7 +126,7 @@ R4
 r1
 !s85 0
 31
-Z10 !s108 1729386620.000000
+Z10 !s108 1729390173.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv|
 !i113 1
@@ -137,13 +137,13 @@ vdatapath_unit
 R1
 R9
 !i10b 1
-!s100 WdCU5VHlW`C@QGnL]ni?T0
-IV?gMLh]:_<bzTZH[1@23c1
+!s100 C`foPPkiW<lgOoK9]VmXP1
+IRin?]k@A?7zaEHLaIW=7V2
 R3
 !s105 datapath_unit_sv_unit
 S1
 R0
-w1729386137
+w1729390027
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv
 L0 1
@@ -162,13 +162,13 @@ vdatapath_unit_tb
 R1
 R9
 !i10b 1
-!s100 d=BQ7EOE>d9lDcBJHM9];3
-IkDaBUUXFO`h03<ea8@6lE1
+!s100 O2jLLzF<C5O9ZQGm5eTJ41
+IlA@X@oEN6l:G8Wnm@XCz33
 R3
 !s105 datapath_unit_tb_sv_unit
 S1
 R0
-w1729268378
+w1729390144
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv
 L0 1
@@ -179,6 +179,31 @@ r1
 R10
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit_tb.sv|
+!i113 1
+R6
+R7
+R8
+vforwarding_unit
+R1
+R9
+!i10b 1
+!s100 UiS8F]XN?zBdmJWVeAK480
+ITc<d1eVZml<HC;e:h<B_]2
+R3
+!s105 forwarding_unit_sv_unit
+S1
+R0
+w1729252506
+8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/forwarding_unit.sv
+FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/forwarding_unit.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R10
+!s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/forwarding_unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/forwarding_unit.sv|
 !i113 1
 R6
 R7
@@ -212,13 +237,13 @@ vinstruction_memory
 R1
 R9
 !i10b 1
-!s100 fLJbE^z@KAQmZ<Z^]Q4aT3
-I;ALn23?_`^fBRd?jTldcY3
+!s100 X3Td5TNfz8<n6EDCRD7K:3
+I`G<;HXHDM80I1j7I>5l6O1
 R3
 !s105 instruction_memory_sv_unit
 S1
 R0
-w1729267649
+w1729388220
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv
 L0 1

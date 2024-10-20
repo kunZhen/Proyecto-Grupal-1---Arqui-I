@@ -14,6 +14,7 @@ vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/P
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/mux4.sv}
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/register_file.sv}
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/datapath_unit.sv}
+vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/forwarding_unit.sv}
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv}
 vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/instruction_memory.sv}
 
