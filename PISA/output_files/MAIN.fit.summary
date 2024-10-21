@@ -1,17 +1,17 @@
-Fitter Status : Successful - Sat Oct 19 22:50:34 2024
-Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Fitter Status : Successful - Sun Oct 20 17:39:42 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : MAIN
-Top-level Entity Name : MAIN
+Top-level Entity Name : PS2_DRIVER
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 97 / 41,910 ( < 1 % )
-Total registers : 74
-Total pins : 204 / 499 ( 41 % )
+Logic utilization (in ALMs) : 40 / 41,910 ( < 1 % )
+Total registers : 65
+Total pins : 19 / 499 ( 4 % )
 Total virtual pins : 0
-Total block memory bits : 1,048,576 / 5,662,720 ( 19 % )
-Total RAM Blocks : 128 / 553 ( 23 % )
-Total DSP Blocks : 1 / 112 ( < 1 % )
+Total block memory bits : 0 / 5,662,720 ( 0 % )
+Total RAM Blocks : 0 / 553 ( 0 % )
+Total DSP Blocks : 0 / 112 ( 0 % )
 Total HSSI RX PCSs : 0 / 9 ( 0 % )
 Total HSSI PMA RX Deserializers : 0 / 9 ( 0 % )
 Total HSSI TX PCSs : 0 / 9 ( 0 % )

@@ -11,14 +11,10 @@ module PISA(
    output logic [7:0] green,
    output logic [7:0] blue,
 	
-	input logic wren_a,
-	input logic wren_b,
-	input logic [31:0] data_a,       
-	input logic [31:0] data_b, 
-	output logic [31:0] q_a, 
-	output logic [31:0] q_b,
-	output logic [16:0] address_a, address_b, 
-	output logic [3:0] byteena_a, byteena_b
+	input logic wren,
+	input logic [31:0] data,       
+	output [7:0] q, 
+	output [17:0] rdaddress, wraddress
 	
 );
 
@@ -27,9 +23,8 @@ module PISA(
 		 .clk(clk),                // Señal de reloj principal
 		 .switch(switch),          // Entrada de switch
 		 
-		 .address_b(address_b),
-		 .q_b(q_b),
-		 .byteena_b(byteena_b),
+		 .rdaddress(rdaddress), 
+		 .q(q),
 		 
 		 .vgaclk(vgaclk),          // Señal de reloj para VGA
 		 .hsync(hsync),            // Señal de sincronización horizontal
@@ -42,19 +37,16 @@ module PISA(
 	);
 	
 	RAM_pixels ram_pixels (
-        .address_a(address_a),
-        .address_b(address_b),
-        .byteena_a(byteena_a),
-        .byteena_b(byteena_b),
-        .clock(clk),
-        .data_a(data_a),
-        .data_b(data_b),
-        .wren_a(wren_a),
-        .wren_b(wren_b),
-        .q_a(q_a),
-        .q_b(q_b)
-    );
+    .clock(clk), 
+    .data(data), 
+    .rdaddress(rdaddress), 
+    .wraddress(wraddress), 
+    .wren(wren), 
+    .q(q)
+  );
 
+
+	
 	
 
 endmodule 

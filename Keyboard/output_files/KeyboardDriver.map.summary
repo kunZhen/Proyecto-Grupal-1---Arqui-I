@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Sun Oct 20 13:59:26 2024
+Analysis & Synthesis Status : Successful - Sun Oct 20 21:46:40 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : KeyboardDriver
 Top-level Entity Name : PS2_DRIVER
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 82
-Total pins : 7
+Total registers : 98
+Total pins : 23
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

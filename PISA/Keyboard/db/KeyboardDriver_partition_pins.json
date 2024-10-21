@@ -1,0 +1,37 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "left_arrow",
+					"strict" : false
+				},
+				{
+					"name" : "right_arrow",
+					"strict" : false
+				},
+				{
+					"name" : "left_led",
+					"strict" : false
+				},
+				{
+					"name" : "right_led",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_clk",
+					"strict" : false
+				},
+				{
+					"name" : "ps2_data",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

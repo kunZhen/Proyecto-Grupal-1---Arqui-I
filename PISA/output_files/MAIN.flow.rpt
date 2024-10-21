@@ -1,6 +1,6 @@
 Flow report for MAIN
-Sat Oct 19 22:51:03 2024
-Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+Sun Oct 20 17:39:59 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -21,9 +21,9 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2022  Intel Corporation. All rights reserved.
+Copyright (C) 2018  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and any partner logic 
+and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -33,34 +33,33 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details, at
-https://fpgasoftware.intel.com/eula.
+refer to the applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Sat Oct 19 22:51:03 2024          ;
-; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
-; Revision Name                   ; MAIN                                           ;
-; Top-level Entity Name           ; MAIN                                           ;
-; Family                          ; Cyclone V                                      ;
-; Device                          ; 5CSXFC6D6F31C6                                 ;
-; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 97 / 41,910 ( < 1 % )                          ;
-; Total registers                 ; 74                                             ;
-; Total pins                      ; 204 / 499 ( 41 % )                             ;
-; Total virtual pins              ; 0                                              ;
-; Total block memory bits         ; 1,048,576 / 5,662,720 ( 19 % )                 ;
-; Total DSP Blocks                ; 1 / 112 ( < 1 % )                              ;
-; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                                  ;
-; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                                  ;
-; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                                  ;
-; Total HSSI PMA TX Serializers   ; 0 / 9 ( 0 % )                                  ;
-; Total PLLs                      ; 0 / 15 ( 0 % )                                 ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                                  ;
-+---------------------------------+------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Sun Oct 20 17:39:59 2024       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; MAIN                                        ;
+; Top-level Entity Name           ; PS2_DRIVER                                  ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSXFC6D6F31C6                              ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 40 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 65                                          ;
+; Total pins                      ; 19 / 499 ( 4 % )                            ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
+; Total HSSI RX PCSs              ; 0 / 9 ( 0 % )                               ;
+; Total HSSI PMA RX Deserializers ; 0 / 9 ( 0 % )                               ;
+; Total HSSI TX PCSs              ; 0 / 9 ( 0 % )                               ;
+; Total HSSI PMA TX Serializers   ; 0 / 9 ( 0 % )                               ;
+; Total PLLs                      ; 0 / 15 ( 0 % )                              ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -68,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/19/2024 22:48:32 ;
+; Start date & time ; 10/20/2024 17:38:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MAIN                ;
 +-------------------+---------------------+
@@ -79,35 +78,43 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 154027285978271.172939971222888        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 128059400897965.172946753737036        ; --            ; --          ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_PS2_DRIVER                     ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; RAM_data_tb                       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; RAM_pixels_tb                     ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; RAM_pixels_tb                          ; --            ; --          ; eda_simulation                    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; ModelSim (Verilog)                     ; <None>        ; --          ; --                                ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_PS2_DRIVER                          ; --            ; --          ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --                                ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; Keyboard/tb_PS2_DRIVER.sv              ; --            ; --          ; tb_PS2_DRIVER                     ;
 ; EDA_TEST_BENCH_FILE                  ; TestBench/RAM_data_tb.sv               ; --            ; --          ; RAM_data_tb                       ;
 ; EDA_TEST_BENCH_FILE                  ; TestBench/RAM_pixels_tb.sv             ; --            ; --          ; RAM_pixels_tb                     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_PS2_DRIVER                          ; --            ; --          ; tb_PS2_DRIVER                     ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; RAM_data_tb                            ; --            ; --          ; RAM_data_tb                       ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; RAM_pixels_tb                          ; --            ; --          ; RAM_pixels_tb                     ;
 ; EDA_TEST_BENCH_NAME                  ; RAM_data_tb                            ; --            ; --          ; eda_simulation                    ;
 ; EDA_TEST_BENCH_NAME                  ; RAM_pixels_tb                          ; --            ; --          ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_PS2_DRIVER                          ; --            ; --          ; eda_simulation                    ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                                ;
-; MISC_FILE                            ; Memory/RAM_pixels.bsf                  ; --            ; --          ; --                                ;
-; MISC_FILE                            ; Memory/RAM_pixels_inst.v               ; --            ; --          ; --                                ;
-; MISC_FILE                            ; Memory/RAM_pixels_bb.v                 ; --            ; --          ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; MISC_FILE                            ; RAM_data.bsf                           ; --            ; --          ; --                                ;
+; MISC_FILE                            ; RAM_data_inst.v                        ; --            ; --          ; --                                ;
+; MISC_FILE                            ; RAM_data_bb.v                          ; --            ; --          ; --                                ;
+; MISC_FILE                            ; RAM_pixels.bsf                         ; --            ; --          ; --                                ;
+; MISC_FILE                            ; RAM_pixels_inst.v                      ; --            ; --          ; --                                ;
+; MISC_FILE                            ; RAM_pixels_bb.v                        ; --            ; --          ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; PS2_DRIVER  ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; PS2_DRIVER  ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; PS2_DRIVER  ; Top                               ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                     ; PS2_DRIVER                             ; MAIN          ; --          ; --                                ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -116,12 +123,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4882 MB             ; 00:00:31                           ;
-; Fitter               ; 00:01:47     ; 1.1                     ; 6538 MB             ; 00:03:20                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4889 MB             ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:13     ; 1.5                     ; 5201 MB             ; 00:00:18                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4744 MB             ; 00:00:02                           ;
-; Total                ; 00:02:23     ; --                      ; --                  ; 00:04:19                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4832 MB             ; 00:00:11                           ;
+; Fitter               ; 00:00:34     ; 1.0                     ; 6554 MB             ; 00:00:45                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 4834 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5133 MB             ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4738 MB             ; 00:00:01                           ;
+; Total                ; 00:00:57     ; --                      ; --                  ; 00:01:08                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -130,11 +137,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-61ESG33  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; DESKTOP-61ESG33  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; DESKTOP-61ESG33  ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; DESKTOP-61ESG33  ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; DESKTOP-61ESG33  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-9C4FACL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-9C4FACL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-9C4FACL  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-9C4FACL  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-9C4FACL  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

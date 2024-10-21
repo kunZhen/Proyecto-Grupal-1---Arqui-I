@@ -5,9 +5,8 @@ module vga #(
     input logic clk,
 	 input logic switch,
 	 
-	 input logic [31:0] q_b, 
-	 output logic [16:0] address_b,
-	 output logic [3:0] byteena_b,
+	 input [7:0] q, 
+	 output [17:0] rdaddress,
 	 
     output logic vgaclk,
     output logic hsync,
@@ -50,9 +49,8 @@ module vga #(
 		 .x(x),
 		 .y(y),
 		 
-		 .address_b(address_b),
-		 .q_b(q_b),
-		 .byteena_b(byteena_b),
+		 .q(q),
+		 .rdaddress(rdaddress),
 		 
 		 .red(red),
 		 .green(green),
