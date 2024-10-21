@@ -1,7 +1,12 @@
 Flow report for Unicycle
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Sun Oct 20 07:02:31 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+=======
+Sat Oct 19 21:44:51 2024
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+>>>>>>> Stashed changes
 =======
 Sat Oct 19 21:44:51 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
@@ -44,6 +49,7 @@ https://fpgasoftware.intel.com/eula.
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
@@ -63,6 +69,8 @@ https://fpgasoftware.intel.com/eula.
 ; Total DLLs                  ; N/A until Partition Merge                   ;
 +-----------------------------+---------------------------------------------+
 =======
+=======
+>>>>>>> Stashed changes
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-----------------------------+------------------------------------------------+
@@ -81,6 +89,9 @@ https://fpgasoftware.intel.com/eula.
 ; Total PLLs                  ; N/A until Partition Merge                      ;
 ; Total DLLs                  ; N/A until Partition Merge                      ;
 +-----------------------------+------------------------------------------------+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
@@ -90,7 +101,11 @@ https://fpgasoftware.intel.com/eula.
 ; Option            ; Setting             ;
 +-------------------+---------------------+
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ; Start date & time ; 10/20/2024 06:57:58 ;
+=======
+; Start date & time ; 10/19/2024 21:44:34 ;
+>>>>>>> Stashed changes
 =======
 ; Start date & time ; 10/19/2024 21:44:34 ;
 >>>>>>> Stashed changes
@@ -105,7 +120,11 @@ https://fpgasoftware.intel.com/eula.
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id            ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------+
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ; COMPILER_SIGNATURE_ID                ; 9447191579688.172942907804560          ; --            ; --          ; --                    ;
+=======
+; COMPILER_SIGNATURE_ID                ; 10995770589205.172939587426008         ; --            ; --          ; --                    ;
+>>>>>>> Stashed changes
 =======
 ; COMPILER_SIGNATURE_ID                ; 10995770589205.172939587426008         ; --            ; --          ; --                    ;
 >>>>>>> Stashed changes
@@ -159,8 +178,13 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ; Analysis & Elaboration ; 00:04:35     ; 1.0                     ; 10753 MB            ; 00:04:09                           ;
 ; Total                  ; 00:04:35     ; --                      ; --                  ; 00:04:09                           ;
+=======
+; Analysis & Elaboration ; 00:00:17     ; 1.0                     ; 5113 MB             ; 00:00:28                           ;
+; Total                  ; 00:00:17     ; --                      ; --                  ; 00:00:28                           ;
+>>>>>>> Stashed changes
 =======
 ; Analysis & Elaboration ; 00:00:17     ; 1.0                     ; 5113 MB             ; 00:00:28                           ;
 ; Total                  ; 00:00:17     ; --                      ; --                  ; 00:00:28                           ;

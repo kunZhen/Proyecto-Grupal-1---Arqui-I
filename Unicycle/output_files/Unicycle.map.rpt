@@ -1,7 +1,12 @@
 Analysis & Elaboration report for Unicycle
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Sun Oct 20 07:02:31 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+=======
+Sat Oct 19 21:44:51 2024
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+>>>>>>> Stashed changes
 =======
 Sat Oct 19 21:44:51 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
@@ -57,6 +62,7 @@ https://fpgasoftware.intel.com/eula.
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
@@ -74,6 +80,8 @@ https://fpgasoftware.intel.com/eula.
 ; Total DLLs                    ; N/A until Partition Merge                   ;
 +-------------------------------+---------------------------------------------+
 =======
+=======
+>>>>>>> Stashed changes
 +--------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                 ;
 +-------------------------------+------------------------------------------------+
@@ -90,6 +98,9 @@ https://fpgasoftware.intel.com/eula.
 ; Total PLLs                    ; N/A until Partition Merge                      ;
 ; Total DLLs                    ; N/A until Partition Merge                      ;
 +-------------------------------+------------------------------------------------+
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 
@@ -375,8 +386,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
     Info: Processing started: Sun Oct 20 06:57:55 2024
+=======
+    Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
+    Info: Processing started: Sat Oct 19 21:44:34 2024
+>>>>>>> Stashed changes
 =======
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
     Info: Processing started: Sat Oct 19 21:44:34 2024
@@ -423,6 +439,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file unicycl
 Info (12021): Found 1 design units, including 1 entities, in source file unicycle_tb.sv
     Info (12023): Found entity 1: unicycle_tb File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv Line: 1
 Info (12127): Elaborating entity "unicycle" for the top level hierarchy
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 Warning (10034): Output port "CMP" at unicycle.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 15
 Warning (10034): Output port "BLT" at unicycle.sv(15) has no driver File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 15
@@ -489,6 +506,8 @@ Info (10041): Inferred latch for "read_data[30]" at data_memory.sv(49) File: C:/
 Info (10041): Inferred latch for "read_data[31]" at data_memory.sv(49) File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 49
 Info (12128): Elaborating entity "mux4" for hierarchy "datapath_unit:datapath_unit_inst|mux4:mux_alu_mem" File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 203
 =======
+=======
+>>>>>>> Stashed changes
 Warning (10034): Output port "CMP" at unicycle.sv(15) has no driver File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 15
 Warning (10034): Output port "BLT" at unicycle.sv(15) has no driver File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 15
 Warning (10034): Output port "BGE" at unicycle.sv(15) has no driver File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv Line: 15
@@ -553,6 +572,7 @@ Info (10041): Inferred latch for "read_data[29]" at data_memory.sv(49) File: C:/
 Info (10041): Inferred latch for "read_data[30]" at data_memory.sv(49) File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 49
 Info (10041): Inferred latch for "read_data[31]" at data_memory.sv(49) File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv Line: 49
 Info (12128): Elaborating entity "mux4" for hierarchy "datapath_unit:datapath_unit_inst|mux4:mux_alu_mem" File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 199
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (144001): Generated suppressed messages file C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/output_files/Unicycle.map.smsg
@@ -563,10 +583,18 @@ Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 21 warnings
     Info: Elapsed time: 00:04:37
     Info: Total CPU time (on all processors): 00:04:11
 =======
+=======
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/output_files/Unicycle.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 21 warnings
+>>>>>>> Stashed changes
     Info: Peak virtual memory: 5113 megabytes
     Info: Processing ended: Sat Oct 19 21:44:52 2024
     Info: Elapsed time: 00:00:18
     Info: Total CPU time (on all processors): 00:00:28
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 

@@ -791,20 +791,27 @@
 # Modifying modelsim.ini
 # 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # vlog -sv -work work +incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 # Start time: 07:06:41 on Oct 20,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv 
 =======
+=======
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:40 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module register_file
 # 
 # Top level modules:
 # 	register_file
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:41 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -815,15 +822,23 @@
 =======
 # End time: 21:48:40 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:40 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/mux2.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:40 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/mux2.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module mux2
 # 
 # Top level modules:
 # 	mux2
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:41 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -834,15 +849,23 @@
 =======
 # End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:41 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module imm_gen
 # 
 # Top level modules:
 # 	imm_gen
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:41 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -853,15 +876,23 @@
 =======
 # End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:41 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module alu
 # 
 # Top level modules:
 # 	alu
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -872,15 +903,23 @@
 =======
 # End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_control.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:41 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/alu_control.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module alu_control
 # 
 # Top level modules:
 # 	alu_control
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -891,15 +930,23 @@
 =======
 # End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/control_unit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:41 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/control_unit.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module control_unit
 # 
 # Top level modules:
 # 	control_unit
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -910,15 +957,23 @@
 =======
 # End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:41 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module datapath_unit
 # 
 # Top level modules:
 # 	datapath_unit
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -929,15 +984,23 @@
 =======
 # End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/compare.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:41 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/compare.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module compare
 # 
 # Top level modules:
 # 	compare
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -948,15 +1011,23 @@
 =======
 # End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:41 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/mux4.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:41 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/mux4.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module mux4
 # 
 # Top level modules:
 # 	mux4
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -967,15 +1038,23 @@
 =======
 # End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:42 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module unicycle
 # 
 # Top level modules:
 # 	unicycle
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -986,15 +1065,23 @@
 =======
 # End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:42 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module instruction_memory
 # 
 # Top level modules:
 # 	instruction_memory
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -1005,15 +1092,23 @@
 =======
 # End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+=======
+# End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:42 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module data_memory
 # 
 # Top level modules:
 # 	data_memory
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
@@ -1026,17 +1121,29 @@
 # End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
+=======
+# End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+>>>>>>> Stashed changes
 # vlog -sv -work work +incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto\ II/Proyecto-Grupal-1---Arqui-I/Unicycle {C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 # Start time: 21:48:42 on Oct 19,2024
 # vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle" C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # -- Compiling module unicycle_tb
 # 
 # Top level modules:
 # 	unicycle_tb
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # End time: 07:06:42 on Oct 20,2024, Elapsed time: 0:00:00
+=======
+# End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:00
+>>>>>>> Stashed changes
 =======
 # End time: 21:48:42 on Oct 19,2024, Elapsed time: 0:00:00
 >>>>>>> Stashed changes
@@ -1045,7 +1152,11 @@
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  unicycle_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" unicycle_tb 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # Start time: 07:06:42 on Oct 20,2024
+=======
+# Start time: 21:48:43 on Oct 19,2024
+>>>>>>> Stashed changes
 =======
 # Start time: 21:48:43 on Oct 19,2024
 >>>>>>> Stashed changes
@@ -1063,6 +1174,7 @@
 # Loading work.alu
 # Loading work.data_memory
 # Loading work.mux4
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 # ** Warning: (vsim-3017) C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv(31): [TFMPC] - Too few port connections. Expected 30, found 26.
 #    Time: 0 ps  Iteration: 0  Instance: /unicycle_tb/dut File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv
@@ -1083,6 +1195,8 @@
 # ** Warning: (vsim-3015) C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv(183): [PCDPC] - Port size (32) does not match connection size (20) for port 'read_data'. The port definition is at: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv(13).
 #    Time: 0 ps  Iteration: 0  Instance: /unicycle_tb/dut/datapath_unit_inst/data_memory_inst File: C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv
 =======
+=======
+>>>>>>> Stashed changes
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 30, found 26.
 #    Time: 0 ps  Iteration: 0  Instance: /unicycle_tb/dut File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv Line: 31
 # ** Warning: (vsim-3722) C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv(31): [TFMPC] - Missing connection for port 'CMP'.
@@ -1101,6 +1215,9 @@
 #    Time: 0 ps  Iteration: 0  Instance: /unicycle_tb/dut/datapath_unit_inst/data_memory_inst File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 179
 # ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (20) for port 'read_data'. The port definition is at: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv(13).
 #    Time: 0 ps  Iteration: 0  Instance: /unicycle_tb/dut/datapath_unit_inst/data_memory_inst File: C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv Line: 179
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # 
 # add wave *
@@ -1111,16 +1228,22 @@
 # run -all
 # Testbench completed successfully
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # ** Note: $finish    : C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv(67)
 #    Time: 10 us  Iteration: 0  Instance: /unicycle_tb
 # 1
 # Break in Module unicycle_tb at C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv line 67
 # End time: 07:14:30 on Oct 20,2024, Elapsed time: 0:07:48
 =======
+=======
+>>>>>>> Stashed changes
 # ** Note: $finish    : C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv(66)
 #    Time: 200 ps  Iteration: 0  Instance: /unicycle_tb
 # 1
 # Break in Module unicycle_tb at C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv line 66
 # End time: 03:16:22 on Oct 20,2024, Elapsed time: 5:27:39
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 # Errors: 0, Warnings: 13

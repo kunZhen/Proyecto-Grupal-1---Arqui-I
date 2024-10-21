@@ -11,8 +11,13 @@ cModel Technology
 Z0 dC:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/simulation/modelsim
 valu
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 Z2 !s110 1729429602
+=======
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1729396121
+>>>>>>> Stashed changes
 =======
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
 Z2 !s110 1729396121
@@ -34,9 +39,15 @@ r1
 !s85 0
 31
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Z5 !s108 1729429602.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv|
+=======
+Z7 !s108 1729396121.000000
+!s107 C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv|
+>>>>>>> Stashed changes
 =======
 Z7 !s108 1729396121.000000
 !s107 C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/alu.sv|
@@ -109,18 +120,24 @@ R4
 S1
 R0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 w1729167874
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/control_unit.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/control_unit.sv
 L0 1
 R4
 =======
+=======
+>>>>>>> Stashed changes
 R5
 8C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/control_unit.sv
 FC:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/control_unit.sv
 !i122 5
 L0 1 111
 R6
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 r1
 !s85 0
@@ -135,10 +152,16 @@ R10
 vdata_memory
 R1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 R2
 !i10b 1
 !s100 AP21[Sz4edD1b<[n6o3gQ0
 ID_dRhKUHR<bEEaZ0>>j>S1
+=======
+Z11 !s110 1729396122
+!i10b 1
+!s100 A29MVCBa?KeWjIX?YM;zS1
+>>>>>>> Stashed changes
 =======
 Z11 !s110 1729396122
 !i10b 1
@@ -149,6 +172,7 @@ I<o:O8bZA;kF4@m9Z1OH>f3
 R4
 S1
 R0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 w1729429071
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv
@@ -175,6 +199,20 @@ Z12 !s108 1729396122.000000
 !s107 C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv|
 >>>>>>> Stashed changes
+=======
+R5
+8C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv
+FC:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv
+!i122 11
+L0 1 70
+R6
+r1
+!s85 0
+31
+Z12 !s108 1729396122.000000
+!s107 C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/data_memory.sv|
+>>>>>>> Stashed changes
 !i113 1
 R8
 R9
@@ -184,8 +222,12 @@ R1
 R2
 !i10b 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 !s100 Z5KeS=CJ[LMRl=DiYmbQ12
 IM15E?1L5hZ>n<zDGATSZe0
+=======
+!s100 97JU7m[g_i0TUQ6bhF0gG1
+>>>>>>> Stashed changes
 =======
 !s100 97JU7m[g_i0TUQ6bhF0gG1
 >>>>>>> Stashed changes
@@ -195,18 +237,24 @@ R4
 S1
 R0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 w1729429069
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv
 L0 1
 R4
 =======
+=======
+>>>>>>> Stashed changes
 R5
 8C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv
 FC:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/datapath_unit.sv
 !i122 6
 L0 1 201
 R6
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 r1
 !s85 0
@@ -238,11 +286,14 @@ r1
 !s85 0
 31
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Z10 !s108 1729429601.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/imm_gen.sv|
 !i113 1
 R6
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 R7
@@ -257,8 +308,12 @@ R1
 R11
 !i10b 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 !s100 MB4fNlfOW=[U<RFi6YA]Q2
 IWS77Sb@GE[bHJE5Tbz5EU2
+=======
+!s100 W>nY]4j?lUcU0ai2ZLT4O2
+>>>>>>> Stashed changes
 =======
 !s100 W>nY]4j?lUcU0ai2ZLT4O2
 >>>>>>> Stashed changes
@@ -268,18 +323,24 @@ R4
 S1
 R0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 w1729171254
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv
 L0 1
 R4
 =======
+=======
+>>>>>>> Stashed changes
 R5
 8C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv
 FC:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/instruction_memory.sv
 !i122 10
 L0 1 29
 R6
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 r1
 !s85 0
@@ -311,9 +372,15 @@ r1
 !s85 0
 31
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 R10
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/mux2.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/mux2.sv|
+=======
+Z13 !s108 1729396120.000000
+!s107 C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/mux2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/mux2.sv|
+>>>>>>> Stashed changes
 =======
 Z13 !s108 1729396120.000000
 !s107 C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/mux2.sv|
@@ -352,7 +419,11 @@ R10
 vregister_file
 R1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 R9
+=======
+!s110 1729396120
+>>>>>>> Stashed changes
 =======
 !s110 1729396120
 >>>>>>> Stashed changes
@@ -373,9 +444,15 @@ r1
 !s85 0
 31
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 R10
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv|
+=======
+R13
+!s107 C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv|
+>>>>>>> Stashed changes
 =======
 R13
 !s107 C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/register_file.sv|
@@ -396,18 +473,24 @@ R4
 S1
 R0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 w1729242526
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv
 L0 1
 R4
 =======
+=======
+>>>>>>> Stashed changes
 Z14 w1729126556
 8C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv
 FC:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle.sv
 !i122 9
 L0 1 62
 R6
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 r1
 !s85 0
@@ -422,10 +505,16 @@ R10
 vunicycle_tb
 R1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 R2
 !i10b 1
 !s100 nAdg]K7f1dbfSh6TO>AVg1
 I^eSC9_^^H:?GZUznEcXTh2
+=======
+R11
+!i10b 1
+!s100 hdRnOSmC<ETPDZkAaNcG[3
+>>>>>>> Stashed changes
 =======
 R11
 !i10b 1
@@ -436,6 +525,7 @@ I9R6IM`DY>V6Z<a7;c9[`42
 R4
 S1
 R0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 w1729428316
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv
@@ -448,6 +538,20 @@ r1
 R5
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv|
+=======
+R14
+8C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv
+FC:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv
+!i122 12
+L0 1 69
+R6
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle|C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv|
+>>>>>>> Stashed changes
 =======
 R14
 8C:/Users/jespinoz/Documents/TEC/Arqui/Proyecto II/Proyecto-Grupal-1---Arqui-I/Unicycle/unicycle_tb.sv
