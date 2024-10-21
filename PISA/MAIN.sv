@@ -1,5 +1,5 @@
 module MAIN (
-	input logic clk, reset,
+	input logic CLK,
 	
 	input logic switch,
    output logic vgaclk,
@@ -27,10 +27,14 @@ module MAIN (
 	
 );
 
+	logic reset;
+	
+	
+
 	// Instantiate Processor
 	
 	PISA pisa(
-		.clk(clk),
+		.clk(CLK),
 		.reset(reset),
 		.switch(switch),          // Entrada de switch
 		.vgaclk(vgaclk),          // Señal de reloj para VGA

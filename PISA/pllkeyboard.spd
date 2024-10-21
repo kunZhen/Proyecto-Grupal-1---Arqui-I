@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="pllkeyboard_sim/pllkeyboard.vo" type="VERILOG" />
+ <topLevel name="pllkeyboard" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

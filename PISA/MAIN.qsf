@@ -39,27 +39,21 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSXFC6D6F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY keyboard
+set_global_assignment -name TOP_LEVEL_ENTITY MAIN
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:15:23  OCTOBER 11, 2024"
-set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.0 Lite Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Lite Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
-set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (Verilog)"
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name SYSTEMVERILOG_FILE MAIN.sv
-set_global_assignment -name SYSTEMVERILOG_FILE PISA.sv
-set_global_assignment -name SYSTEMVERILOG_FILE VGA/pll.sv
-set_global_assignment -name SYSTEMVERILOG_FILE VGA/vga_controller.sv
-set_global_assignment -name SYSTEMVERILOG_FILE VGA/draw_board.sv
-set_global_assignment -name SYSTEMVERILOG_FILE VGA/vga.sv
 set_location_assignment PIN_AK22 -to blank_b
 set_location_assignment PIN_AJ21 -to blue[0]
 set_location_assignment PIN_AJ20 -to blue[1]
@@ -69,7 +63,6 @@ set_location_assignment PIN_AH19 -to blue[4]
 set_location_assignment PIN_AJ17 -to blue[5]
 set_location_assignment PIN_AJ16 -to blue[6]
 set_location_assignment PIN_AK16 -to blue[7]
-set_location_assignment PIN_AF14 -to clk
 set_location_assignment PIN_AK26 -to green[0]
 set_location_assignment PIN_AJ25 -to green[1]
 set_location_assignment PIN_AH25 -to green[2]
@@ -91,26 +84,16 @@ set_location_assignment PIN_AA30 -to switch
 set_location_assignment PIN_AJ22 -to sync_b
 set_location_assignment PIN_AK21 -to vgaclk
 set_location_assignment PIN_AK18 -to vsync
-set_global_assignment -name MIF_FILE data.mif
-set_global_assignment -name QIP_FILE RAM_data.qip
-set_global_assignment -name SYSTEMVERILOG_FILE RAM/ram_test.sv
-set_global_assignment -name SYSTEMVERILOG_FILE RAM/counter.sv
-set_global_assignment -name SYSTEMVERILOG_FILE TestBench/RAM_data_tb.sv
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
-set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH RAM_pixels_tb -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH RAM_data_tb -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_NAME RAM_data_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id RAM_data_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RAM_data_tb -section_id RAM_data_tb
-set_global_assignment -name QIP_FILE RAM_pixels.qip
-set_global_assignment -name SYSTEMVERILOG_FILE TestBench/RAM_pixels_tb.sv
-set_global_assignment -name EDA_TEST_BENCH_FILE TestBench/RAM_data_tb.sv -section_id RAM_data_tb
 set_global_assignment -name EDA_TEST_BENCH_NAME RAM_pixels_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id RAM_pixels_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME RAM_pixels_tb -section_id RAM_pixels_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE TestBench/RAM_pixels_tb.sv -section_id RAM_pixels_tb
-set_location_assignment PIN_AC29 -to reset
 set_location_assignment PIN_AH18 -to HEX0[6]
 set_location_assignment PIN_AG18 -to HEX0[5]
 set_location_assignment PIN_AH17 -to HEX0[4]
@@ -155,7 +138,34 @@ set_location_assignment PIN_AG21 -to HEX5[1]
 set_location_assignment PIN_AF21 -to HEX5[0]
 set_location_assignment PIN_AB25 -to PS2_CLK
 set_location_assignment PIN_AA25 -to PS2_DAT
+set_global_assignment -name SYSTEMVERILOG_FILE MAIN.sv
+set_global_assignment -name SYSTEMVERILOG_FILE PISA.sv
+set_global_assignment -name SYSTEMVERILOG_FILE VGA/pll.sv
+set_global_assignment -name SYSTEMVERILOG_FILE VGA/vga_controller.sv
+set_global_assignment -name SYSTEMVERILOG_FILE VGA/draw_board.sv
+set_global_assignment -name SYSTEMVERILOG_FILE VGA/vga.sv
+set_global_assignment -name MIF_FILE data.mif
+set_global_assignment -name QIP_FILE RAM_data.qip
+set_global_assignment -name SYSTEMVERILOG_FILE RAM/ram_test.sv
+set_global_assignment -name SYSTEMVERILOG_FILE RAM/counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE TestBench/RAM_data_tb.sv
+set_global_assignment -name QIP_FILE RAM_pixels.qip
+set_global_assignment -name SYSTEMVERILOG_FILE TestBench/RAM_pixels_tb.sv
+set_global_assignment -name SYSTEMVERILOG_FILE top_keyboard.sv
+set_global_assignment -name SYSTEMVERILOG_FILE KFPS2KB.sv
+set_global_assignment -name SYSTEMVERILOG_FILE KFPS2KB_Shift_Register.sv
+set_global_assignment -name QIP_FILE pllkeyboard.qip
+set_global_assignment -name SIP_FILE pllkeyboard.sip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AF14 -to CLK
+set_global_assignment -name SYSTEMVERILOG_FILE MAIN_TB.sv
+set_global_assignment -name EDA_TEST_BENCH_NAME MAIN_TB -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id MAIN_TB
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MAIN_TB -section_id MAIN_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE MAIN_TB.sv -section_id MAIN_TB
+set_global_assignment -name EDA_TEST_BENCH_FILE TestBench/RAM_data_tb.sv -section_id RAM_data_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE TestBench/RAM_pixels_tb.sv -section_id RAM_pixels_tb
+set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY ON -section_id eda_simulation
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

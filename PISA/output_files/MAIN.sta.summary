@@ -2,100 +2,196 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -5.568
-TNS   : -6228.274
+Type  : Slow 1100mV 85C Model Setup 'CLK'
+Slack : -5.216
+TNS   : -174.099
 
 Type  : Slow 1100mV 85C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : -3.738
-TNS   : -135.773
+Slack : -3.819
+TNS   : -151.289
 
-Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 0.092
+Type  : Slow 1100mV 85C Model Setup 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 14.324
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLK'
+Slack : -0.050
+TNS   : -0.050
+
+Type  : Slow 1100mV 85C Model Hold 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.219
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : 1.118
+Slack : 1.288
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -2.636
-TNS   : -28132.696
+Type  : Slow 1100mV 85C Model Recovery 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 12.582
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 1.350
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PISA:pisa|vga:vga|pll:vgapll|toggle'
 Slack : -2.225
-TNS   : -57.616
+TNS   : -58.643
 
-Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -5.580
-TNS   : -5845.131
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLK'
+Slack : 8.867
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 9.141
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'CLK'
+Slack : -5.234
+TNS   : -167.771
 
 Type  : Slow 1100mV 0C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : -3.778
-TNS   : -135.332
+Slack : -3.743
+TNS   : -151.244
 
-Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : 0.032
+Type  : Slow 1100mV 0C Model Setup 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 14.495
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLK'
+Slack : -0.106
+TNS   : -0.106
+
+Type  : Slow 1100mV 0C Model Hold 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.280
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : 1.025
+Slack : 1.195
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -2.636
-TNS   : -28072.640
+Type  : Slow 1100mV 0C Model Recovery 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 13.060
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 1.124
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'PISA:pisa|vga:vga|pll:vgapll|toggle'
 Slack : -2.225
-TNS   : -57.549
+TNS   : -58.375
 
-Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -3.104
-TNS   : -3123.824
-
-Type  : Fast 1100mV 85C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : -1.707
-TNS   : -61.111
-
-Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : -0.041
-TNS   : -0.041
-
-Type  : Fast 1100mV 85C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : 0.503
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -2.636
-TNS   : -27989.323
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLK'
+Slack : 8.822
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 9.153
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'CLK'
+Slack : -2.911
+TNS   : -99.591
+
+Type  : Fast 1100mV 85C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
+Slack : -1.830
+TNS   : -69.836
+
+Type  : Fast 1100mV 85C Model Setup 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 16.616
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'CLK'
+Slack : -0.118
+TNS   : -0.118
+
+Type  : Fast 1100mV 85C Model Hold 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.141
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
+Slack : 0.662
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 13.943
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 1.599
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PISA:pisa|vga:vga|pll:vgapll|toggle'
 Slack : -1.702
 TNS   : -35.742
 
-Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -2.700
-TNS   : -2514.763
-
-Type  : Fast 1100mV 0C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : -1.556
-TNS   : -54.564
-
-Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : -0.132
-TNS   : -0.831
-
-Type  : Fast 1100mV 0C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : 0.417
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -2.636
-TNS   : -28008.160
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLK'
+Slack : 8.781
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 9.522
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLK'
+Slack : -2.558
+TNS   : -82.161
+
+Type  : Fast 1100mV 0C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
+Slack : -1.561
+TNS   : -61.402
+
+Type  : Fast 1100mV 0C Model Setup 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 16.936
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLK'
+Slack : -0.201
+TNS   : -0.211
+
+Type  : Fast 1100mV 0C Model Hold 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.146
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
+Slack : 0.609
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 14.844
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 1.292
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PISA:pisa|vga:vga|pll:vgapll|toggle'
 Slack : -1.702
 TNS   : -35.742
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
+Slack : 1.666
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLK'
+Slack : 8.775
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pisa|u_keyboard|PLL|pllkeyboard_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
+Slack : 9.525
+TNS   : 0.000
 
 ------------------------------------------------------------

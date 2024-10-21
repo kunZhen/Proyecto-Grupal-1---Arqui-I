@@ -56,8 +56,8 @@ module PISA(
   );
   
   // Instancia del módulo keyboard
-	keyboard u_keyboard (
-		 .clk        (clk),      // Señal de reloj
+	top_keyboard u_keyboard (
+		 .CLK        (clk),      // Señal de reloj
 		 .PS2_CLK    (PS2_CLK),  // Señal del reloj del PS2
 		 .PS2_DAT    (PS2_DAT),  // Señal de datos del PS2
 

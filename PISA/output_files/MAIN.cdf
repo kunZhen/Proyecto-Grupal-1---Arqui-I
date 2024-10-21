@@ -1,4 +1,4 @@
-/* Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition */
+/* Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSXFC6D6F31) Path("C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/output_files/") File("MAIN.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSXFC6D6F31) Path("C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/output_files/") File("MAIN.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
