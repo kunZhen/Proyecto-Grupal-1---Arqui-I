@@ -14,7 +14,7 @@ _start:
     lbp t2, 4(zero) 
     lbp t3, 5(zero) 
     sllip t3, t3, 8           
-    orp s1, t2, t3          		# s1 = height
+    orp s1, t2, t3          	# s1 = height
 	
 	# Store base address of original image
 	addip s2, zero, 16			# s2 = original_image

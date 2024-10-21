@@ -111,8 +111,6 @@ def readFile():
 
     with open('Compiler/intermediate.txt', 'r') as f:
         f.seek(0)
-        binaryFile = open('Compiler/binary_out.txt', 'w')
-        hexFile = open('Compiler/hex_out.txt', 'w')
         
         for line in f:
             instr = line.split()
@@ -126,25 +124,35 @@ def readFile():
 
             if instr[0] in (arithmeticOps + logicOps + immOps):
                 artimeticInstruction = RITypeAddressing(clean_instr)
-                binaryFile.write(artimeticInstruction)
-                hexFile.write(hex(int(artimeticInstruction, 2))[2:])
+                binary_lines.append(artimeticInstruction)
+                hexInstruction = format(int(artimeticInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
 
             elif instr[0] in (I_memOps + S_memOps):
                 memInstruction = memoryAddressing(clean_instr)
-                binaryFile.write(memInstruction)
-                hexFile.write(hex(int(memInstruction, 2))[2:])
+                binary_lines.append(memInstruction)
+                hexInstruction = format(int(memInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
 
             elif instr[0] in controlOps:
                 controlInstruction = controlAddressing(clean_instr, lineCounter)
-                binaryFile.write(controlInstruction)
-                hexFile.write(hex(int(controlInstruction, 2))[2:])
+                binary_lines.append(controlInstruction)
+                hexInstruction = format(int(controlInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
 
-            binaryFile.write('\n')
-            hexFile.write('\n')
+            elif instr[0] == 'nop':
+                nopInstruction = ''.zfill(20)
+                binary_lines.append(nopInstruction)
+                hexInstruction = format(int(nopInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
+
+            elif instr[0] == 'syscall':
+                syscallInstruction = ''.zfill(15) + '00110'
+                binary_lines.append(syscallInstruction)
+                hexInstruction = format(int(syscallInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
+
             lineCounter += 1
-        f.close()
-        binaryFile.close()
-        hexFile.close()
 
     with open('Compiler/binary_out.bin', 'w') as binaryFile, open('Compiler/hexadecimal_out.hex', 'w') as hexFile:
         for binary_line, hex_line in zip(binary_lines, hex_lines):
@@ -213,8 +221,6 @@ def RITypeAddressing(instr):
     return value
     
 
-
-# Retorna una lista con el str del número de cada registro, en decimal
 def extract_register(value):
     # Check if the value is a known registry name
     if value in register_map:
@@ -222,16 +228,8 @@ def extract_register(value):
     
     # If it is an immediate number
     if isinstance(value, (int, str)) and str(value).isdigit():
-        print(value)
         return str(value)
     
-
-    if value == 'zero':
-        return '0'
-
-    digits = re.findall(r'\d+', value)
-    if digits:
-        return digits[0]
 
 def main():
     remove_tags()
