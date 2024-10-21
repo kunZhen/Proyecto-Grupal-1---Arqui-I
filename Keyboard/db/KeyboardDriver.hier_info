@@ -30,6 +30,13 @@ clk => holding_counter[27].CLK
 clk => holding_counter[28].CLK
 clk => holding_counter[29].CLK
 clk => holding.CLK
+clk => Quadrant16_led~reg0.CLK
+clk => Quadrant15_led~reg0.CLK
+clk => Quadrant14_led~reg0.CLK
+clk => Quadrant13_led~reg0.CLK
+clk => Quadrant12_led~reg0.CLK
+clk => Quadrant11_led~reg0.CLK
+clk => Quadrant10_led~reg0.CLK
 clk => Quadrant9_led~reg0.CLK
 clk => Quadrant8_led~reg0.CLK
 clk => Quadrant7_led~reg0.CLK
@@ -39,6 +46,11 @@ clk => Quadrant4_led~reg0.CLK
 clk => Quadrant3_led~reg0.CLK
 clk => Quadrant2_led~reg0.CLK
 clk => Quadrant1_led~reg0.CLK
+clk => Quadrant16_confirm~reg0.CLK
+clk => Quadrant15_confirm~reg0.CLK
+clk => Quadrant14_confirm~reg0.CLK
+clk => Quadrant13_confirm~reg0.CLK
+clk => Quadrant12_confirm~reg0.CLK
 clk => Quadrant11_confirm~reg0.CLK
 clk => Quadrant10_confirm~reg0.CLK
 clk => Quadrant9_confirm~reg0.CLK
@@ -127,6 +139,11 @@ Quadrant8_confirm << Quadrant8_confirm~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Quadrant9_confirm << Quadrant9_confirm~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Quadrant10_confirm << Quadrant10_confirm~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Quadrant11_confirm << Quadrant11_confirm~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant12_confirm << Quadrant12_confirm~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant13_confirm << Quadrant13_confirm~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant14_confirm << Quadrant14_confirm~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant15_confirm << Quadrant15_confirm~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant16_confirm << Quadrant16_confirm~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Quadrant1_led << Quadrant1_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Quadrant2_led << Quadrant2_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Quadrant3_led << Quadrant3_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -136,5 +153,12 @@ Quadrant6_led << Quadrant6_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Quadrant7_led << Quadrant7_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Quadrant8_led << Quadrant8_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
 Quadrant9_led << Quadrant9_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant10_led << Quadrant10_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant11_led << Quadrant11_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant12_led << Quadrant12_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant13_led << Quadrant13_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant14_led << Quadrant14_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant15_led << Quadrant15_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Quadrant16_led << Quadrant16_led~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

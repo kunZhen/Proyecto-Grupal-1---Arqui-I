@@ -48,6 +48,26 @@
 					"strict" : false
 				},
 				{
+					"name" : "Quadrant12_confirm",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant13_confirm",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant14_confirm",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant15_confirm",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant16_confirm",
+					"strict" : false
+				},
+				{
 					"name" : "Quadrant1_led",
 					"strict" : false
 				},
@@ -81,6 +101,34 @@
 				},
 				{
 					"name" : "Quadrant9_led",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant10_led",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant11_led",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant12_led",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant13_led",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant14_led",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant15_led",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant16_led",
 					"strict" : false
 				},
 				{

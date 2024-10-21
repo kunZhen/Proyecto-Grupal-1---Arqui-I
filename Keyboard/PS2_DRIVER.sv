@@ -1,9 +1,13 @@
 module PS2_DRIVER(
  input clk, ps2_clk, ps2_data,
  output Quadrant1_confirm, Quadrant2_confirm,Quadrant3_confirm, Quadrant4_confirm,Quadrant5_confirm, Quadrant6_confirm,
-	Quadrant7_confirm, Quadrant8_confirm,Quadrant9_confirm, Quadrant10_confirm,Quadrant11_confirm, 
+	Quadrant7_confirm, Quadrant8_confirm,Quadrant9_confirm, Quadrant10_confirm,Quadrant11_confirm, Quadrant12_confirm,
+	Quadrant13_confirm, Quadrant14_confirm,Quadrant15_confirm, Quadrant16_confirm,
+	
 	Quadrant1_led, Quadrant2_led, Quadrant3_led, Quadrant4_led,
-	Quadrant5_led, Quadrant6_led, Quadrant7_led, Quadrant8_led, Quadrant9_led
+	Quadrant5_led, Quadrant6_led, Quadrant7_led, Quadrant8_led, Quadrant9_led,
+	Quadrant10_led, Quadrant11_led, Quadrant12_led, Quadrant13_led, Quadrant14_led,
+	Quadrant15_led,Quadrant16_led
 	
 );
 
@@ -19,6 +23,11 @@ module PS2_DRIVER(
  logic[7:0] Quadrant_9 = 8'h46; // código para el número 9
  logic[7:0] Quadrant_10 = 8'h15; // código para el número Q
  logic[7:0] Quadrant_11 = 8'h1D; // código para el número W
+ logic[7:0] Quadrant_12 = 8'h24; // código para el número W
+ logic[7:0] Quadrant_13 = 8'h2D; // código para el número W
+ logic[7:0] Quadrant_14 = 8'h2C; // código para el número W
+ logic[7:0] Quadrant_15 = 8'h35; // código para el número W
+ logic[7:0] Quadrant_16 = 8'h3C; // código para el número W
  
  logic read; // para saber si necesita más bits
  logic previous_state; // para verificar el cambio en el reloj
@@ -55,8 +64,13 @@ module PS2_DRIVER(
   Quadrant7_confirm = 0;
   Quadrant8_confirm = 0;
   Quadrant9_confirm = 0;
-   Quadrant10_confirm = 0;
+  Quadrant10_confirm = 0;
   Quadrant11_confirm = 0;
+  Quadrant12_confirm = 0;
+  Quadrant13_confirm = 0;
+  Quadrant14_confirm = 0;
+  Quadrant15_confirm = 0;
+  Quadrant16_confirm = 0;
   holding_counter = 8'b0;
   holding = 0;
   Quadrant1_led = 0;
@@ -68,6 +82,13 @@ module PS2_DRIVER(
   Quadrant7_led = 0;
   Quadrant8_led = 0;
   Quadrant9_led = 0;
+  Quadrant10_led = 0;
+  Quadrant11_led = 0;
+  Quadrant12_led = 0;
+  Quadrant13_led = 0;
+  Quadrant14_led = 0;
+  Quadrant15_led = 0;
+  Quadrant16_led = 0;
 
  end
  
@@ -217,6 +238,31 @@ module PS2_DRIVER(
   end else begin
    Quadrant11_confirm = 1'b0;
   end
+  if (key_code == Quadrant_12) begin
+   Quadrant12_confirm = 1'b1;
+  end else begin
+   Quadrant12_confirm = 1'b0;
+  end
+  if (key_code == Quadrant_13) begin
+   Quadrant13_confirm = 1'b1;
+  end else begin
+   Quadrant13_confirm = 1'b0;
+  end
+  if (key_code == Quadrant_14) begin
+   Quadrant14_confirm = 1'b1;
+  end else begin
+   Quadrant14_confirm = 1'b0;
+  end
+  if (key_code == Quadrant_15) begin
+   Quadrant15_confirm = 1'b1;
+  end else begin
+   Quadrant15_confirm = 1'b0;
+  end
+  if (key_code == Quadrant_16) begin
+   Quadrant16_confirm = 1'b1;
+  end else begin
+   Quadrant16_confirm = 1'b0;
+  end
  end
  
  // control de los LEDs
@@ -256,9 +302,32 @@ module PS2_DRIVER(
   if(Quadrant9_confirm) begin
    Quadrant9_led = 1'b1;
   end
+  if(Quadrant10_confirm) begin
+   Quadrant10_led = 1'b1;
+  end
+  if(Quadrant11_confirm) begin
+   Quadrant11_led = 1'b1;
+  end
+  if(Quadrant12_confirm) begin
+   Quadrant12_led = 1'b1;
+  end
+  if(Quadrant13_confirm) begin
+   Quadrant13_led = 1'b1;
+  end
+  if(Quadrant14_confirm) begin
+   Quadrant14_led = 1'b1;
+  end
+  if(Quadrant15_confirm) begin
+   Quadrant15_led = 1'b1;
+  end
+  if(Quadrant16_confirm) begin
+   Quadrant16_led = 1'b1;
+  end
   
   if(Quadrant1_led || Quadrant2_led || Quadrant3_led || Quadrant4_led ||
-   Quadrant5_led || Quadrant6_led || Quadrant7_led || Quadrant8_led || Quadrant9_led) begin
+   Quadrant5_led || Quadrant6_led || Quadrant7_led || Quadrant8_led 
+	|| Quadrant9_led|| Quadrant10_led || Quadrant11_led || Quadrant12_led 
+	|| Quadrant13_led|| Quadrant14_led || Quadrant15_led) begin
    holding = 1'b1;
 	end
 
@@ -277,6 +346,14 @@ module PS2_DRIVER(
 	Quadrant7_led = 1'b0;
 	Quadrant8_led = 1'b0;
    Quadrant9_led = 1'b0;
+	Quadrant10_led = 1'b0;
+	Quadrant11_led = 1'b0;
+   Quadrant12_led = 1'b0;
+	Quadrant13_led = 1'b0;
+	Quadrant14_led = 1'b0;
+   Quadrant15_led = 1'b0;
+	Quadrant16_led = 1'b0;
+
    holding = 1'b0;
    holding_counter = 30'b0;
   end
