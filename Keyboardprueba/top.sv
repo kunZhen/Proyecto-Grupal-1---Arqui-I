@@ -1,8 +1,4 @@
-//
-// On-board Check Code
-//
-// Written by kitune-san
-//
+
 `define POR_MAX 16'hffff
 
 module top (

@@ -1,5 +1,5 @@
 Flow report for Keyboardprueba
-Mon Oct 21 10:08:23 2024
+Mon Oct 21 10:40:31 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Mon Oct 21 10:08:23 2024       ;
+; Flow Status                     ; Successful - Mon Oct 21 10:40:31 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Keyboardprueba                              ;
 ; Top-level Entity Name           ; top                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 93 / 41,910 ( < 1 % )                       ;
-; Total registers                 ; 108                                         ;
+; Logic utilization (in ALMs)     ; 90 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 110                                         ;
 ; Total pins                      ; 45 / 499 ( 9 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/21/2024 10:07:08 ;
+; Start date & time ; 10/21/2024 10:39:19 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Keyboardprueba      ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+----------------+-------------+----------------+
 ; Assignment Name                      ; Value                                  ; Default Value  ; Entity Name ; Section Id     ;
 +--------------------------------------+----------------------------------------+----------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 128059400897965.172952682720056        ; --             ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 128059400897965.172952875901212        ; --             ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --             ; --          ; KFPS2KB_tb     ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; KFPS2KB_tb                             ; --             ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --             ; --          ; eda_simulation ;
@@ -110,12 +110,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4834 MB             ; 00:00:14                           ;
-; Fitter               ; 00:00:41     ; 1.0                     ; 6659 MB             ; 00:00:57                           ;
-; Assembler            ; 00:00:08     ; 1.0                     ; 4833 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:07     ; 1.1                     ; 5164 MB             ; 00:00:06                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4844 MB             ; 00:00:02                           ;
-; Total                ; 00:01:12     ; --                      ; --                  ; 00:01:25                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 4853 MB             ; 00:00:14                           ;
+; Fitter               ; 00:00:38     ; 1.0                     ; 6663 MB             ; 00:00:55                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4831 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.1                     ; 5167 MB             ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4847 MB             ; 00:00:02                           ;
+; Total                ; 00:01:08     ; --                      ; --                  ; 00:01:23                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

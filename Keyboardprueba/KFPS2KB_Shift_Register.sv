@@ -1,9 +1,4 @@
-//
-// KFPS2KB_Shift_Register.sv
-// PS/2 shift register
-//
-// Written by kitune-san
-//
+
 module KFPS2KB_Shift_Register #(
     parameter over_time = 16'd1000
 ) (

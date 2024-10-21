@@ -1,12 +1,12 @@
-Fitter Status : Successful - Mon Oct 21 10:08:03 2024
+Fitter Status : Successful - Mon Oct 21 10:40:11 2024
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Keyboardprueba
 Top-level Entity Name : top
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 93 / 41,910 ( < 1 % )
-Total registers : 108
+Logic utilization (in ALMs) : 90 / 41,910 ( < 1 % )
+Total registers : 110
 Total pins : 45 / 499 ( 9 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
