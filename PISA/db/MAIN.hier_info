@@ -112,7 +112,7 @@ wraddress[17] << PISA:pisa.wraddress
 
 |MAIN|PISA:pisa
 clk => clk.IN2
-reset => ~NO_FANOUT~
+reset => reset.IN1
 switch => switch.IN1
 vgaclk <= vga:vga.vgaclk
 hsync <= vga:vga.hsync
@@ -224,7 +224,8 @@ wraddress[17] <= RAM_pixels:ram_pixels.wraddress
 
 |MAIN|PISA:pisa|vga:vga
 clk => clk.IN2
-switch => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+switch => switch.IN1
 q[0] => q[0].IN1
 q[1] => q[1].IN1
 q[2] => q[2].IN1
@@ -899,6 +900,7 @@ y[9] => LessThan11.IN25
 y[9] => LessThan12.IN7
 y[9] => LessThan13.IN25
 y[9] => Mult0.IN0
+switch => ~NO_FANOUT~
 q[0] => red.DATAA
 q[0] => green.DATAA
 q[1] => red.DATAA

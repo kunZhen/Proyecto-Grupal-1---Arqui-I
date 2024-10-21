@@ -3,6 +3,8 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
     input logic rst,
     input logic [9:0] x,
     input logic [9:0] y,
+	 
+	 input logic switch,
     
     input [7:0] q,
     output logic [17:0] rdaddress,

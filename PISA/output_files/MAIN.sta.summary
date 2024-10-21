@@ -3,96 +3,96 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -4.674
-TNS   : -5884.802
+Slack : -4.654
+TNS   : -5876.969
 
 Type  : Slow 1100mV 85C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : -3.420
-TNS   : -126.521
+Slack : -3.619
+TNS   : -134.638
 
 Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 0.341
+Slack : 0.376
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : 1.240
+Slack : 1.154
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -2.636
-TNS   : -28122.988
+TNS   : -28123.192
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'PISA:pisa|vga:vga|pll:vgapll|toggle'
 Slack : -2.225
-TNS   : -57.736
+TNS   : -58.397
 
 Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -4.594
-TNS   : -5527.736
+Slack : -4.567
+TNS   : -5514.168
 
 Type  : Slow 1100mV 0C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : -3.412
-TNS   : -127.594
+Slack : -3.659
+TNS   : -134.530
 
 Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : 0.092
+Slack : 0.227
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : 1.091
+Slack : 1.008
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
 Slack : -2.636
-TNS   : -28063.488
+TNS   : -28062.878
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'PISA:pisa|vga:vga|pll:vgapll|toggle'
 Slack : -2.225
-TNS   : -57.664
+TNS   : -58.240
 
 Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -2.780
-TNS   : -2900.113
+Slack : -2.775
+TNS   : -2917.490
 
 Type  : Fast 1100mV 85C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : -1.564
-TNS   : -54.856
+Slack : -1.826
+TNS   : -62.517
 
 Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : 0.055
+Slack : 0.126
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : 0.606
+Slack : 0.520
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -2.636
-TNS   : -27987.661
+TNS   : -27987.466
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'PISA:pisa|vga:vga|pll:vgapll|toggle'
 Slack : -1.702
 TNS   : -35.742
 
 Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -2.397
-TNS   : -2330.624
+Slack : -2.389
+TNS   : -2349.934
 
 Type  : Fast 1100mV 0C Model Setup 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : -1.417
-TNS   : -48.498
+Slack : -1.621
+TNS   : -54.556
 
 Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : -0.191
-TNS   : -1.886
+Slack : -0.075
+TNS   : -0.848
 
 Type  : Fast 1100mV 0C Model Hold 'PISA:pisa|vga:vga|pll:vgapll|toggle'
-Slack : 0.517
+Slack : 0.435
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
 Slack : -2.636
-TNS   : -28006.454
+TNS   : -28006.447
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'PISA:pisa|vga:vga|pll:vgapll|toggle'
 Slack : -1.702
