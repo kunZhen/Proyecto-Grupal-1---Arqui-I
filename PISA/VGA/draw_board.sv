@@ -31,7 +31,7 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
     // Registros para las líneas divisorias
     logic [15:0] div_width_1, div_width_2, div_width_3;  // Divisiones horizontales
     logic [15:0] div_height_1, div_height_2, div_height_3; // Divisiones verticales
-    parameter LINE_WIDTH = 2; // Ancho de las líneas divisorias
+    parameter LINE_WIDTH = 1; // Ancho de las líneas divisorias
     
     // Dirección base donde comienza la imagen real
     parameter BASE_ADDRESS = 18'h10;
@@ -57,7 +57,7 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
                     width_low <= q;
                     rdaddress <= 18'h4;
                     img_width <= {width_high, width_low};
-						  img_width <= 450;
+						  img_width <= 64;
                     // Calcular divisiones horizontales
                     div_width_1 <= img_width / 4;
                     div_width_2 <= (img_width * 2) / 4;
@@ -74,7 +74,7 @@ module draw_board #(parameter HRES = 640, VRES = 480) (
                 INIT_HEIGHT_LOW: begin
                     height_low <= q;
                     img_height <= {height_high, height_low};
-						  img_height <= 450;
+						  img_height <= 64;
                     // Calcular divisiones verticales
                     div_height_1 <= img_height/ 4;
                     div_height_2 <= (img_height * 2) / 4;
