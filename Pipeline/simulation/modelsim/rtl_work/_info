@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/simulation/modelsim
 valu
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1729454834
+Z2 !s110 1729526487
 !i10b 1
 !s100 n<QYDWSQPlV8MYgU_m^^Z2
 IG^A^]iMZkJ0VQmQ9FD2So1
@@ -18,7 +18,7 @@ Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 alu_sv_unit
 S1
 R0
-Z4 w1729453349
+Z4 w1729494097
 8C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv
 FC:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv
 L0 1
@@ -26,7 +26,7 @@ Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z6 !s108 1729454834.000000
+Z6 !s108 1729526487.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/alu.sv|
 !i113 1
@@ -85,7 +85,7 @@ R8
 R9
 vdata_memory
 R1
-Z10 !s110 1729454835
+Z10 !s110 1729526488
 !i10b 1
 !s100 6M[4OXYWbBJDLIngbZo:73
 I[YNc:OBV`NUfi4lZaFTUR2
@@ -101,7 +101,7 @@ R5
 r1
 !s85 0
 31
-Z11 !s108 1729454835.000000
+Z11 !s108 1729526488.000000
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/data_memory.sv|
 !i113 1
@@ -310,7 +310,7 @@ R8
 R9
 vregister_file
 R1
-R10
+R2
 !i10b 1
 !s100 iS:Fng=oB3mIJk>:9_hBC3
 Ig4jNA]fh6XQI[=W>lmNN[0
@@ -326,7 +326,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/register_file.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline|C:/Users/emari/Desktop/Proyecto-Grupal-1---Arqui-I/Pipeline/register_file.sv|
 !i113 1
