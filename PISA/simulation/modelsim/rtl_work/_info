@@ -8,52 +8,55 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/simulation/modelsim
-vRAMps2
-Z1 !s110 1729489469
+vPS2_DRIVER
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1729513300
 !i10b 1
-!s100 l[9kbMo`AI[ePPXXVKIzU1
-I_>SOgk3@[lHGWA8hK@UQ]2
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-R0
-w1729485678
-8C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2.v
-FC:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2.v
-L0 39
-Z3 OV;L;10.5b;63
-r1
-!s85 0
-31
-Z4 !s108 1729489469.000000
-!s107 C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA|C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2.v|
-!i113 1
-o-vlog01compat -work work
-!s92 -vlog01compat -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA
-Z5 tCvgOpt 0
-n@r@a@mps2
-vRAMps2_tb
-DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-R1
-!i10b 1
-!s100 Od`Dc]8A];iX4V1k19;le1
-IoDcOz>Gz[QXheQd0T<XU13
-R2
-!s105 RAMps2_tb_sv_unit
+!s100 N3z^1b=mCDC:SVja_c[<K0
+IIRRGc[MdzK45ONkA]7T8X2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 PS2_DRIVER_sv_unit
 S1
 R0
-w1729489451
-8C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv
-FC:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv
-L0 4
-R3
+w1729510623
+8C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv
+FC:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv
+L0 1
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-R4
-!s107 C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA|C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv|
+Z5 !s108 1729513300.000000
+!s107 C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard|C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv|
 !i113 1
-o-sv -work work
-!s92 -sv -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard
+Z8 tCvgOpt 0
+n@p@s2_@d@r@i@v@e@r
+vPS2_DRIVER_tb
+R1
+R2
+!i10b 1
+!s100 Xe[NiJiF_VEnl;LeBN^KR3
+IFjKTmB=j:457O6eBL7j3V1
+R3
+!s105 PS2_DRIVER_tb_sv_unit
+S1
+R0
+w1729513272
+8C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER_tb.sv
+FC:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
 R5
-n@r@a@mps2_tb
+!s107 C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard|C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER_tb.sv|
+!i113 1
+R6
+R7
+R8
+n@p@s2_@d@r@i@v@e@r_tb

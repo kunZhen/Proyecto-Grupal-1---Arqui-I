@@ -132,6 +132,26 @@
 					"strict" : false
 				},
 				{
+					"name" : "Quadrant_value[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_value[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_value[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_value[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_value[4]",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},
