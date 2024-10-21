@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="simulation/submodules/altera_up_ps2.v"
+   type="VERILOG"
+   library="ps2_0" />
+ <file
+   path="simulation/submodules/altera_up_ps2_command_out.v"
+   type="VERILOG"
+   library="ps2_0" />
+ <file
+   path="simulation/submodules/altera_up_ps2_data_in.v"
+   type="VERILOG"
+   library="ps2_0" />
+ <file
+   path="simulation/submodules/PS2controller_ps2_0.v"
+   type="VERILOG"
+   library="ps2_0" />
+ <file path="simulation/PS2controller.v" type="VERILOG" />
+ <topLevel name="PS2controller" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

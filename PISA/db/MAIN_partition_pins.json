@@ -4,67 +4,131 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "key_0_led",
+					"name" : "Quadrant_confirm[0]",
 					"strict" : false
 				},
 				{
-					"name" : "key_1_led",
+					"name" : "Quadrant_confirm[1]",
 					"strict" : false
 				},
 				{
-					"name" : "key_2_led",
+					"name" : "Quadrant_confirm[2]",
 					"strict" : false
 				},
 				{
-					"name" : "key_3_led",
+					"name" : "Quadrant_confirm[3]",
 					"strict" : false
 				},
 				{
-					"name" : "key_4_led",
+					"name" : "Quadrant_confirm[4]",
 					"strict" : false
 				},
 				{
-					"name" : "key_5_led",
+					"name" : "Quadrant_confirm[5]",
 					"strict" : false
 				},
 				{
-					"name" : "key_6_led",
+					"name" : "Quadrant_confirm[6]",
 					"strict" : false
 				},
 				{
-					"name" : "key_7_led",
+					"name" : "Quadrant_confirm[7]",
 					"strict" : false
 				},
 				{
-					"name" : "key_8_led",
+					"name" : "Quadrant_confirm[8]",
 					"strict" : false
 				},
 				{
-					"name" : "key_9_led",
+					"name" : "Quadrant_confirm[9]",
 					"strict" : false
 				},
 				{
-					"name" : "key_10_led",
+					"name" : "Quadrant_confirm[10]",
 					"strict" : false
 				},
 				{
-					"name" : "key_11_led",
+					"name" : "Quadrant_confirm[11]",
 					"strict" : false
 				},
 				{
-					"name" : "key_12_led",
+					"name" : "Quadrant_confirm[12]",
 					"strict" : false
 				},
 				{
-					"name" : "key_13_led",
+					"name" : "Quadrant_confirm[13]",
 					"strict" : false
 				},
 				{
-					"name" : "key_14_led",
+					"name" : "Quadrant_confirm[14]",
 					"strict" : false
 				},
 				{
-					"name" : "key_15_led",
+					"name" : "Quadrant_confirm[15]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[5]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[6]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[7]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[8]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[9]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[10]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[11]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[12]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[14]",
+					"strict" : false
+				},
+				{
+					"name" : "Quadrant_led[15]",
 					"strict" : false
 				},
 				{

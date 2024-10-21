@@ -1,5 +1,5 @@
 Analysis & Synthesis report for KeyboardDriver
-Sun Oct 20 13:59:26 2024
+Sun Oct 20 22:25:47 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -44,14 +44,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Oct 20 13:59:26 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sun Oct 20 22:25:47 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; KeyboardDriver                              ;
 ; Top-level Entity Name           ; PS2_DRIVER                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 82                                          ;
-; Total pins                      ; 7                                           ;
+; Total registers                 ; 110                                         ;
+; Total pins                      ; 35                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -182,25 +182,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 70        ;
+; Estimate of Logic utilization (ALMs needed) ; 97        ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 123       ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 15        ;
-;     -- 5 input functions                    ; 15        ;
-;     -- 4 input functions                    ; 4         ;
-;     -- <=3 input functions                  ; 89        ;
+; Combinational ALUT usage for logic          ; 167       ;
+;     -- 7 input functions                    ; 2         ;
+;     -- 6 input functions                    ; 22        ;
+;     -- 5 input functions                    ; 24        ;
+;     -- 4 input functions                    ; 6         ;
+;     -- <=3 input functions                  ; 113       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 82        ;
+; Dedicated logic registers                   ; 110       ;
 ;                                             ;           ;
-; I/O pins                                    ; 7         ;
+; I/O pins                                    ; 35        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 82        ;
-; Total fan-out                               ; 650       ;
-; Average fan-out                             ; 2.97      ;
+; Maximum fan-out                             ; 110       ;
+; Total fan-out                               ; 938       ;
+; Average fan-out                             ; 2.70      ;
 +---------------------------------------------+-----------+
 
 
@@ -209,7 +209,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |PS2_DRIVER                ; 123 (123)           ; 82 (82)                   ; 0                 ; 0          ; 7    ; 0            ; |PS2_DRIVER         ; PS2_DRIVER  ; work         ;
+; |PS2_DRIVER                ; 167 (167)           ; 110 (110)                 ; 0                 ; 0          ; 35   ; 0            ; |PS2_DRIVER         ; PS2_DRIVER  ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -219,8 +219,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 82    ;
-; Number of registers using Synchronous Clear  ; 61    ;
+; Total registers                              ; 110   ;
+; Number of registers using Synchronous Clear  ; 74    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -244,8 +244,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |PS2_DRIVER|key_code[4]    ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |PS2_DRIVER|counter[0]     ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |PS2_DRIVER|key_code[5]    ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |PS2_DRIVER|counter[1]     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -254,25 +254,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 82                          ;
+; arriav_ff             ; 110                         ;
 ;     ENA               ; 12                          ;
 ;     ENA SCLR          ; 12                          ;
-;     SCLR              ; 49                          ;
-;     plain             ; 9                           ;
-; arriav_lcell_comb     ; 123                         ;
+;     SCLR              ; 62                          ;
+;     plain             ; 24                          ;
+; arriav_lcell_comb     ; 167                         ;
 ;     arith             ; 50                          ;
 ;         1 data inputs ; 50                          ;
-;     normal            ; 73                          ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 115                         ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 35                          ;
-;         4 data inputs ; 4                           ;
-;         5 data inputs ; 15                          ;
-;         6 data inputs ; 15                          ;
-; boundary_port         ; 7                           ;
+;         2 data inputs ; 21                          ;
+;         3 data inputs ; 41                          ;
+;         4 data inputs ; 6                           ;
+;         5 data inputs ; 24                          ;
+;         6 data inputs ; 22                          ;
+; boundary_port         ; 35                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.40                        ;
-; Average LUT depth     ; 3.73                        ;
+; Average LUT depth     ; 3.92                        ;
 +-----------------------+-----------------------------+
 
 
@@ -291,7 +293,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Oct 20 13:59:15 2024
+    Info: Processing started: Sun Oct 20 22:25:36 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off KeyboardDriver -c KeyboardDriver
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -300,20 +302,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file ps2_dri
 Info (12021): Found 1 design units, including 1 entities, in source file tb_ps2_driver.sv
     Info (12023): Found entity 1: tb_PS2_DRIVER File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboard/tb_PS2_DRIVER.sv Line: 1
 Info (12127): Elaborating entity "PS2_DRIVER" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(45): truncated value with size 32 to match size of target (8) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboard/PS2_DRIVER.sv Line: 45
-Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(57): truncated value with size 32 to match size of target (12) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboard/PS2_DRIVER.sv Line: 57
-Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(73): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboard/PS2_DRIVER.sv Line: 73
+Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(98): truncated value with size 32 to match size of target (8) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboard/PS2_DRIVER.sv Line: 98
+Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(110): truncated value with size 32 to match size of target (12) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboard/PS2_DRIVER.sv Line: 110
+Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(126): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboard/PS2_DRIVER.sv Line: 126
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 163 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 229 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 156 logic cells
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 194 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4830 megabytes
-    Info: Processing ended: Sun Oct 20 13:59:26 2024
+    Info: Peak virtual memory: 4829 megabytes
+    Info: Processing ended: Sun Oct 20 22:25:47 2024
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
 
 

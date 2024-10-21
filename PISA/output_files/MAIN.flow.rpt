@@ -1,5 +1,5 @@
 Flow report for MAIN
-Sun Oct 20 17:39:59 2024
+Mon Oct 21 00:14:04 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Oct 20 17:39:59 2024       ;
+; Flow Status                     ; Successful - Mon Oct 21 00:14:04 2024       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; MAIN                                        ;
-; Top-level Entity Name           ; PS2_DRIVER                                  ;
+; Top-level Entity Name           ; PS2_DRIVER_simplify                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSXFC6D6F31C6                              ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 40 / 41,910 ( < 1 % )                       ;
-; Total registers                 ; 65                                          ;
-; Total pins                      ; 19 / 499 ( 4 % )                            ;
+; Logic utilization (in ALMs)     ; 79 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 132                                         ;
+; Total pins                      ; 35 / 499 ( 7 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
@@ -67,55 +67,60 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/20/2024 17:38:57 ;
+; Start date & time ; 10/21/2024 00:12:46 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; MAIN                ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                ;
-+--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
-+--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 128059400897965.172946753737036        ; --            ; --          ; --                                ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; tb_PS2_DRIVER                     ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; RAM_data_tb                       ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; RAM_pixels_tb                     ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_symbol           ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_PS2_DRIVER                          ; --            ; --          ; eda_simulation                    ;
-; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --                                ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_FILE                  ; Keyboard/tb_PS2_DRIVER.sv              ; --            ; --          ; tb_PS2_DRIVER                     ;
-; EDA_TEST_BENCH_FILE                  ; TestBench/RAM_data_tb.sv               ; --            ; --          ; RAM_data_tb                       ;
-; EDA_TEST_BENCH_FILE                  ; TestBench/RAM_pixels_tb.sv             ; --            ; --          ; RAM_pixels_tb                     ;
-; EDA_TEST_BENCH_MODULE_NAME           ; tb_PS2_DRIVER                          ; --            ; --          ; tb_PS2_DRIVER                     ;
-; EDA_TEST_BENCH_MODULE_NAME           ; RAM_data_tb                            ; --            ; --          ; RAM_data_tb                       ;
-; EDA_TEST_BENCH_MODULE_NAME           ; RAM_pixels_tb                          ; --            ; --          ; RAM_pixels_tb                     ;
-; EDA_TEST_BENCH_NAME                  ; RAM_data_tb                            ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; RAM_pixels_tb                          ; --            ; --          ; eda_simulation                    ;
-; EDA_TEST_BENCH_NAME                  ; tb_PS2_DRIVER                          ; --            ; --          ; eda_simulation                    ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                                ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                                ;
-; MISC_FILE                            ; RAM_data.bsf                           ; --            ; --          ; --                                ;
-; MISC_FILE                            ; RAM_data_inst.v                        ; --            ; --          ; --                                ;
-; MISC_FILE                            ; RAM_data_bb.v                          ; --            ; --          ; --                                ;
-; MISC_FILE                            ; RAM_pixels.bsf                         ; --            ; --          ; --                                ;
-; MISC_FILE                            ; RAM_pixels_inst.v                      ; --            ; --          ; --                                ;
-; MISC_FILE                            ; RAM_pixels_bb.v                        ; --            ; --          ; --                                ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; PS2_DRIVER  ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; PS2_DRIVER  ; Top                               ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; PS2_DRIVER  ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                     ; PS2_DRIVER                             ; MAIN          ; --          ; --                                ;
-+--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                        ;
++--------------------------------------+----------------------------------------+---------------+---------------------+-----------------------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name         ; Section Id                        ;
++--------------------------------------+----------------------------------------+---------------+---------------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID                ; 128059400897965.172949116532204        ; --            ; --                  ; --                                ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --                  ; RAMps2_tb                         ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --                  ; tb_PS2_DRIVER                     ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --                  ; RAM_data_tb                       ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --                  ; RAM_pixels_tb                     ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --                  ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --                  ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --                  ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --                  ; eda_board_design_symbol           ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; RAMps2_tb                              ; --            ; --                  ; eda_simulation                    ;
+; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --                  ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --                  ; --                                ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --                  ; eda_simulation                    ;
+; EDA_TEST_BENCH_FILE                  ; RAMps2_tb.sv                           ; --            ; --                  ; RAMps2_tb                         ;
+; EDA_TEST_BENCH_FILE                  ; Keyboard/tb_PS2_DRIVER.sv              ; --            ; --                  ; tb_PS2_DRIVER                     ;
+; EDA_TEST_BENCH_FILE                  ; TestBench/RAM_data_tb.sv               ; --            ; --                  ; RAM_data_tb                       ;
+; EDA_TEST_BENCH_FILE                  ; TestBench/RAM_pixels_tb.sv             ; --            ; --                  ; RAM_pixels_tb                     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; RAMps2_tb                              ; --            ; --                  ; RAMps2_tb                         ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_PS2_DRIVER                          ; --            ; --                  ; tb_PS2_DRIVER                     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; RAM_data_tb                            ; --            ; --                  ; RAM_data_tb                       ;
+; EDA_TEST_BENCH_MODULE_NAME           ; RAM_pixels_tb                          ; --            ; --                  ; RAM_pixels_tb                     ;
+; EDA_TEST_BENCH_NAME                  ; RAM_data_tb                            ; --            ; --                  ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; RAM_pixels_tb                          ; --            ; --                  ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; tb_PS2_DRIVER                          ; --            ; --                  ; eda_simulation                    ;
+; EDA_TEST_BENCH_NAME                  ; RAMps2_tb                              ; --            ; --                  ; eda_simulation                    ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --                  ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --                  ; --                                ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --                  ; --                                ;
+; MISC_FILE                            ; RAM_data.bsf                           ; --            ; --                  ; --                                ;
+; MISC_FILE                            ; RAM_data_inst.v                        ; --            ; --                  ; --                                ;
+; MISC_FILE                            ; RAM_data_bb.v                          ; --            ; --                  ; --                                ;
+; MISC_FILE                            ; RAM_pixels.bsf                         ; --            ; --                  ; --                                ;
+; MISC_FILE                            ; RAM_pixels_inst.v                      ; --            ; --                  ; --                                ;
+; MISC_FILE                            ; RAM_pixels_bb.v                        ; --            ; --                  ; --                                ;
+; MISC_FILE                            ; RAMps2_bb.v                            ; --            ; --                  ; --                                ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; PS2_DRIVER_simplify ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; PS2_DRIVER_simplify ; Top                               ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; PS2_DRIVER_simplify ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --                  ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                  ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --                  ; --                                ;
+; TOP_LEVEL_ENTITY                     ; PS2_DRIVER_simplify                    ; MAIN          ; --                  ; --                                ;
++--------------------------------------+----------------------------------------+---------------+---------------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -123,12 +128,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4832 MB             ; 00:00:11                           ;
-; Fitter               ; 00:00:34     ; 1.0                     ; 6554 MB             ; 00:00:45                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4832 MB             ; 00:00:11                           ;
+; Fitter               ; 00:00:49     ; 1.0                     ; 6615 MB             ; 00:00:59                           ;
 ; Assembler            ; 00:00:06     ; 1.0                     ; 4834 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5133 MB             ; 00:00:05                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4738 MB             ; 00:00:01                           ;
-; Total                ; 00:00:57     ; --                      ; --                  ; 00:01:08                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.1                     ; 5137 MB             ; 00:00:05                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4743 MB             ; 00:00:01                           ;
+; Total                ; 00:01:13     ; --                      ; --                  ; 00:01:22                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

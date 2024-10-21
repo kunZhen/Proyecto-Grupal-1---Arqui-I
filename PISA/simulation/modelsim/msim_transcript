@@ -10,34 +10,38 @@
 # Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard {C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv}
+# vlog -vlog01compat -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA {C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:13:10 on Oct 20,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard" C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv 
-# -- Compiling module PS2_DRIVER
+# Start time: 23:44:29 on Oct 20,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA" C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2.v 
+# -- Compiling module RAMps2
 # 
 # Top level modules:
-# 	PS2_DRIVER
-# End time: 17:13:10 on Oct 20,2024, Elapsed time: 0:00:00
+# 	RAMps2
+# End time: 23:44:29 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard {C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/tb_PS2_DRIVER.sv}
+# vlog -sv -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA {C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:13:10 on Oct 20,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard" C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/tb_PS2_DRIVER.sv 
-# -- Compiling module tb_PS2_DRIVER
+# Start time: 23:44:29 on Oct 20,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA" C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv 
+# -- Compiling module RAMps2_tb
 # 
 # Top level modules:
-# 	tb_PS2_DRIVER
-# End time: 17:13:10 on Oct 20,2024, Elapsed time: 0:00:00
+# 	RAMps2_tb
+# End time: 23:44:29 on Oct 20,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  tb_PS2_DRIVER
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" tb_PS2_DRIVER 
-# Start time: 17:13:10 on Oct 20,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  RAMps2_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" RAMps2_tb 
+# Start time: 23:44:29 on Oct 20,2024
 # Loading sv_std.std
-# Loading work.tb_PS2_DRIVER
-# Loading work.PS2_DRIVER
+# Loading work.RAMps2_tb
+# Loading work.RAMps2
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
 # 
 # add wave *
 # view structure
@@ -45,18 +49,11 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Time =                    0, ps2_data = 1, leds = 0000000000000000, keys = xxxxxxxxxxxxxxxx
-# Time =                    5, ps2_data = 1, leds = 0000000000000000, keys = 0000000000000000
-# Time =                  100, ps2_data = 0, leds = 0000000000000000, keys = 0000000000000000
-# Time =                  200, ps2_data = 1, leds = 0000000000000000, keys = 0000000000000000
-# Time =                  260, ps2_data = 0, leds = 0000000000000000, keys = 0000000000000000
-# Time =                  280, ps2_data = 1, leds = 0000000000000000, keys = 0000000000000000
-# LEDs: 0000000000000000
-# Keys: 0000000000000000
-# ** Note: $stop    : C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/tb_PS2_DRIVER.sv(82)
-#    Time: 620 ps  Iteration: 0  Instance: /tb_PS2_DRIVER
-# Break in Module tb_PS2_DRIVER at C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/tb_PS2_DRIVER.sv line 82
-# A time value could not be extracted from the current line
-# A time value could not be extracted from the current line
-# End time: 17:24:12 on Oct 20,2024, Elapsed time: 0:11:02
+# Dato en dirección 1: 0c
+# Dato en dirección 2: 0c
+# ** Note: $finish    : C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv(57)
+#    Time: 115 ns  Iteration: 0  Instance: /RAMps2_tb
+# 1
+# Break in Module RAMps2_tb at C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv line 57
+# End time: 00:06:27 on Oct 21,2024, Elapsed time: 0:21:58
 # Errors: 0, Warnings: 0
