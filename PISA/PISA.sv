@@ -21,6 +21,7 @@ module PISA(
 	// Instancia del módulo VGA
 	vga vga (
 		 .clk(clk),                // Señal de reloj principal
+		 .reset(reset),
 		 .switch(switch),          // Entrada de switch
 		 
 		 .rdaddress(rdaddress), 

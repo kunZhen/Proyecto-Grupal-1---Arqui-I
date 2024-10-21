@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Oct 19 04:01:41 2024
+Analysis & Synthesis Status : Successful - Mon Oct 21 04:13:56 2024
 Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : MAIN
 Top-level Entity Name : MAIN
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 76
+Total registers : 94
 Total pins : 109
 Total virtual pins : 0
 Total block memory bits : 1,600,000
-Total DSP Blocks : 1
+Total DSP Blocks : 3
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

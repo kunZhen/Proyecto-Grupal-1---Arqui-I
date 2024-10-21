@@ -228,6 +228,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "switch",
+					"strict" : false
+				},
+				{
 					"name" : "data[0]",
 					"strict" : false
 				},

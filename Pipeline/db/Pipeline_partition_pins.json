@@ -1,0 +1,833 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "rs1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rs1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rs1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rs1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rs1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[16]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[17]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[18]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[19]",
+					"strict" : false
+				},
+				{
+					"name" : "zero",
+					"strict" : false
+				},
+				{
+					"name" : "pc_result[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_result[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_result[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_result[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_result[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_result[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_result[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pc_result[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOp[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ForwardA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ForwardA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ForwardB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ForwardB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Flush",
+					"strict" : false
+				},
+				{
+					"name" : "ByteEnable",
+					"strict" : false
+				},
+				{
+					"name" : "MemWrite",
+					"strict" : false
+				},
+				{
+					"name" : "ALUSrc",
+					"strict" : false
+				},
+				{
+					"name" : "RegWrite",
+					"strict" : false
+				},
+				{
+					"name" : "CMP",
+					"strict" : false
+				},
+				{
+					"name" : "BLT",
+					"strict" : false
+				},
+				{
+					"name" : "BGE",
+					"strict" : false
+				},
+				{
+					"name" : "JMP",
+					"strict" : false
+				},
+				{
+					"name" : "rs2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rs2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rs2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rs2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rs2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rd[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[11]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[12]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[13]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[14]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[15]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[16]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[17]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[18]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs1[19]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[9]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[10]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[11]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[12]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[13]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[14]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[15]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[16]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[17]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[18]",
+					"strict" : false
+				},
+				{
+					"name" : "data_rs2[19]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[0]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[1]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[2]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[3]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[4]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[5]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[6]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[7]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[8]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[9]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[10]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[11]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[12]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[13]",
+					"strict" : false
+				},
+				{
+					"name" : "immediate[14]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[16]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[17]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[18]",
+					"strict" : false
+				},
+				{
+					"name" : "reg_write_data[19]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[0]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[1]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[2]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[3]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[4]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[5]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[6]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[7]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[8]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[9]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[10]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[11]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[12]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[13]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[14]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[15]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[16]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[17]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[18]",
+					"strict" : false
+				},
+				{
+					"name" : "alu_result[19]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[0]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[1]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[2]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[3]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[4]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[5]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[6]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[7]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[8]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[9]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[10]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[11]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[12]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[13]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[14]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[15]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[16]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[17]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[18]",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[19]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[16]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[17]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[18]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_read_data[19]",
+					"strict" : false
+				},
+				{
+					"name" : "ALUOp[0]",
+					"strict" : false
+				},
+				{
+					"name" : "MemToReg",
+					"strict" : false
+				},
+				{
+					"name" : "Stall",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Write",
+					"strict" : false
+				},
+				{
+					"name" : "PCWrite",
+					"strict" : false
+				},
+				{
+					"name" : "MemRead",
+					"strict" : false
+				},
+				{
+					"name" : "RegSrc",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

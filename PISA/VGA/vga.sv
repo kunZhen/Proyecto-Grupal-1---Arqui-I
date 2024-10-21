@@ -2,7 +2,7 @@ module vga #(
     parameter HRES = 640,
     parameter VRES = 480
 )(
-    input logic clk,
+    input logic clk, reset,
 	 input logic switch,
 	 
 	 input [7:0] q, 
@@ -21,8 +21,6 @@ module vga #(
     logic [9:0] x, y;
 	 
 	 logic [2:0] num_boats;
-	 
-	 logic reset = 1;
 
     pll vgapll(
         .inclk0(clk),
@@ -46,8 +44,11 @@ module vga #(
 	 // Instanciación del módulo draw_board
 	 draw_board #(HRES, VRES) draw_board_inst (//Lógica para el estado 1
 		 .clk(clk),
+		 //.rst(reset),
 		 .x(x),
 		 .y(y),
+		 
+		 .switch(switch),
 		 
 		 .q(q),
 		 .rdaddress(rdaddress),

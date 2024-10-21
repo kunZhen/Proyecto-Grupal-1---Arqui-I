@@ -1,5 +1,5 @@
 Analysis & Synthesis report for MAIN
-Sat Oct 19 04:01:42 2024
+Mon Oct 21 04:13:56 2024
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -31,6 +31,7 @@ Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
  23. Post-Synthesis Netlist Statistics for Top Partition
  24. Elapsed Time Per Partition
  25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -57,17 +58,17 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Oct 19 04:01:41 2024          ;
+; Analysis & Synthesis Status     ; Successful - Mon Oct 21 04:13:56 2024          ;
 ; Quartus Prime Version           ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
 ; Revision Name                   ; MAIN                                           ;
 ; Top-level Entity Name           ; MAIN                                           ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 76                                             ;
+; Total registers                 ; 94                                             ;
 ; Total pins                      ; 109                                            ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 1,600,000                                      ;
-; Total DSP Blocks                ; 1                                              ;
+; Total DSP Blocks                ; 3                                              ;
 ; Total HSSI RX PCSs              ; 0                                              ;
 ; Total HSSI PMA RX Deserializers ; 0                                              ;
 ; Total HSSI TX PCSs              ; 0                                              ;
@@ -215,27 +216,27 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 118       ;
+; Estimate of Logic utilization (ALMs needed) ; 147       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 141       ;
+; Combinational ALUT usage for logic          ; 187       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 85        ;
-;     -- 5 input functions                    ; 13        ;
-;     -- 4 input functions                    ; 14        ;
-;     -- <=3 input functions                  ; 29        ;
+;     -- 6 input functions                    ; 95        ;
+;     -- 5 input functions                    ; 7         ;
+;     -- 4 input functions                    ; 18        ;
+;     -- <=3 input functions                  ; 67        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 76        ;
+; Dedicated logic registers                   ; 94        ;
 ;                                             ;           ;
 ; I/O pins                                    ; 109       ;
 ; Total MLAB memory bits                      ; 0         ;
 ; Total block memory bits                     ; 1600000   ;
 ;                                             ;           ;
-; Total DSP Blocks                            ; 1         ;
+; Total DSP Blocks                            ; 3         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 256       ;
-; Total fan-out                               ; 4287      ;
-; Average fan-out                             ; 6.74      ;
+; Maximum fan-out                             ; 274       ;
+; Total fan-out                               ; 4500      ;
+; Average fan-out                             ; 6.41      ;
 +---------------------------------------------+-----------+
 
 
@@ -244,14 +245,14 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                               ; Entity Name     ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |MAIN                                         ; 141 (1)             ; 76 (0)                    ; 1600000           ; 1          ; 109  ; 0            ; |MAIN                                                                                                             ; MAIN            ; work         ;
-;    |PISA:pisa|                                ; 140 (0)             ; 76 (0)                    ; 1600000           ; 1          ; 0    ; 0            ; |MAIN|PISA:pisa                                                                                                   ; PISA            ; work         ;
+; |MAIN                                         ; 187 (1)             ; 94 (0)                    ; 1600000           ; 3          ; 109  ; 0            ; |MAIN                                                                                                             ; MAIN            ; work         ;
+;    |PISA:pisa|                                ; 186 (0)             ; 94 (0)                    ; 1600000           ; 3          ; 0    ; 0            ; |MAIN|PISA:pisa                                                                                                   ; PISA            ; work         ;
 ;       |RAM_pixels:ram_pixels|                 ; 74 (0)              ; 10 (0)                    ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels                                                                             ; RAM_pixels      ; work         ;
 ;          |altsyncram:altsyncram_component|    ; 74 (0)              ; 10 (0)                    ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component                                             ; altsyncram      ; work         ;
 ;             |altsyncram_m002:auto_generated|  ; 74 (0)              ; 10 (10)                   ; 1600000           ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated              ; altsyncram_m002 ; work         ;
 ;                |mux_ehb:mux3|                 ; 74 (74)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|mux_ehb:mux3 ; mux_ehb         ; work         ;
-;       |vga:vga|                               ; 66 (0)              ; 66 (0)                    ; 0                 ; 1          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga                                                                                           ; vga             ; work         ;
-;          |draw_board:draw_board_inst|         ; 35 (35)             ; 45 (45)                   ; 0                 ; 1          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst                                                                ; draw_board      ; work         ;
+;       |vga:vga|                               ; 112 (0)             ; 84 (0)                    ; 0                 ; 3          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga                                                                                           ; vga             ; work         ;
+;          |draw_board:draw_board_inst|         ; 81 (81)             ; 63 (63)                   ; 0                 ; 3          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|draw_board:draw_board_inst                                                                ; draw_board      ; work         ;
 ;          |pll:vgapll|                         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|pll:vgapll                                                                                ; pll             ; work         ;
 ;          |vga_controller:vga_controller_inst| ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |MAIN|PISA:pisa|vga:vga|vga_controller:vga_controller_inst                                                        ; vga_controller  ; work         ;
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
@@ -272,10 +273,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------+-------------+
 ; Statistic                                ; Number Used ;
 +------------------------------------------+-------------+
-; Independent 18x18 plus 36                ; 1           ;
-; Total number of DSP blocks               ; 1           ;
+; Independent 18x18 plus 36                ; 3           ;
+; Total number of DSP blocks               ; 3           ;
 ;                                          ;             ;
-; Fixed Point Unsigned Multiplier          ; 1           ;
+; Fixed Point Unsigned Multiplier          ; 3           ;
 ; Fixed Point Dedicated Output Accumulator ; 1           ;
 +------------------------------------------+-------------+
 
@@ -289,124 +290,153 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+---------------------------------------+-----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                        ;
-+------------------------------------------------------------------+----------------------------------------+
-; Register name                                                    ; Reason for Removal                     ;
-+------------------------------------------------------------------+----------------------------------------+
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|state[3..31]        ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[7..15]    ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[6]        ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[0..5]     ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[7..15]   ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[6]       ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[0..5]    ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[5..15]  ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[4]      ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[0..3]   ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[6..15]  ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[5]      ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[0..4]   ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[5..15] ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[4]     ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[0..3]  ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[6..15] ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[5]     ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[0..4]  ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[6..15]  ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[4]      ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[0..3]   ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[6..15] ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[4]     ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[0..3]  ; Stuck at GND due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[5]      ; Stuck at VCC due to stuck port data_in ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[5]     ; Stuck at VCC due to stuck port data_in ;
-; Total Number of Removed Registers = 157                          ;                                        ;
-+------------------------------------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++-----------------------------------------------------------------------+----------------------------------------+
+; Register name                                                         ; Reason for Removal                     ;
++-----------------------------------------------------------------------+----------------------------------------+
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|state[3..31]             ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[7..15]         ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[6]             ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[0..5]          ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[7..15]        ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[6]            ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[0..5]         ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[6..15]  ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[5]      ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[0..4]   ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[5..15]       ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[4]           ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[0..3]        ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[6..15]       ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[5]           ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[0..4]        ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[6..15] ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[5]     ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[0..4]  ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[5..15]      ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[4]          ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[0..3]       ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[6..15]      ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[5]          ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[0..4]       ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[6..15]       ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[4]           ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[0..3]        ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[6..15]      ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[4]          ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[0..3]       ; Stuck at GND due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[5]           ; Stuck at VCC due to stuck port data_in ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[5]          ; Stuck at VCC due to stuck port data_in ;
+; Total Number of Removed Registers = 189                               ;                                        ;
++-----------------------------------------------------------------------+----------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                              ;
-+-------------------------------------------------------------+---------------------------+----------------------------------------------------------------+
-; Register name                                               ; Reason for Removal        ; Registers Removed due to This Register                         ;
-+-------------------------------------------------------------+---------------------------+----------------------------------------------------------------+
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[15]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[13],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[14],  ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[14],  ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[13],  ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[12],  ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[11],  ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[10],  ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[9],   ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[8],   ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[7]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[15] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[13], ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[14], ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[14], ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[13], ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[12], ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[11], ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[10], ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[9],  ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[8],  ;
-;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[7]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[14]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[12],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[13]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[13]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[11],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[12]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[12]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[10],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[11]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[11]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[9],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[10]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[10]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[8],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[9]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[9]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[7],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[8]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[8]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[6],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[7]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[7]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[5],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[6]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[6]   ; Stuck at VCC              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[4],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[5]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[5]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[3],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[4]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[4]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[2],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[3]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[3]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[1],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[2]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[2]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[0],   ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[1]    ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[14] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[12], ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[13]  ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[13] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[11], ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[12]  ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[12] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[10], ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[11]  ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[11] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[9],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[10]  ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[10] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[8],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[9]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[9]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[7],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[8]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[8]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[6],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[7]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[7]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[5],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[6]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[6]  ; Stuck at VCC              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[4],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[5]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[5]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[3],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[4]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[4]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[2],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[3]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[3]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[1],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[2]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[2]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[0],  ;
-;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[1]   ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[1]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[0]    ;
-;                                                             ; due to stuck port data_in ;                                                                ;
-; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[1]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[0]   ;
-;                                                             ; due to stuck port data_in ;                                                                ;
-+-------------------------------------------------------------+---------------------------+----------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                   ;
++-------------------------------------------------------------+---------------------------+---------------------------------------------------------------------+
+; Register name                                               ; Reason for Removal        ; Registers Removed due to This Register                              ;
++-------------------------------------------------------------+---------------------------+---------------------------------------------------------------------+
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[15] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[14], ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[13],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[14],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[14],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[13],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[12],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[11],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[10],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[9],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[8],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_3[7]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[15]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[13],       ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[14],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[14],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[13],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[12],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[11],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[10],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[9],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[8],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_3[7]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[10]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[9],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[8],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[9]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[9]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[8],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[7],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[8]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[8]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[7],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[6],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[7]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[7]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[6],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[5],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[6]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[6]   ; Stuck at VCC              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[5],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[4],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[5]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[5]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[4],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[3],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[4]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[4]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[3],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[2],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[3]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[3]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[2],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[1],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[2]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[2]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_width[1],   ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[0],        ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[1]         ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[14] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[13], ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[12],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[13]       ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[13] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[12], ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[11],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[12]       ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[12] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[11], ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[10],      ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[11]       ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[11] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[10], ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[9],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[10]       ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[10] ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[9],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[8],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[9]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[9]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[8],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[7],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[8]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[8]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[7],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[6],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[7]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[7]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[6],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[5],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[6]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[6]  ; Stuck at VCC              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[5],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[4],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[5]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[5]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[4],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[3],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[4]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[4]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[3],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[2],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[3]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[3]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[2],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[1],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[2]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[2]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|second_img_height[1],  ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_1[0],       ;
+;                                                             ;                           ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[1]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[14]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[12],       ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[13]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[13]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[11],       ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[12]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[12]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[10],       ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[11]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[11]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_1[9],        ;
+;                                                             ; due to stuck port data_in ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[10]        ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_width[1]   ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_width_2[0]         ;
+;                                                             ; due to stuck port data_in ;                                                                     ;
+; PISA:pisa|vga:vga|draw_board:draw_board_inst|img_height[1]  ; Stuck at GND              ; PISA:pisa|vga:vga|draw_board:draw_board_inst|div_height_2[0]        ;
+;                                                             ; due to stuck port data_in ;                                                                     ;
++-------------------------------------------------------------+---------------------------+---------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -414,12 +444,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 76    ;
+; Total registers                              ; 94    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 34    ;
+; Number of registers using Clock Enable       ; 52    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -589,29 +619,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 76                          ;
-;     ENA               ; 16                          ;
+; arriav_ff             ; 94                          ;
+;     ENA               ; 34                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     ENA SLD           ; 8                           ;
 ;     SCLR              ; 10                          ;
 ;     plain             ; 32                          ;
-; arriav_lcell_comb     ; 142                         ;
-;     arith             ; 20                          ;
-;         1 data inputs ; 20                          ;
-;     normal            ; 122                         ;
+; arriav_lcell_comb     ; 188                         ;
+;     arith             ; 55                          ;
+;         1 data inputs ; 37                          ;
+;         3 data inputs ; 18                          ;
+;     normal            ; 133                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
+;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 14                          ;
-;         5 data inputs ; 13                          ;
-;         6 data inputs ; 85                          ;
-; arriav_mac            ; 1                           ;
+;         3 data inputs ; 7                           ;
+;         4 data inputs ; 18                          ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 95                          ;
+; arriav_mac            ; 3                           ;
 ; boundary_port         ; 109                         ;
 ; stratixv_ram_block    ; 200                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.96                        ;
+; Average LUT depth     ; 2.80                        ;
 +-----------------------+-----------------------------+
 
 
@@ -630,7 +661,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Sat Oct 19 04:01:25 2024
+    Info: Processing started: Mon Oct 21 04:13:44 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PISA -c MAIN
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -658,23 +689,25 @@ Info (12021): Found 1 design units, including 1 entities, in source file ram_pix
     Info (12023): Found entity 1: RAM_pixels File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file testbench/ram_pixels_tb.sv
     Info (12023): Found entity 1: RAM_pixels_tb File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/TestBench/RAM_pixels_tb.sv Line: 3
-Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(34): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 34
-Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(37): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 37
-Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(40): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 40
+Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(36): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 36
+Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(39): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 39
+Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(43): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 43
 Info (12127): Elaborating entity "MAIN" for the top level hierarchy
 Info (12128): Elaborating entity "PISA" for hierarchy "PISA:pisa" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 40
-Info (12128): Elaborating entity "vga" for hierarchy "PISA:pisa|vga:vga" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 37
-Warning (10036): Verilog HDL or VHDL warning at vga.sv(25): object "reset" assigned a value but never read File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 25
-Info (12128): Elaborating entity "pll" for hierarchy "PISA:pisa|vga:vga|pll:vgapll" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 30
-Info (12128): Elaborating entity "vga_controller" for hierarchy "PISA:pisa|vga:vga|vga_controller:vga_controller_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 43
-Info (12128): Elaborating entity "draw_board" for hierarchy "PISA:pisa|vga:vga|draw_board:draw_board_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 58
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(62): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 62
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(63): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 63
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(64): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 64
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(79): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 79
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(80): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 80
-Warning (10230): Verilog HDL assignment warning at draw_board.sv(81): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 81
-Info (12128): Elaborating entity "RAM_pixels" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 46
+Info (12128): Elaborating entity "vga" for hierarchy "PISA:pisa|vga:vga" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 38
+Info (12128): Elaborating entity "pll" for hierarchy "PISA:pisa|vga:vga|pll:vgapll" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 28
+Info (12128): Elaborating entity "vga_controller" for hierarchy "PISA:pisa|vga:vga|vga_controller:vga_controller_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 41
+Info (12128): Elaborating entity "draw_board" for hierarchy "PISA:pisa|vga:vga|draw_board:draw_board_inst" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/vga.sv Line: 59
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(68): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 68
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(69): truncated value with size 32 to match size of target (18) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 69
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(71): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 71
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(72): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 72
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(73): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 73
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(87): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 87
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(89): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 89
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(90): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 90
+Warning (10230): Verilog HDL assignment warning at draw_board.sv(91): truncated value with size 32 to match size of target (16) File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 91
+Info (12128): Elaborating entity "RAM_pixels" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/PISA.sv Line: 47
 Info (12128): Elaborating entity "altsyncram" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
 Info (12130): Elaborated megafunction instantiation "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
 Info (12133): Instantiated megafunction "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
@@ -701,7 +734,6 @@ Info (12133): Instantiated megafunction "PISA:pisa|RAM_pixels:ram_pixels|altsync
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_m002.tdf
     Info (12023): Found entity 1: altsyncram_m002 File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 32
 Info (12128): Elaborating entity "altsyncram_m002" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Critical Warning (127005): Memory depth (200000) in the design file differs from memory depth (5000) in the Memory Initialization File "C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/pixels.mif" -- setting initial value for remaining addresses to 0 File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/RAM_pixels.v Line: 89
 Info (12021): Found 1 design units, including 1 entities, in source file db/decode_uma.tdf
     Info (12023): Found entity 1: decode_uma File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/decode_uma.tdf Line: 23
 Info (12128): Elaborating entity "decode_uma" for hierarchy "PISA:pisa|RAM_pixels:ram_pixels|altsyncram:altsyncram_component|altsyncram_m002:auto_generated|decode_uma:decode2" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/db/altsyncram_m002.tdf Line: 44
@@ -729,11 +761,11 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "wraddress[16]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
     Warning (13410): Pin "wraddress[17]" is stuck at GND File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 19
 Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/output_files/MAIN.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 26 input pin(s) that do not drive logic
+Warning (21074): Design contains 25 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "reset" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 2
-    Warning (15610): No output dependent on input pin "switch" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 4
     Warning (15610): No output dependent on input pin "data[8]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
     Warning (15610): No output dependent on input pin "data[9]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
     Warning (15610): No output dependent on input pin "data[10]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
@@ -758,16 +790,22 @@ Warning (21074): Design contains 26 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "data[29]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
     Warning (15610): No output dependent on input pin "data[30]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
     Warning (15610): No output dependent on input pin "data[31]" File: C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/MAIN.sv Line: 15
-Info (21057): Implemented 505 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 554 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 36 input pins
     Info (21059): Implemented 73 output pins
-    Info (21061): Implemented 195 logic cells
+    Info (21061): Implemented 242 logic cells
     Info (21064): Implemented 200 RAM segments
-    Info (21062): Implemented 1 DSP elements
+    Info (21062): Implemented 3 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 4858 megabytes
-    Info: Processing ended: Sat Oct 19 04:01:42 2024
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 4883 megabytes
+    Info: Processing ended: Mon Oct 21 04:13:56 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:27
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/Usuario/Desktop/Proyecto-Grupal-1---Arqui-I/PISA/output_files/MAIN.map.smsg.
 
 
