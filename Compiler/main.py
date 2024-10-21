@@ -1,6 +1,13 @@
 import os
 import re
 
+register_map = {
+    'zero': 0, 'v0': 1,
+    'a0': 2, 'a1': 3, 'a2': 4, 'a3': 5,
+    's0': 6, 's1': 7, 's2': 8, 's3': 9, 's4': 10, 's5': 11, 's6': 12, 's7': 13, 's8': 14, 's9': 15,
+    't0': 16, 't1': 17, 't2': 18, 't3': 19, 't4': 20, 't5': 21, 't6': 22, 't7': 23, 't8': 24, 't9': 25,
+    't10': 26, 't11': 27, 't12': 28, 't13': 29, 't14': 30, 't15': 31
+}
 
 instructionDictionary = {
 
@@ -58,7 +65,7 @@ def initializeRom(wordSize, depth):
     
     lineCounter = 0
 
-    with open('Compiler/binary_out.txt', 'r') as binaryFile:
+    with open('Compiler/binary_out.bin', 'r') as binaryFile:
         for instruction in binaryFile:
             romDataFile.write(f'\t{lineCounter}\t :\t {instruction.rstrip()};\n')
             lineCounter += 1
@@ -70,79 +77,120 @@ def initializeRom(wordSize, depth):
 
 
 def remove_tags():
-
     lineCounter = 0
     with open('Compiler/bilinear_interpolation.txt', 'r') as f:
-        lines = f.readlines()
+        # Read all lines, removing empty lines, comments and removing indentation
+        lines = [line.strip() for line in f.readlines() if line.strip() and not line.strip().startswith('#') and not line.strip().startswith('.global')]
         f.close()
 
     with open('Compiler/intermediate.txt', 'xt') as f:
         for line in lines:
 
             # If there is a tag add it to controlOpsDictionary with the line number
-            if(line[-2] == ':'):
+            if ':' in line:
 
                 # Tag name
-                temp = line[:-2] # 2 ':' and '\n'
-                # Line number to binary and fill for 24 bits
-                lineNumber = bin(lineCounter)[2:].zfill(24)
+                line = line.replace(' ', '')
+                line = line.replace('\n', '')
+                temp = line.replace(':', '')
+                # Line number to binary and fill for 20 bits
+                lineNumber = bin(lineCounter-len(controlOpsDictionary))[2:].zfill(20)
                 controlOpsDictionary[temp] = lineNumber
 
             else:
-                f.write(line)
+                f.write(line + '\n')
 
             lineCounter += 1
         f.close()
+
 
 def readFile():
     lineCounter = 0
+    binary_lines = []  # List to store binary content
+    hex_lines = []  # List to store the content in hexadecimal
+
     with open('Compiler/intermediate.txt', 'r') as f:
         f.seek(0)
-        binaryFile = open('Compiler/binary_out.txt', 'w')
         
         for line in f:
             instr = line.split()
-            instr = [s.rstrip(',') for s in instr] # Remove ","
+            instr = [s.rstrip(',') for s in instr]  # Remove ","
 
             # Remove comments
-            if '#' in instr: comment_index = instr.index('#')
-            clean_instr = instr[:comment_index]
+            clean_instr = instr
+            if '#' in instr: 
+                comment_index = instr.index('#')
+                clean_instr = instr[:comment_index]
 
             if instr[0] in (arithmeticOps + logicOps + immOps):
-                
                 artimeticInstruction = RITypeAddressing(clean_instr)
-                binaryFile.write(artimeticInstruction)
+                binary_lines.append(artimeticInstruction)
+                hexInstruction = format(int(artimeticInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
 
-            elif (instr[0] in (I_memOps + S_memOps)):
+            elif instr[0] in (I_memOps + S_memOps):
                 memInstruction = memoryAddressing(clean_instr)
-                binaryFile.write(memInstruction)
+                binary_lines.append(memInstruction)
+                hexInstruction = format(int(memInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
 
-
-            elif (instr[0] in controlOps):
+            elif instr[0] in controlOps:
                 controlInstruction = controlAddressing(clean_instr, lineCounter)
-                binaryFile.write(controlInstruction)
+                binary_lines.append(controlInstruction)
+                hexInstruction = format(int(controlInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
 
-            binaryFile.write('\n')
+            elif instr[0] == 'nop':
+                nopInstruction = ''.zfill(20)
+                binary_lines.append(nopInstruction)
+                hexInstruction = format(int(nopInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
+
+            elif instr[0] == 'syscall':
+                syscallInstruction = ''.zfill(15) + '00110'
+                binary_lines.append(syscallInstruction)
+                hexInstruction = format(int(syscallInstruction, 2), '05x')
+                hex_lines.append(hexInstruction)
+
             lineCounter += 1
-        f.close()
+
+    with open('Compiler/binary_out.bin', 'w') as binaryFile, open('Compiler/hexadecimal_out.hex', 'w') as hexFile:
+        for binary_line, hex_line in zip(binary_lines, hex_lines):
+            binaryFile.write(binary_line + '\n')
+            hexFile.write(hex_line + '\n')
 
     os.remove("Compiler/intermediate.txt")
 
+
 def controlAddressing(instr, lineCounter):
     operation = instructionDictionary[instr[0]]
-    imm = format(lineCounter + 2 - (int(controlOpsDictionary[instr[1]], 2)), 'b').zfill(15)
-    negativeImm = format(int(''.join('1' if bit == '0' else '0' for bit in imm), 2) + int('1', 2), 'b')
+    jumpToLine = int(format(int(controlOpsDictionary[instr[1]], 2)))
+
+    imm = ''
+    if jumpToLine < lineCounter:
+        positive_binary = bin(lineCounter - jumpToLine)[2:].zfill(15)
+        inverted = ''.join('1' if bit == '0' else '0' for bit in positive_binary)
+        negative_binary = bin(int(inverted, 2) + 1)[2:]
+        imm = negative_binary.zfill(15)
+    else:
+        imm = bin(jumpToLine - lineCounter)[2:].zfill(15)
+
     value =  imm + operation
     return value
 
 
 def memoryAddressing(instr):
-    
     operation = instructionDictionary[instr[0]]
 
     # Separate instruction into list elements (remove parentheses)
-    instrToList = [instr[0], instr[1]] + instr[2][:-1].split('(')
-    instrToList[-1] = instrToList[-1].replace(')', '')
+    if operation[2:] == '011': # Load
+        temp = instr[2][:-1].split('(')
+        instrToList = [instr[0], instr[1]] + [temp[1]] + [temp[0]]
+        instrToList[-1] = instrToList[-1].replace(')', '')
+    else: # Store
+        temp = instr[2][:-1].split('(')
+        instrToList = [instr[0]] + [temp[0]] + [temp[1]] + [instr[1]]
+        instrToList[-1] = instrToList[-1].replace(')', '')
 
     if instrToList[0] in I_memOps:
         rd = format(int(extract_register(instrToList[1])), 'b').zfill(5)
@@ -150,8 +198,8 @@ def memoryAddressing(instr):
         imm = format(int(extract_register(instrToList[3])), 'b').zfill(5)
         value =  imm + rs1 + rd + operation
     else:
-        rs1 = format(int(extract_register(instrToList[1])), 'b').zfill(5)
-        imm = format(int(extract_register(instrToList[2])), 'b').zfill(5)
+        imm = format(int(extract_register(instrToList[1])), 'b').zfill(5)
+        rs1 = format(int(extract_register(instrToList[2])), 'b').zfill(5)
         rs2 = format(int(extract_register(instrToList[3])), 'b').zfill(5)
         value =  rs2 + rs1 + imm + operation
     return value
@@ -169,19 +217,19 @@ def RITypeAddressing(instr):
         rs1 = format(int(extract_register(instr[1])), 'b').zfill(5)
         rs2 = format(int(extract_register(instr[2])), 'b').zfill(5)
         value = rs2 + rs1 + '00001' + operation
+
     return value
+    
 
 def extract_register(value):
-
+    # Check if the value is a known registry name
+    if value in register_map:
+        return register_map[value]
+    
+    # If it is an immediate number
     if isinstance(value, (int, str)) and str(value).isdigit():
         return str(value)
-
-    if value == 'zero':
-        return '0'
-
-    digits = re.findall(r'\d+', value)
-    if digits:   
-        return digits[0]
+    
 
 def main():
     remove_tags()

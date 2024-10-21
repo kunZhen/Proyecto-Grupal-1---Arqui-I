@@ -54,7 +54,11 @@ module datapath_unit #(
         if (~rst) begin
             pc <= 8'h0;
         end else begin
-            pc = pc_result;
+				if (pc_result >= 8'hfa) begin
+					pc <= 8'hfa;
+				end else begin
+					pc = pc_result;
+				end
         end
     end
 
@@ -175,7 +179,7 @@ module datapath_unit #(
     data_memory #(
         .DATA_WIDTH(32),
         .ADDRESS_WIDTH(20),
-        .MEM_SIZE(1024)
+        .MEM_SIZE(16384)
     ) data_memory_inst(
         .clk(clk),
         .rst(rst),
