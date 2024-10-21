@@ -14,7 +14,16 @@ module MAIN (
 	input logic wren,
 	input logic [31:0] data,       
 	output [7:0] q, 
-	output [17:0] rdaddress, wraddress
+	output [17:0] rdaddress, wraddress,
+	
+	input   logic           PS2_CLK,
+   input   logic           PS2_DAT,
+	output  logic   [6:0]   HEX0,
+   output  logic   [6:0]   HEX1,
+   output  logic   [6:0]   HEX2,
+   output  logic   [6:0]   HEX3,
+   output  logic   [6:0]   HEX4,
+   output  logic   [6:0]   HEX5
 	
 );
 
@@ -36,7 +45,15 @@ module MAIN (
 		.data(data),
 		.q(q),
 		.rdaddress(rdaddress),
-		.wraddress(wraddress)
+		.wraddress(wraddress),
+		.PS2_CLK(PS2_CLK),
+		.PS2_DAT(PS2_DAT),
+		.HEX0(HEX0),
+		.HEX1(HEX1),
+		.HEX2(HEX2),
+		.HEX3(HEX3),
+		.HEX4(HEX4),
+		.HEX5(HEX5)
 	);
 
 endmodule

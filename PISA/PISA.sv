@@ -14,7 +14,16 @@ module PISA(
 	input logic wren,
 	input logic [31:0] data,       
 	output [7:0] q, 
-	output [17:0] rdaddress, wraddress
+	output [17:0] rdaddress, wraddress,
+	
+	input   logic           PS2_CLK,
+   input   logic           PS2_DAT,
+	output  logic   [6:0]   HEX0,
+   output  logic   [6:0]   HEX1,
+   output  logic   [6:0]   HEX2,
+   output  logic   [6:0]   HEX3,
+   output  logic   [6:0]   HEX4,
+   output  logic   [6:0]   HEX5
 	
 );
 
@@ -45,6 +54,21 @@ module PISA(
     .wren(wren), 
     .q(q)
   );
+  
+  // Instancia del módulo keyboard
+	keyboard u_keyboard (
+		 .clk        (clk),      // Señal de reloj
+		 .PS2_CLK    (PS2_CLK),  // Señal del reloj del PS2
+		 .PS2_DAT    (PS2_DAT),  // Señal de datos del PS2
+
+		 .HEX0       (HEX0),     // Salida al display HEX0
+		 .HEX1       (HEX1),     // Salida al display HEX1
+		 .HEX2       (HEX2),     // Salida al display HEX2
+		 .HEX3       (HEX3),     // Salida al display HEX3
+		 .HEX4       (HEX4),     // Salida al display HEX4
+		 .HEX5       (HEX5)      // Salida al display HEX5
+	);
+
 
 
 	
