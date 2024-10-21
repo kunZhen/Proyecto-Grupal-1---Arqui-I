@@ -1,5 +1,5 @@
 Flow report for Pipeline
-Mon Oct 21 09:10:31 2024
+Mon Oct 21 11:35:18 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,10 +40,10 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Mon Oct 21 09:10:31 2024       ;
+; Flow Status                 ; Successful - Mon Oct 21 11:35:18 2024       ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; Pipeline                                    ;
-; Top-level Entity Name       ; datapath_unit                               ;
+; Top-level Entity Name       ; pipeline                                    ;
 ; Family                      ; Cyclone V                                   ;
 ; Device                      ; 5CSEMA5F31C6                                ;
 ; Timing Models               ; Final                                       ;
@@ -62,37 +62,40 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/21/2024 09:10:14 ;
+; Start date & time ; 10/21/2024 11:35:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pipeline            ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                 ;
-+--------------------------------------+----------------------------------------+---------------+---------------+------------------+
-; Assignment Name                      ; Value                                  ; Default Value ; Entity Name   ; Section Id       ;
-+--------------------------------------+----------------------------------------+---------------+---------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 9447191579688.172952341316972          ; --            ; --            ; --               ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --            ; datapath_unit_tb ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; datapath_unit_tb                       ; --            ; --            ; eda_simulation   ;
-; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --            ; eda_simulation   ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --            ; --               ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --            ; eda_simulation   ;
-; EDA_TEST_BENCH_FILE                  ; datapath_unit_tb.sv                    ; --            ; --            ; datapath_unit_tb ;
-; EDA_TEST_BENCH_MODULE_NAME           ; datapath_unit_tb                       ; --            ; --            ; datapath_unit_tb ;
-; EDA_TEST_BENCH_NAME                  ; datapath_unit_tb                       ; --            ; --            ; eda_simulation   ;
-; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --            ; eda_simulation   ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --            ; --               ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --            ; --               ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; datapath_unit ; Top              ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; datapath_unit ; Top              ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; datapath_unit ; Top              ;
-; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --            ; --               ;
-; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --            ; --               ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --            ; --               ;
-; TOP_LEVEL_ENTITY                     ; datapath_unit                          ; Pipeline      ; --            ; --               ;
-+--------------------------------------+----------------------------------------+---------------+---------------+------------------+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                               ;
++--------------------------------------+----------------------------------------+---------------+-------------+------------------+
+; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id       ;
++--------------------------------------+----------------------------------------+---------------+-------------+------------------+
+; COMPILER_SIGNATURE_ID                ; 9447191579688.172953210220364          ; --            ; --          ; --               ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; pipeline_tb      ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; datapath_unit_tb ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; pipeline_tb                            ; --            ; --          ; eda_simulation   ;
+; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation   ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --               ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_FILE                  ; pipeline_tb.sv                         ; --            ; --          ; pipeline_tb      ;
+; EDA_TEST_BENCH_FILE                  ; datapath_unit_tb.sv                    ; --            ; --          ; datapath_unit_tb ;
+; EDA_TEST_BENCH_MODULE_NAME           ; pipeline_tb                            ; --            ; --          ; pipeline_tb      ;
+; EDA_TEST_BENCH_MODULE_NAME           ; datapath_unit_tb                       ; --            ; --          ; datapath_unit_tb ;
+; EDA_TEST_BENCH_NAME                  ; datapath_unit_tb                       ; --            ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; pipeline_tb                            ; --            ; --          ; eda_simulation   ;
+; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation   ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --               ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; pipeline    ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; pipeline    ; Top              ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; pipeline    ; Top              ;
+; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --               ;
+; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --               ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --               ;
++--------------------------------------+----------------------------------------+---------------+-------------+------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------+
@@ -100,8 +103,8 @@ refer to the applicable agreement for further details.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:21     ; 1.0                     ; 5263 MB             ; 00:00:21                           ;
-; Total                  ; 00:00:21     ; --                      ; --                  ; 00:00:21                           ;
+; Analysis & Elaboration ; 00:00:19     ; 1.0                     ; 5263 MB             ; 00:00:17                           ;
+; Total                  ; 00:00:19     ; --                      ; --                  ; 00:00:17                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
