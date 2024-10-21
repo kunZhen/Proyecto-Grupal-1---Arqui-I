@@ -1,0 +1,1287 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Keyboardprueba_run_msim_rtl_systemverilog.do
+# if ![file isdirectory Keyboardprueba_iputf_libs] {
+# 	file mkdir Keyboardprueba_iputf_libs
+# }
+# 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+###### Libraries for IPUTF cores 
+###### End libraries for IPUTF cores 
+###### MIF file copy and HDL compilation commands for IPUTF cores 
+# 
+# 
+# vlog "C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo"
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:37:09 on Oct 21,2024
+# vlog -reportprogress 300 C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo 
+# -- Compiling module pll
+# 
+# Top level modules:
+# 	pll
+# End time: 08:37:09 on Oct 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba {C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/ramps2.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:37:09 on Oct 21,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba" C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/ramps2.v 
+# -- Compiling module ramps2
+# 
+# Top level modules:
+# 	ramps2
+# End time: 08:37:09 on Oct 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba {C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/KFPS2KB_Shift_Register.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:37:09 on Oct 21,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba" C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/KFPS2KB_Shift_Register.sv 
+# -- Compiling module KFPS2KB_Shift_Register
+# 
+# Top level modules:
+# 	KFPS2KB_Shift_Register
+# End time: 08:37:09 on Oct 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba {C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/KFPS2KB.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:37:09 on Oct 21,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba" C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/KFPS2KB.sv 
+# -- Compiling module KFPS2KB
+# 
+# Top level modules:
+# 	KFPS2KB
+# End time: 08:37:09 on Oct 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba {C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/top.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:37:09 on Oct 21,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba" C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/top.sv 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 08:37:09 on Oct 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba {C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/KFPS2KB_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 08:37:09 on Oct 21,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba" C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/KFPS2KB_tb.sv 
+# -- Compiling module KFPS2KB_tb
+# 
+# Top level modules:
+# 	KFPS2KB_tb
+# End time: 08:37:09 on Oct 21,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  KFPS2KB_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" KFPS2KB_tb 
+# Start time: 08:37:10 on Oct 21,2024
+# Loading sv_std.std
+# Loading work.KFPS2KB_tb
+# Loading work.top
+# Loading work.pll
+# Loading altera_lnsim_ver.altera_lnsim_functions
+# Loading altera_lnsim_ver.altera_pll
+# Loading work.KFPS2KB
+# Loading work.KFPS2KB_Shift_Register
+# Loading work.ramps2
+# Loading altera_mf_ver.altsyncram
+# Loading altera_lnsim_ver.dps_extra_kick
+# Loading altera_lnsim_ver.dprio_init
+# Loading altera_lnsim_ver.altera_generic_pll_functions
+# Loading altera_lnsim_ver.generic_pll
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3017) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/top.sv(27): [TFMPC] - Too few port connections. Expected 4, found 3.
+#    Time: 0 ps  Iteration: 0  Instance: /KFPS2KB_tb/dut/PLL File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/top.sv(27): [TFMPC] - Missing connection for port 'locked'.
+# ** Warning: (vsim-3017) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Too few port connections. Expected 26, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /KFPS2KB_tb/dut/PLL/pll_altera_pll_altera_pll_i_639 File: /build/swbuild/SJ/nightly/18.1std/625/l64/work/modelsim/eda/sim_lib/altera_lnsim.sv
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'refclk1'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'phase_en'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'updn'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'num_phase_shifts'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'scanclk'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'cntsel'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'reconfig_to_pll'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'extswitch'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'adjpllin'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'cclk'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'fboutclk'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'phase_done'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'reconfig_from_pll'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'activeclk'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'clkbad'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'phout'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'lvds_clk'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'loaden'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'extclk_out'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'cascade_out'.
+# ** Warning: (vsim-3722) C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/pll_sim/pll.vo(45): [TFMPC] - Missing connection for port 'zdbfbclk'.
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (KFPS2KB_tb.dut.PLL.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = KFPS2KB_tb.dut.PLL.pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 5 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 100000.000000
+# Info: output_clock_low_period = 100000.000000
+# Time=5000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=15000, HEX5-0: 7f 7f 7f 40 40 40
+# Info: hierarchical_name = KFPS2KB_tb.dut.PLL.pll_altera_pll_altera_pll_i_639.new_model.gpll.UI
+# Warning: The frequency of the reference clock signal differs from the specified frequency (50.0 MHz).
+# Time=25000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=35000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=45000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=55000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=65000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=75000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=85000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=95000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=1995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=2995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=3995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=4995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=5995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=6995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=7995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=8995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=9995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10295000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10305000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10315000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10325000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10335000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10345000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10355000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10365000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10375000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10385000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10395000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10405000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10415000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10425000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10435000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10445000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10455000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10465000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10475000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10485000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10495000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10505000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10515000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10525000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10535000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10545000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10555000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10565000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10575000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10585000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10595000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10605000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10615000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10625000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10635000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10645000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10655000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10665000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10675000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10685000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10695000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10705000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10715000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10725000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10735000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10745000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10755000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10765000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10775000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10785000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10795000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10805000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10815000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10825000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10835000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10845000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10855000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10865000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10875000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10885000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10895000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10905000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10915000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10925000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10935000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10945000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10955000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10965000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10975000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10985000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=10995000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11005000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11015000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11025000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11035000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11045000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11055000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11065000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11075000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11085000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11095000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11105000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11115000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11125000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11135000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11145000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11155000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11165000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11175000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11185000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11195000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11205000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11215000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11225000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11235000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11245000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11255000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11265000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11275000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11285000, HEX5-0: 7f 7f 7f 40 40 40
+# Time=11295000, HEX5-0: 7f 7f 7f 40 40 40
+# ** Note: $finish    : C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/KFPS2KB_tb.sv(66)
+#    Time: 11300 ns  Iteration: 0  Instance: /KFPS2KB_tb
+# 1
+# Break in Module KFPS2KB_tb at C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/Keyboardprueba/KFPS2KB_tb.sv line 66
+# End time: 08:40:12 on Oct 21,2024, Elapsed time: 0:03:02
+# Errors: 0, Warnings: 24

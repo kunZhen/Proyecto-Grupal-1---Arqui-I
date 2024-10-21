@@ -1,84 +1,97 @@
+`timescale 1ns / 1ps
+
 module PS2_DRIVER_tb;
 
-    // Signals for the test
+    // Inputs
     reg clk;
     reg ps2_clk;
     reg ps2_data;
-    
+
+    // Outputs
     wire [15:0] Quadrant_confirm;
     wire [15:0] Quadrant_led;
     wire [7:0] Quadrant_value;
 
-    // Instantiate the module under test
+    // Instantiate the Unit Under Test (UUT)
     PS2_DRIVER uut (
-        .clk(clk),
-        .ps2_clk(ps2_clk),
-        .ps2_data(ps2_data),
-        .Quadrant_confirm(Quadrant_confirm),
-        .Quadrant_led(Quadrant_led),
+        .clk(clk), 
+        .ps2_clk(ps2_clk), 
+        .ps2_data(ps2_data), 
+        .Quadrant_confirm(Quadrant_confirm), 
+        .Quadrant_led(Quadrant_led), 
         .Quadrant_value(Quadrant_value)
     );
 
-    // Clock generator
-    always #5 clk = ~clk;
-
-    // Task to simulate PS/2 data input
-    task send_ps2_data;
-        input [10:0] packet;  // 11-bit PS/2 packet
-        integer i;
-        begin
-            // Simulate PS/2 clock and data
-            for (i = 0; i < 11; i = i + 1) begin
-                ps2_data = packet[i];
-                #10 ps2_clk = 0;  // Falling edge
-                #10 ps2_clk = 1;  // Rising edge
-            end
-        end
-    endtask
-
-    // Example PS/2 packets to simulate keyboard input
-    reg [10:0] ps2_packet;
-
+    // Clock generation
     initial begin
-        // Initialization of signals
         clk = 0;
-        ps2_clk = 1;
-        ps2_data = 1;
-
-        // Initial delay to allow for simulation setup
-        #100;
-
-        // Simulate multiple key presses
-
-        // Example: key 1 (0x16) for quadrant 0
-        ps2_packet = 11'b0_01100010_1_1;  // Start, keycode (0x16), parity (1), stop (1)
-        send_ps2_data(ps2_packet);
-
-        // Wait to allow the module to process the data
-        #200;
-
-        // Example: key 2 (0x1E) for quadrant 1
-        ps2_packet = 11'b0_01111000_1_1;  // Start, keycode (0x1E), parity (1), stop (1)
-        send_ps2_data(ps2_packet);
-
-        // Wait for processing
-        #200;
-
-        // Example: key 3 (0x26) for quadrant 2
-        ps2_packet = 11'b0_00100110_0_1;  // Start, keycode (0x26), parity, stop
-        send_ps2_data(ps2_packet);
-
-        // Wait before finishing
-        #200;
-
-        // End the simulation
-        $finish;
+        forever #5 clk = ~clk;  // 100MHz clock
     end
 
-    // Monitor for output changes
+    // PS/2 clock generation
     initial begin
-        $monitor("Time = %0t | Quadrant_confirm = %b | Quadrant_led = %b | Quadrant_value = %h",
-                 $time, Quadrant_confirm, Quadrant_led, Quadrant_value);
+        ps2_clk = 1;
+        forever #50 ps2_clk = ~ps2_clk;  // 10kHz PS/2 clock
+    end
+
+    // Test scenario
+    initial begin
+        // Initialize Inputs
+        ps2_data = 1;
+
+        // Wait 100 ns for global reset to finish
+        #100;
+        
+        // Test for key '1' (scan code 0x16)
+        send_scancode(8'h16);
+        
+        // Wait for processing
+        #10000;
+        
+        // Test for key '2' (scan code 0x1E)
+        send_scancode(8'h1E);
+        
+        // Wait for processing
+        #10000;
+        
+        // Test for key 'A' (scan code 0x1C)
+        send_scancode(8'h1C);
+        
+        // Wait for processing
+        #10000;
+        
+        // End simulation
+        $finish;
+    end
+    
+    // Task to send a scancode
+    task send_scancode;
+        input [7:0] code;
+        integer i;
+        begin
+            // Start bit
+            ps2_data = 0;
+            #100;
+            
+            // Data bits
+            for (i = 0; i < 8; i = i + 1) begin
+                ps2_data = code[i];
+                #100;
+            end
+            
+            // Parity bit (odd parity)
+            ps2_data = ~^code;
+            #100;
+            
+            // Stop bit
+            ps2_data = 1;
+            #100;
+        end
+    endtask
+    
+    // Monitor changes in Quadrant_value
+    initial begin
+        $monitor("Time=%0t ps: Quadrant_value changed to %h", $time, Quadrant_value);
     end
 
 endmodule

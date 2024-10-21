@@ -14,7 +14,7 @@
 /*.rdb
 /db/*.flock
 PISA/db/*.flock
-
+Keyboardprueba/db/*.flock
 
 # # Quartus settings file
 # *.qsf

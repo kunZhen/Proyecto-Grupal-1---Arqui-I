@@ -2,8 +2,7 @@ module PS2_DRIVER(
     input clk, ps2_clk, ps2_data,
     output reg [15:0] Quadrant_confirm,
     output reg [15:0] Quadrant_led,
-	 output reg [7:0] Quadrant_value  // Nuevo output para el valor del cuadrante
-
+    output reg [7:0] Quadrant_value  // Nuevo output para el valor del cuadrante
 );
 
     // Definición de códigos de teclas
@@ -53,49 +52,49 @@ module PS2_DRIVER(
         end
     end
 
-  // Control de LEDs, temporizador y generación de valor de cuadrante
+    // Control de LEDs, temporizador y generación de valor de cuadrante
     always @(posedge clk) begin
-            if (trigger) begin
-                // Lógica de lectura PS/2
-                if (ps2_clk != previous_state && !ps2_clk) begin
-                    read <= 1;
-                    error <= 0;
-                    scan_code <= {ps2_data, scan_code[10:1]};
-                    counter <= counter + 1;
-                end else if (counter == 11) begin
+        if (trigger) begin
+            // Lógica de lectura PS/2
+            if (ps2_clk != previous_state && !ps2_clk) begin
+                read <= 1;
+                error <= 0;
+                scan_code <= {ps2_data, scan_code[10:1]};
+                counter <= counter + 1;
+            end else if (counter == 11) begin
+                counter <= 0;
+                read <= 0;
+                full_buffer <= 1;
+                error <= !scan_code[10] || !(^scan_code[9:1]);
+            end else begin
+                full_buffer <= 0;
+                if (counter < 11 && read_counter >= 4000) begin
                     counter <= 0;
                     read <= 0;
-                    full_buffer <= 1;
-                    error <= !scan_code[10] || !(^scan_code[9:1]);
-                end else begin
-                    full_buffer <= 0;
-                    if (counter < 11 && read_counter >= 4000) begin
-                        counter <= 0;
-                        read <= 0;
-                    end
                 end
-    
-                previous_state <= ps2_clk;
-                
-                if (read)
-                    read_counter <= read_counter + 1;
-                else
-                    read_counter <= 0;
-    
-                // Actualización de key_code
-                if (full_buffer && !error)
-                    key_code <= scan_code[8:1];
-                else
-                    key_code <= 8'd0;
-    
-                // Actualización de Quadrant_confirm
-                for (i = 0; i < 16; i = i + 1) begin
-                    Quadrant_confirm[i] <= (key_code == QUADRANT_CODES[i]);
-                end
+            end
+
+            previous_state <= ps2_clk;
+            
+            if (read)
+                read_counter <= read_counter + 1;
+            else
+                read_counter <= 0;
+
+            // Actualización de key_code
+            if (full_buffer && !error)
+                key_code <= scan_code[8:1];
+            else
+                key_code <= 8'd0;
+
+            // Actualización de Quadrant_confirm
+            for (i = 0; i < 16; i = i + 1) begin
+                Quadrant_confirm[i] <= (key_code == QUADRANT_CODES[i]);
+            end
 
             if (|Quadrant_confirm) begin
-                Quadrant_led <= Quadrant_confirm;
-                holding <= 1'b1;
+                Quadrant_led <= Quadrant_confirm;  // Actualización de LED correspondiente
+                holding <= 1'b1;  // Activar el estado de retención
                 holding_counter <= 0;
                 
                 // Generación del valor del cuadrante
@@ -116,22 +115,17 @@ module PS2_DRIVER(
                     16'b001?????????????: Quadrant_value <= 8'hD;
                     16'b01??????????????: Quadrant_value <= 8'hE;
                     16'b1???????????????: Quadrant_value <= 8'hF;
-                    default: Quadrant_value <= 5'h34;
+                    default: Quadrant_value <= 5'h34; // Valor por defecto
                 endcase
             end else if (holding) begin
                 holding_counter <= holding_counter + 1'b1;
                 if (holding_counter > 10000000) begin
-                    Quadrant_led <= 16'b0;
+                    Quadrant_led <= 16'b0;  // Apagar los LEDs
                     holding <= 1'b0;
-                    Quadrant_value <= 5'd0;  // Reset del valor del cuadrante
+                    Quadrant_value <= 8'h0;  // Reset del valor del cuadrante
                 end
             end
         end
     end
 
-	 
-	 
 endmodule
-
-
-

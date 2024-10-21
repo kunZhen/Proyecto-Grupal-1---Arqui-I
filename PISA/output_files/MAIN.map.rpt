@@ -1,5 +1,5 @@
 Analysis & Elaboration report for MAIN
-Mon Oct 21 06:21:31 2024
+Mon Oct 21 06:45:43 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                              ;
 +-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Mon Oct 21 06:21:31 2024       ;
+; Analysis & Elaboration Status ; Successful - Mon Oct 21 06:45:43 2024       ;
 ; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                 ; MAIN                                        ;
 ; Top-level Entity Name         ; PS2_DRIVER                                  ;
@@ -160,11 +160,11 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Oct 21 06:21:21 2024
+    Info: Processing started: Mon Oct 21 06:45:33 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PISA -c MAIN --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Warning (10229): Verilog HDL Expression warning at PS2_DRIVER.sv(119): truncated literal to match 5 bits File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv Line: 119
+Warning (10229): Verilog HDL Expression warning at PS2_DRIVER.sv(118): truncated literal to match 5 bits File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv Line: 118
 Info (12021): Found 1 design units, including 1 entities, in source file keyboard/ps2_driver.sv
     Info (12023): Found entity 1: PS2_DRIVER File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file main.sv
@@ -198,16 +198,16 @@ Info (12021): Found 2 design units, including 2 entities, in source file ramps2_
     Info (12023): Found entity 1: RAMps2_tb File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv Line: 3
     Info (12023): Found entity 2: PS2_DRIVER_simplify File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/RAMps2_tb.sv Line: 91
 Info (12021): Found 1 design units, including 1 entities, in source file keyboard/ps2_driver_tb.sv
-    Info (12023): Found entity 1: PS2_DRIVER_tb File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER_tb.sv Line: 1
+    Info (12023): Found entity 1: PS2_DRIVER_tb File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER_tb.sv Line: 3
 Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(34): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 34
 Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(37): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 37
 Warning (10222): Verilog HDL Parameter Declaration warning at draw_board.sv(40): Parameter Declaration in module "draw_board" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/VGA/draw_board.sv Line: 40
 Info (12127): Elaborating entity "PS2_DRIVER" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(64): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv Line: 64
-Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(81): truncated value with size 32 to match size of target (12) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv Line: 81
+Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(63): truncated value with size 32 to match size of target (4) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv Line: 63
+Warning (10230): Verilog HDL assignment warning at PS2_DRIVER.sv(80): truncated value with size 32 to match size of target (12) File: C:/Users/Usuario/Documents/ArquidecomputadoresI/Proyecto-Grupal-1---Arqui-I/PISA/Keyboard/PS2_DRIVER.sv Line: 80
 Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 8 warnings
     Info: Peak virtual memory: 4775 megabytes
-    Info: Processing ended: Mon Oct 21 06:21:31 2024
+    Info: Processing ended: Mon Oct 21 06:45:43 2024
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:10
 
