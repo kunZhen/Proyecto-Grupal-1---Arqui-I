@@ -1,5 +1,5 @@
 // memory data file (do not edit the following line - required for mem load use)
-// instance=/datapath_unit_tb/dut/data_memory_inst/memory
+// instance=/pipeline_tb/dut/datapath_unit_inst/data_memory_inst/memory
 // format=hex addressradix=h dataradix=h version=1.0 wordsperline=1 noaddress
 0000000c
 0000000c
