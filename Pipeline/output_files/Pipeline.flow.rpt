@@ -1,6 +1,6 @@
 Flow report for Pipeline
-Mon Oct 21 11:35:18 2024
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Thu Apr 24 00:45:00 2025
+Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
 ---------------------
@@ -21,9 +21,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -33,28 +33,29 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Mon Oct 21 11:35:18 2024       ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; Pipeline                                    ;
-; Top-level Entity Name       ; pipeline                                    ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CSEMA5F31C6                                ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++------------------------------------------------------------------------------+
+; Flow Summary                                                                 ;
++-----------------------------+------------------------------------------------+
+; Flow Status                 ; Flow Failed - Thu Apr 24 00:44:59 2025         ;
+; Quartus Prime Version       ; 22.1std.0 Build 915 10/25/2022 SC Lite Edition ;
+; Revision Name               ; Pipeline                                       ;
+; Top-level Entity Name       ; pipeline_tb                                    ;
+; Family                      ; Cyclone V                                      ;
+; Device                      ; 5CSXFC6D6F31C6                                 ;
+; Timing Models               ; Final                                          ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
+; Total registers             ; N/A until Partition Merge                      ;
+; Total pins                  ; N/A until Partition Merge                      ;
+; Total virtual pins          ; N/A until Partition Merge                      ;
+; Total block memory bits     ; N/A until Partition Merge                      ;
+; Total PLLs                  ; N/A until Partition Merge                      ;
+; Total DLLs                  ; N/A until Partition Merge                      ;
++-----------------------------+------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -62,7 +63,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/21/2024 11:35:02 ;
+; Start date & time ; 04/24/2025 00:44:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Pipeline            ;
 +-------------------+---------------------+
@@ -73,12 +74,12 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id       ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 9447191579688.172953210220364          ; --            ; --          ; --               ;
+; COMPILER_SIGNATURE_ID                ; 154027285978271.174547708532632        ; --            ; --          ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; pipeline_tb      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; datapath_unit_tb ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; pipeline_tb                            ; --            ; --          ; eda_simulation   ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation   ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --               ;
+; EDA_SIMULATION_TOOL                  ; Questa Intel FPGA (Verilog)            ; <None>        ; --          ; --               ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation   ;
 ; EDA_TEST_BENCH_FILE                  ; pipeline_tb.sv                         ; --            ; --          ; pipeline_tb      ;
 ; EDA_TEST_BENCH_FILE                  ; datapath_unit_tb.sv                    ; --            ; --          ; datapath_unit_tb ;
@@ -89,38 +90,39 @@ refer to the applicable agreement for further details.
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation   ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --               ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --               ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; pipeline    ; Top              ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; pipeline    ; Top              ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; pipeline    ; Top              ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; pipeline_tb ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; pipeline_tb ; Top              ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; pipeline_tb ; Top              ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --               ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --               ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --               ;
+; TOP_LEVEL_ENTITY                     ; pipeline_tb                            ; Pipeline      ; --          ; --               ;
 +--------------------------------------+----------------------------------------+---------------+-------------+------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                          ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:19     ; 1.0                     ; 5263 MB             ; 00:00:17                           ;
-; Total                  ; 00:00:19     ; --                      ; --                  ; 00:00:17                           ;
-+------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:15     ; 1.0                     ; 4927 MB             ; 00:00:32                           ;
+; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:32                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                      ;
-+------------------------+------------------+------------+------------+----------------+
-; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+------------------------+------------------+------------+------------+----------------+
-; Analysis & Elaboration ; Emanuel          ; Windows 10 ; 10.0       ; x86_64         ;
-+------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; Kun              ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off Pipeline -c Pipeline --analysis_and_elaboration
+quartus_map --read_settings_files=on --write_settings_files=off Pipeline -c Pipeline
 
 
 

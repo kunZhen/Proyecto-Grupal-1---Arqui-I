@@ -1,7 +1,7 @@
-Analysis & Elaboration Status : Successful - Mon Oct 21 11:35:18 2024
-Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Analysis & Synthesis Status : Failed - Thu Apr 24 00:44:59 2025
+Quartus Prime Version : 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 Revision Name : Pipeline
-Top-level Entity Name : pipeline
+Top-level Entity Name : pipeline_tb
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A until Partition Merge
 Total registers : N/A until Partition Merge

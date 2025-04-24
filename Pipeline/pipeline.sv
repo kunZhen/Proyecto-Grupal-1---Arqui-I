@@ -1,7 +1,7 @@
 module pipeline #(
    parameter DATA_WIDTH = 20,
    parameter ADDRESS_WIDTH = 8,
-   parameter REG_NUMBER = 5,
+   parameter REG_NUMBER = 3,
    parameter MEM_SIZE = 256
 ) (
    input logic clk,

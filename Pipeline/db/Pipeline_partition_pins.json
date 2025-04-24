@@ -4,106 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "rs1[0]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1[1]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1[2]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rs1[4]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[0]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[1]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[2]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[3]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[4]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[5]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[6]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[7]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[8]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[9]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[10]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[11]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[12]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[13]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[14]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[15]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[16]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[17]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[18]",
-					"strict" : false
-				},
-				{
-					"name" : "mem_write_data[19]",
-					"strict" : false
-				},
-				{
 					"name" : "zero",
 					"strict" : false
 				},
@@ -212,6 +112,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "rs1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rs1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rs1[2]",
+					"strict" : false
+				},
+				{
 					"name" : "rs2[0]",
 					"strict" : false
 				},
@@ -224,14 +136,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "rs2[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rs2[4]",
-					"strict" : false
-				},
-				{
 					"name" : "rd[0]",
 					"strict" : false
 				},
@@ -241,14 +145,6 @@
 				},
 				{
 					"name" : "rd[2]",
-					"strict" : false
-				},
-				{
-					"name" : "rd[3]",
-					"strict" : false
-				},
-				{
-					"name" : "rd[4]",
 					"strict" : false
 				},
 				{
@@ -708,7 +604,83 @@
 					"strict" : false
 				},
 				{
-					"name" : "instruction[19]",
+					"name" : "mem_write_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[8]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[9]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[10]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[11]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[12]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[13]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[14]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[15]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[16]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[17]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[18]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_write_data[19]",
 					"strict" : false
 				},
 				{
@@ -756,6 +728,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "Stall",
+					"strict" : false
+				},
+				{
+					"name" : "IF_ID_Write",
+					"strict" : false
+				},
+				{
+					"name" : "PCWrite",
+					"strict" : false
+				},
+				{
+					"name" : "instruction[19]",
+					"strict" : false
+				},
+				{
 					"name" : "mem_read_data[11]",
 					"strict" : false
 				},
@@ -797,18 +785,6 @@
 				},
 				{
 					"name" : "MemToReg",
-					"strict" : false
-				},
-				{
-					"name" : "Stall",
-					"strict" : false
-				},
-				{
-					"name" : "IF_ID_Write",
-					"strict" : false
-				},
-				{
-					"name" : "PCWrite",
 					"strict" : false
 				},
 				{

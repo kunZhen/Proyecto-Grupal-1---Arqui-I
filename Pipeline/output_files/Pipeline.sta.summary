@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -41.622
+TNS   : -471018.197
+
+Type  : Slow 1100mV 85C Model Setup 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : -11.358
+TNS   : -210.558
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : -1.229
+TNS   : -4.318
+
+Type  : Slow 1100mV 85C Model Hold 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : 2.248
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.394
+TNS   : -17622.864
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : 0.008
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -42.350
+TNS   : -449003.426
+
+Type  : Slow 1100mV 0C Model Setup 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : -11.211
+TNS   : -206.796
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : -1.406
+TNS   : -4.852
+
+Type  : Slow 1100mV 0C Model Hold 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : 2.158
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.394
+TNS   : -19383.424
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : 0.035
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -22.941
+TNS   : -324509.923
+
+Type  : Fast 1100mV 85C Model Setup 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : -6.734
+TNS   : -121.584
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : -0.275
+TNS   : -0.920
+
+Type  : Fast 1100mV 85C Model Hold 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : 1.363
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.084
+TNS   : -2461.990
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : 0.094
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -21.511
+TNS   : -283102.403
+
+Type  : Fast 1100mV 0C Model Setup 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : -6.090
+TNS   : -110.541
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : -0.406
+TNS   : -1.410
+
+Type  : Fast 1100mV 0C Model Hold 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : 1.420
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.085
+TNS   : -2531.195
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'datapath_unit:datapath_unit_inst|MEM_MemRead'
+Slack : 0.160
+TNS   : 0.000
+
+------------------------------------------------------------
